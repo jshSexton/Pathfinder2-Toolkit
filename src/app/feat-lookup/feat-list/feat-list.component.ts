@@ -15,7 +15,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Options } from 'ng5-slider';
 import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
-import { map, startWith } from 'rxjs/operators';
+import { delay, map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-feat-list',
@@ -62,12 +62,14 @@ export class FeatListComponent implements OnInit {
   }
 
   ngOnInit() {
-    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats()]).subscribe(([traitRes, featRes]) => {
-      this.featsData = featRes;
-      this.traitsData = traitRes;
+    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats().pipe(delay(3000))]).subscribe(
+      ([traitRes, featRes]) => {
+        this.featsData = featRes;
+        this.traitsData = traitRes;
 
-      this.initAfterGetData();
-    });
+        this.initAfterGetData();
+      }
+    );
   }
 
   initAfterGetData() {

@@ -13,6 +13,7 @@ import { FeatLookupRoutingModule } from '@app/feat-lookup/feat-lookup-routing.mo
 import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
 import { FeatLookupHttpErrorHandlerService } from '@app/feat-lookup/feat-lookup-http-error-handler.service';
 import { FeatItemComponent } from './feat-item/feat-item.component';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [FeatLookupComponent, FeatListComponent, FeatItemComponent],
@@ -24,6 +25,7 @@ import { FeatItemComponent } from './feat-item/feat-item.component';
     HttpClientModule,
     ReactiveFormsModule,
     Ng5SliderModule,
+    SharedModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       passThruUnknownUrl: false

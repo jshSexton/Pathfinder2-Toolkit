@@ -120,3 +120,7 @@
 .mat-column-shortDesc {
   flex: 0 1 50%;
 }
+
+::ng-deep .text-xs-center {
+  text-align: center;
+}
