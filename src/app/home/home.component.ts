@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
-import { QuoteService } from './quote.service';
+import { map } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +10,31 @@ import { QuoteService } from './quote.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  quote: string | undefined;
-  isLoading = false;
+  isLoading = true;
+  /** Based on the screen size, switch from standard to one column per row */
+  cards = this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall]).pipe(
+    map(({ matches }) => {
+      if (matches) {
+        return [
+          { title: 'Card 1', cols: 1, rows: 1 },
+          { title: 'Card 2', cols: 1, rows: 1 },
+          { title: 'Card 3', cols: 1, rows: 1 },
+          { title: 'Card 4', cols: 1, rows: 1 }
+        ];
+      }
 
-  constructor(private quoteService: QuoteService) {}
+      return [
+        { title: 'Card 1', cols: 2, rows: 1 },
+        { title: 'Card 2', cols: 1, rows: 1 },
+        { title: 'Card 3', cols: 1, rows: 2 },
+        { title: 'Card 4', cols: 1, rows: 1 }
+      ];
+    })
+  );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
-    this.isLoading = true;
-    this.quoteService
-      .getRandomQuote({ category: 'dev' })
-      .pipe(
-        finalize(() => {
-          this.isLoading = false;
-        })
-      )
-      .subscribe((quote: string) => {
-        this.quote = quote;
-      });
+    this.isLoading = false;
   }
 }
