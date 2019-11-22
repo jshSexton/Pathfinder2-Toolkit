@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-x-rocket": {
+    "pathfinder2-toolkit": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -29,9 +29,7 @@
               "src/manifest.json",
               "src/assets"
             ],
-            "styles": [
-              "src/main.scss"
-            ],
+            "styles": ["src/main.scss"],
             "scripts": []
           },
           "configurations": {
@@ -70,12 +68,12 @@
           "options": {
             "hmr": true,
             "hmrWarning": false,
-            "browserTarget": "ng-x-rocket:build"
+            "browserTarget": "pathfinder2-toolkit:build"
           },
           "configurations": {
             "production": {
               "hmr": false,
-              "browserTarget": "ng-x-rocket:build:production"
+              "browserTarget": "pathfinder2-toolkit:build:production"
             },
             "ci": {
               "progress": false
@@ -85,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-x-rocket:build"
+            "browserTarget": "pathfinder2-toolkit:build"
           }
         },
         "test": {
@@ -105,18 +103,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "ng-x-rocket-e2e": {
+    "pathfinder2-toolkit-e2e": {
       "root": "e2e",
       "projectType": "application",
       "architect": {
@@ -124,22 +117,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-x-rocket:serve"
+            "devServerTarget": "pathfinder2-toolkit:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "ng-x-rocket"
+  "defaultProject": "pathfinder2-toolkit"
 }

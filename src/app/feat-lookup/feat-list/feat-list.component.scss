@@ -1,8 +1,8 @@
-.feat-table__detail-row {
+.detail-row {
   min-height: auto;
 }
 
-.feat-table__item-container {
+.item-container {
   width: 100%;
 
   app-feat-item {
@@ -10,21 +10,21 @@
   }
 }
 
-.feat-table__filters-key {
+.filters-key {
   display: flex;
   margin-bottom: 40px;
 }
 
-.feat-table__filters-wrapper {
+.filters-wrapper {
   align-self: center;
   flex-grow: 1;
 }
 
-.feat-table__key-wrapper {
+.key-wrapper {
   margin: auto 14px;
 }
 
-.feat-table__filters {
+.filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -37,11 +37,11 @@
   }
 }
 
-.feat-table__level-filter {
+.level-filter {
   margin: 12px;
   min-width: 180px;
 
-  .feat-table__level-filter__label {
+  .level-filter-label {
     color: rgba(0, 0, 0, 0.54);
     font-size: 14px;
     text-align: center;
@@ -60,19 +60,19 @@
   }
 }
 
-.feat-table__action-keys {
+.action-keys {
   border: 2px solid black;
   padding: 10px;
   width: 160px;
 }
 
-.feat-table__key-label {
+.key-label {
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.feat-table__key-item {
+.key-item {
   align-items: center;
   display: flex;
   margin: 6px auto;

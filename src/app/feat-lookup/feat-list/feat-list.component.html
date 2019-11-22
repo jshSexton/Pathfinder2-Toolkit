@@ -1,8 +1,8 @@
 <app-loader [isLoading]="!traitsData && !featsData"></app-loader>
 <div *ngIf="traitsData && featsData">
-  <div class="feat-table__filters-key">
-    <div class="feat-table__filters-wrapper">
-      <div class="feat-table__filters">
+  <div class="filters-key">
+    <div class="filters-wrapper">
+      <div class="filters">
         <mat-form-field>
           <mat-label>Name Filter</mat-label>
           <input matInput [formControl]="nameFilter" />
@@ -18,8 +18,8 @@
           </button>
         </mat-form-field>
 
-        <div class="feat-table__level-filter">
-          <div class="feat-table__level-filter__label">Level Filter</div>
+        <div class="level-filter">
+          <div class="level-filter-label">Level Filter</div>
           <ng5-slider [options]="levelFilterOptions" [formControl]="levelFilter"></ng5-slider>
         </div>
 
@@ -63,10 +63,10 @@
         <button mat-raised-button color="primary" (click)="onFilterResetClick()">Reset Filters</button>
       </div>
     </div>
-    <div class="feat-table__key-wrapper">
-      <div class="feat-table__action-keys">
-        <div class="feat-table__key-label">Action Key</div>
-        <div *ngFor="let key of tableKeys" class="feat-table__key-item">
+    <div class="key-wrapper">
+      <div class="action-keys">
+        <div class="key-label">Action Key</div>
+        <div *ngFor="let key of tableKeys" class="key-item">
           <img src="{{ key.icon }}" />
           <div>{{ key.text }}</div>
         </div>
@@ -109,10 +109,7 @@
       <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
       <ng-container matColumnDef="expandedDetail">
         <mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length">
-          <div
-            class="feat-table__item-container"
-            [@detailExpand]="visibleFeats.includes(row) ? 'expanded' : 'collapsed'"
-          >
+          <div class="item-container" [@detailExpand]="visibleFeats.includes(row) ? 'expanded' : 'collapsed'">
             <app-feat-item [feat]="row" routerLink="/feats/detail/{{ row.id }}"></app-feat-item>
           </div>
         </mat-cell>
@@ -125,7 +122,7 @@
         (click)="onFeatClick(row)"
         [@rowExpand]="visibleFeats.includes(row) ? 'expanded' : 'collapsed'"
       ></mat-row>
-      <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="feat-table__detail-row"></mat-row>
+      <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
     </mat-table>
 
     <mat-paginator

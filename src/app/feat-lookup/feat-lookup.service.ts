@@ -24,7 +24,7 @@ export class FeatLookupService {
   getFeatById(featId: number): Observable<Feat> {
     return this.http
       .get<Feat>(`${this.featsUrl}/${featId}`)
-      .pipe(catchError(this.handleError(`getFeat: id=${featId}`, <Feat>{})));
+      .pipe(catchError(this.handleError(`getFeat: id=${featId}`, {} as Feat)));
   }
 
   getAllTraits(): Observable<Array<Trait>> {
@@ -34,6 +34,6 @@ export class FeatLookupService {
   getTraitById(traitId: number): Observable<Trait> {
     return this.http
       .get<Trait>(`${this.traitsUrl}/${traitId}`)
-      .pipe(catchError(this.handleError(`getFeat: id=${traitId}`, <Trait>{})));
+      .pipe(catchError(this.handleError(`getFeat: id=${traitId}`, {} as Trait)));
   }
 }
