@@ -81,6 +81,7 @@
   },
   "prettier": {
     "singleQuote": true,
+    "jsxSingleQuote": true,
     "overrides": [
       {
         "files": "*.scss",
