@@ -16,7 +16,24 @@ export enum StandardActionSymbols {
   NO_ACTION = ''
 }
 
-export enum SpellActionsTypes {}
+export enum SavingThrowTypes {
+  WILL_SAVE = 'WILL',
+  REFLEX_SAVE = 'REFLEX',
+  FORTITUDE_SAVE = 'FORTITUDE'
+}
+
+export enum SpellTraditions {
+  ARCANE = 'ARCANE',
+  PRIMAL = 'PRIMAL',
+  OCCULT = 'OCCULT',
+  DIVINE = 'DIVINE'
+}
+
+export enum SpellComponents {
+  SOMATIC = 'SOMATIC',
+  VERBAL = 'VERBAL',
+  MATERIAL = 'MATERIAL'
+}
 
 export enum FeatureTypes {
   FEAT_TYPE = 'FEAT',
@@ -52,4 +69,40 @@ export interface Feat extends Feature {
   trigger: string;
   requirements: string;
   special: string;
+}
+
+export interface Spell extends Feature {
+  level: number;
+  traditions: Array<SpellTraditions>;
+  castingTime: StandardActionTypes | string;
+  components: Array<SpellComponents | string>;
+  requirements: string;
+  trigger: string;
+  range: string;
+  targets: string;
+  duration: string;
+  area: string;
+  savingThrow: SavingThrowTypes;
+  heightened: Array<SpellHeightened>;
+  affliction: Affliction;
+}
+
+export interface SpellHeightened {
+  triggerLevel: string;
+  description: string;
+}
+
+export interface Affliction {
+  name: string;
+  level: number;
+  type: string;
+  onset: string;
+  ruleText: string;
+  stages: Array<AfflictionStage>;
+}
+
+export interface AfflictionStage {
+  level: number;
+  effect: string;
+  duration: string;
 }
