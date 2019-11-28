@@ -900,6 +900,6 @@ export class InMemoryDataService {
       } as Spell
     ];
 
-    return { traits, feats };
+    return { traits, feats, spells };
   }
 }

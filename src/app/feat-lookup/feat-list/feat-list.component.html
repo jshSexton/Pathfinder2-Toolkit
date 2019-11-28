@@ -1,4 +1,6 @@
-<app-loader [isLoading]="!traitsData && !featsData"></app-loader>
+<div *ngIf="!traitsData && !spellsData" class="spinner-wrapper">
+  <mat-spinner></mat-spinner>
+</div>
 <div *ngIf="traitsData && featsData">
   <div class="filters-key">
     <div class="filters-wrapper">

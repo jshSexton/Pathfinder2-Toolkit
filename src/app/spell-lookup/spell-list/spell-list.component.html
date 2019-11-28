@@ -1,1 +1,139 @@
-<p>spell-list works!</p>
+<div *ngIf="!traitsData && !spellsData" class="spinner-wrapper">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="traitsData && spellsData">
+  <div class="filters-key">
+    <div class="filters-wrapper">
+      <div class="filters">
+        <mat-form-field>
+          <mat-label>Name Filter</mat-label>
+          <input matInput [formControl]="nameFilter" />
+          <button
+            mat-button
+            *ngIf="nameFilter.value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="nameFilter.reset()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <div class="level-filter">
+          <div class="level-filter-label">Level Filter</div>
+          <ng5-slider [options]="levelFilterOptions" [formControl]="levelFilter"></ng5-slider>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Action Filter</mat-label>
+          <mat-select [formControl]="actionFilter">
+            <mat-option>---</mat-option>
+            <mat-option *ngFor="let option of actionOptions" value="{{ option.value }}">{{ option.text }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Trait Filter</mat-label>
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let trait of filterValues.traits" (removed)="removeTraitChip(trait)">
+              {{ trait.displayText }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input
+              matInput
+              #traitInput
+              [formControl]="traitsFilter"
+              [matAutocomplete]="auto"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="addTraitChip($event)"
+            />
+          </mat-chip-list>
+          <mat-autocomplete
+            autoActiveFirstOption
+            #auto="matAutocomplete"
+            [displayWith]="traitAutoDisplay"
+            (optionSelected)="traitFilterSelected($event)"
+          >
+            <mat-option *ngFor="let trait of autoTraits | async" [value]="trait">
+              {{ trait.displayText }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="onFilterResetClick()">Reset Filters</button>
+      </div>
+    </div>
+    <div class="key-wrapper">
+      <div class="action-keys">
+        <div class="key-label">Action Key</div>
+        <div *ngFor="let key of tableKeys" class="key-item">
+          <img src="{{ key.icon }}" />
+          <div>{{ key.text }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mat-elevation-z6">
+    <mat-table [dataSource]="dataSource" matSort multiTemplateDataRows aria-label="Elements">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
+      </ng-container>
+
+      <!-- Level Column -->
+      <ng-container matColumnDef="level">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Spell Level</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.level }}</mat-cell>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ getActionText(row.castingTime) }}</mat-cell>
+      </ng-container>
+
+      <!-- Traits Column -->
+      <ng-container matColumnDef="traits">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Traits</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.traits | map: getTraitText | join: ', ' }}</mat-cell>
+      </ng-container>
+
+      <!-- Short Description Column -->
+      <ng-container matColumnDef="shortDesc">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Short Description</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.shortDesc }}</mat-cell>
+      </ng-container>
+
+      <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+      <ng-container matColumnDef="expandedDetail">
+        <mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length">
+          <div class="item-container" [@detailExpand]="visibleSpells.includes(row) ? 'expanded' : 'collapsed'">
+            <app-spell-item [spell]="row" routerLink="/spells/detail/{{ row.id }}"></app-spell-item>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Declaring table rows as described by the above columns -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="onSpellClick(row)"
+        [@rowExpand]="visibleSpells.includes(row) ? 'expanded' : 'collapsed'"
+      ></mat-row>
+      <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]"
+    >
+    </mat-paginator>
+  </div>
+</div>
