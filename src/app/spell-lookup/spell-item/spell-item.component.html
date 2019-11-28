@@ -1,1 +1,67 @@
-<p>spell-item works!</p>
+<div *ngIf="spell" class="block mat-elevation-z1">
+  <div class="header">
+    <div class="name">{{ spell.name | uppercase }}</div>
+    <div class="level">SPELL {{ spell.level }}</div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="traits-wrapper">
+    <div class="trait" *ngFor="let trait of spell.traits">
+      <div class="trait-foreground">{{ trait.displayText | uppercase }}</div>
+    </div>
+  </div>
+
+  <div>
+    <span class="label">Traditions</span>
+    <span>{{ spell.traditions.join(', ') | titlecase }}</span>
+  </div>
+
+  <div>
+    <span class="label">Cast</span>
+    <span *ngIf="actionSymbolUrl" class="symbol"><img src="{{ actionSymbolUrl }}"/></span>
+    <span *ngIf="actionSymbolUrl === ''">{{ spell.castingTime }}</span>
+    <span> ( {{ spell.components.join(', ') | lowercase }} )</span>
+  </div>
+
+  <div *ngIf="spell.trigger">
+    <span class="label">Trigger</span>
+    <span>{{ spell.trigger }}</span>
+  </div>
+
+  <div *ngIf="spell.requirements">
+    <span class="label">Requirements</span>
+    <span>{{ spell.requirements }}</span>
+  </div>
+
+  <div class="divider">
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="description">
+    <span [innerHTML]="spell.description"></span>
+  </div>
+
+  <div *ngIf="spell.critSuccessText" class="hanging-indent">
+    <span class="label">Critical Success</span>
+    <span>{{ spell.critSuccessText }}</span>
+  </div>
+  <div *ngIf="spell.successText" class="hanging-indent">
+    <span class="label">Success</span>
+    <span>{{ spell.successText }}</span>
+  </div>
+  <div *ngIf="spell.failText" class="hanging-indent">
+    <span class="label">Failure</span>
+    <span>{{ spell.failText }}</span>
+  </div>
+  <div *ngIf="spell.critFailText" class="hanging-indent">
+    <span class="label">Critical Failure</span>
+    <span>{{ spell.critFailText }}</span>
+  </div>
+</div>
+
+<div *ngIf="notFound">
+  <mat-error>
+    spell Not Found
+  </mat-error>
+</div>

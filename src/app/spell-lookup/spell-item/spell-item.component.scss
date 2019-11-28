@@ -1,0 +1,66 @@
+.block {
+  margin: 24px;
+  padding: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.name {
+  margin: auto 20px 2px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.symbol {
+  img {
+    height: 20px;
+  }
+}
+
+.level {
+  font-weight: bold;
+  margin: auto 5px 2px auto;
+}
+
+.traits-wrapper {
+  display: flex;
+  margin: 5px 0;
+}
+
+.trait {
+  background-color: goldenrod;
+  padding: 0 3px;
+  margin: 1px 3px;
+}
+
+.trait-foreground {
+  background-color: darkred;
+  color: white;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.divider {
+  margin: 5px 0;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.description {
+  margin: 4px 0;
+}
+
+.special {
+  margin: 4px 10px 4px 0;
+}
+
+.hanging-indent {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
