@@ -16,6 +16,7 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Options } from 'ng5-slider';
 import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
 import { delay, map, startWith } from 'rxjs/operators';
+import { Utils } from '@app/shared/utils.service';
 
 @Component({
   selector: 'app-feat-list',
@@ -56,7 +57,7 @@ export class FeatListComponent implements OnInit {
   levelFilterOptions: Options = { floor: 1, ceil: 20, step: 1 };
   tableKeys: Array<TableKey>;
 
-  constructor(private featService: FeatLookupService) {
+  constructor(private featService: FeatLookupService, private utils: Utils) {
     this.setActionOptions();
     this.setTableKeys();
   }
@@ -86,61 +87,30 @@ export class FeatListComponent implements OnInit {
     return trait.displayText;
   }
 
-  getActionText(action: StandardActionTypes, noEmptyStrings: boolean = false): string {
-    let actionText: string;
-    switch (action) {
-      case StandardActionTypes.SINGLE_ACTION:
-        actionText = '1 Action';
-        break;
-      case StandardActionTypes.DOUBLE_ACTION:
-        actionText = '2 Actions';
-        break;
-      case StandardActionTypes.TRIPLE_ACTION:
-        actionText = '3 Actions';
-        break;
-      case StandardActionTypes.REACTION_ACTION:
-        actionText = 'Reaction';
-        break;
-      case StandardActionTypes.FREE_ACTION:
-        actionText = 'Free Action';
-        break;
-      case StandardActionTypes.NO_ACTION:
-      default:
-        if (noEmptyStrings) {
-          actionText = 'No Action Specified';
-        } else {
-          actionText = '';
-        }
-        break;
-    }
-
-    return actionText;
-  }
-
   setActionOptions() {
     this.actionOptions.push({
       value: StandardActionTypes.NO_ACTION,
-      text: this.getActionText(StandardActionTypes.NO_ACTION, true)
+      text: this.utils.getActionText(StandardActionTypes.NO_ACTION, true)
     });
     this.actionOptions.push({
       value: StandardActionTypes.FREE_ACTION,
-      text: this.getActionText(StandardActionTypes.FREE_ACTION, true)
+      text: this.utils.getActionText(StandardActionTypes.FREE_ACTION, true)
     });
     this.actionOptions.push({
       value: StandardActionTypes.SINGLE_ACTION,
-      text: this.getActionText(StandardActionTypes.SINGLE_ACTION, true)
+      text: this.utils.getActionText(StandardActionTypes.SINGLE_ACTION, true)
     });
     this.actionOptions.push({
       value: StandardActionTypes.DOUBLE_ACTION,
-      text: this.getActionText(StandardActionTypes.DOUBLE_ACTION, true)
+      text: this.utils.getActionText(StandardActionTypes.DOUBLE_ACTION, true)
     });
     this.actionOptions.push({
       value: StandardActionTypes.TRIPLE_ACTION,
-      text: this.getActionText(StandardActionTypes.TRIPLE_ACTION, true)
+      text: this.utils.getActionText(StandardActionTypes.TRIPLE_ACTION, true)
     });
     this.actionOptions.push({
       value: StandardActionTypes.REACTION_ACTION,
-      text: this.getActionText(StandardActionTypes.REACTION_ACTION, true)
+      text: this.utils.getActionText(StandardActionTypes.REACTION_ACTION, true)
     });
   }
 
@@ -148,23 +118,23 @@ export class FeatListComponent implements OnInit {
     this.tableKeys = [];
     this.tableKeys.push({
       icon: StandardActionSymbols.FREE_ACTION,
-      text: this.getActionText(StandardActionTypes.FREE_ACTION)
+      text: this.utils.getActionText(StandardActionTypes.FREE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.SINGLE_ACTION,
-      text: this.getActionText(StandardActionTypes.SINGLE_ACTION)
+      text: this.utils.getActionText(StandardActionTypes.SINGLE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.DOUBLE_ACTION,
-      text: this.getActionText(StandardActionTypes.DOUBLE_ACTION)
+      text: this.utils.getActionText(StandardActionTypes.DOUBLE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.TRIPLE_ACTION,
-      text: this.getActionText(StandardActionTypes.TRIPLE_ACTION)
+      text: this.utils.getActionText(StandardActionTypes.TRIPLE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.REACTION_ACTION,
-      text: this.getActionText(StandardActionTypes.REACTION_ACTION)
+      text: this.utils.getActionText(StandardActionTypes.REACTION_ACTION)
     });
   }
 

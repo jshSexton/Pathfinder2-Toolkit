@@ -93,7 +93,7 @@
       <!-- Actions Column -->
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Actions</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ getActionText(row.actions) }}</mat-cell>
+        <mat-cell *matCellDef="let row">{{ utils.getActionText(row.actions) }}</mat-cell>
       </ng-container>
 
       <!-- Traits Column -->

@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Spell } from '@app/shared/app-interfaces-enums';
+import { Spell, StandardActionSymbols, StandardActionTypes } from '@app/shared/app-interfaces-enums';
+import { ActivatedRoute } from '@angular/router';
+import { SpellLookupService } from '@app/spell-lookup/spell-lookup.service';
+import { Utils } from '@app/shared/utils.service';
 
 @Component({
   selector: 'app-spell-item',
@@ -8,8 +11,30 @@ import { Spell } from '@app/shared/app-interfaces-enums';
 })
 export class SpellItemComponent implements OnInit {
   @Input() spell: Spell;
+  notFound = false;
+  actionSymbolUrl: string;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute, private spellService: SpellLookupService, private utils: Utils) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!this.spell) {
+      this.getSpell();
+    } else {
+      this.actionSymbolUrl = this.utils.getActionSymbol(this.spell.castingTime);
+    }
+  }
+
+  getSpell(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.spellService.getSpellById(id).subscribe(spellData => {
+      if (spellData.constructor === Object && Object.entries(spellData).length === 0) {
+        // API returned empty spell object, handle it
+        this.notFound = true;
+        return;
+      }
+
+      this.spell = spellData;
+      this.actionSymbolUrl = this.utils.getActionSymbol(this.spell.castingTime);
+    });
+  }
 }
