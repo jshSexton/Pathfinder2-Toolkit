@@ -39,7 +39,7 @@
   </div>
 
   <div class="description">
-    <span [innerHTML]="spell.description"></span>
+    <span [innerHTML]="spell.description | safeHtml"></span>
   </div>
 
   <div *ngIf="spell.critSuccessText" class="hanging-indent">

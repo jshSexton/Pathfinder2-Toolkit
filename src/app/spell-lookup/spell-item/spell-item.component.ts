@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Spell, StandardActionSymbols, StandardActionTypes } from '@app/shared/app-interfaces-enums';
+import { Spell, StandardActionTypes } from '@app/shared/app-interfaces-enums';
 import { ActivatedRoute } from '@angular/router';
 import { SpellLookupService } from '@app/spell-lookup/spell-lookup.service';
 import { Utils } from '@app/shared/utils.service';
@@ -20,7 +20,7 @@ export class SpellItemComponent implements OnInit {
     if (!this.spell) {
       this.getSpell();
     } else {
-      this.actionSymbolUrl = this.utils.getActionSymbol(this.spell.castingTime);
+      this.initAfterData();
     }
   }
 
@@ -34,7 +34,55 @@ export class SpellItemComponent implements OnInit {
       }
 
       this.spell = spellData;
-      this.actionSymbolUrl = this.utils.getActionSymbol(this.spell.castingTime);
+      this.initAfterData();
     });
+  }
+
+  initAfterData() {
+    this.actionSymbolUrl = this.utils.getActionSymbol(this.spell.castingTime);
+    this.parseDescriptionText();
+    console.log('spell description:', this.spell.description);
+  }
+
+  parseDescriptionText() {
+    this.spell.description = this.spell.description.replace(
+      /\(\(\(ICON-SINGLE-ACTION\)\)\)/g,
+      `<span>
+                    <img src="${this.utils.getActionSymbol(StandardActionTypes.SINGLE_ACTION)}"
+                        style="height: 20px; margin-top: -4px"/>
+                   </span>`
+    );
+
+    this.spell.description = this.spell.description.replace(
+      /\(\(\(ICON-DOUBLE-ACTION\)\)\)/g,
+      `<span>
+                    <img src="${this.utils.getActionSymbol(StandardActionTypes.DOUBLE_ACTION)}"
+                        style="height: 20px; margin-top: -4px"/>
+                   </span>`
+    );
+
+    this.spell.description = this.spell.description.replace(
+      /\(\(\(ICON-TRIPLE-ACTION\)\)\)/g,
+      `<span>
+                    <img src="${this.utils.getActionSymbol(StandardActionTypes.TRIPLE_ACTION)}"
+                        style="height: 20px; margin-top: -4px"/>
+                   </span>`
+    );
+
+    this.spell.description = this.spell.description.replace(
+      /\(\(\(ICON-REACTION-ACTION\)\)\)/g,
+      `<span>
+                    <img src="${this.utils.getActionSymbol(StandardActionTypes.REACTION_ACTION)}"
+                        style="height: 20px; margin-top: -4px"/>
+                   </span>`
+    );
+
+    this.spell.description = this.spell.description.replace(
+      /\(\(\(ICON-FREE-ACTION\)\)\)/g,
+      `<span>
+                    <img src="${this.utils.getActionSymbol(StandardActionTypes.FREE_ACTION)}"
+                        style="height: 20px; margin-top: -4px"/>
+                   </span>`
+    );
   }
 }

@@ -782,21 +782,21 @@ export class InMemoryDataService {
           '<ul>' +
           '<li>' +
           '<b>Bat</b> Speed 20 feet, fly Speed 30 feet; precise echolocation 40 feet; ' +
-          '<b>Melee</b> (ICON-SINGLE-ACTION) fangs, <b>Damage</b> 2d8 piercing; ' +
-          '<b>Melee</b> (ICON-SINGLE-ACTION) wing (agile), <b>Damage</b> 2d6 bludgeoning;' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) fangs, <b>Damage</b> 2d8 piercing; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) wing (agile), <b>Damage</b> 2d6 bludgeoning;' +
           '</li>' +
           '<li>' +
           '<b>Bird</b> Speed 10 feet, fly Speed 50 feet; ' +
-          '<b>Melee</b> (ICON-SINGLE-ACTION) beak, <b>Damage</b> 2d8 piercing; ' +
-          '<b>Melee</b> (ICON-SINGLE-ACTION) talon (agile), <b>Damage</b> 1d10 slashing; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) beak, <b>Damage</b> 2d8 piercing; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) talon (agile), <b>Damage</b> 1d10 slashing; ' +
           '</li>' +
           '<li>' +
           '<b>Pterosaur</b> Speed 10 feet, fly Speed 40 feet; imprecise scent 30 feet; ' +
-          '<b>Melee</b> (ICON-SINGLE-ACTION) beak, <b>Damage</b> 3d6 piercing;' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) beak, <b>Damage</b> 3d6 piercing;' +
           '</li>' +
           '<li>' +
           '<b>Wasp</b> Speed 20 feet, fly Speed 40 feet; ' +
-          '<b>Melee</b> (ICON-SINGLE-ACTION) stinger, <b>Damage</b> 1d8 piercing plus 1d6 persistent poison;' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) stinger, <b>Damage</b> 1d8 piercing plus 1d6 persistent poison;' +
           '</li>' +
           '</ul>',
         heightened: [
