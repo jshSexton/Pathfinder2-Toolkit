@@ -57,7 +57,6 @@ export class SpellListComponent implements OnInit {
   tableKeys: Array<TableKey>;
 
   constructor(private spellService: SpellLookupService) {
-    this.setActionOptions();
     this.setTableKeys();
   }
 
@@ -73,6 +72,7 @@ export class SpellListComponent implements OnInit {
   }
 
   initAfterGetData() {
+    this.setActionOptions();
     this.dataSource = new MatTableDataSource(this.spellsData);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sortData = this.sortData;
@@ -86,7 +86,7 @@ export class SpellListComponent implements OnInit {
     return trait.displayText;
   }
 
-  getActionText(action: StandardActionTypes, noEmptyStrings: boolean = false): string {
+  getActionText(action: StandardActionTypes | string, noEmptyStrings: boolean = false): string {
     let actionText: string;
     switch (action) {
       case StandardActionTypes.SINGLE_ACTION:
@@ -105,42 +105,26 @@ export class SpellListComponent implements OnInit {
         actionText = 'Free Action';
         break;
       case StandardActionTypes.NO_ACTION:
-      default:
         if (noEmptyStrings) {
           actionText = 'No Action Specified';
         } else {
           actionText = '';
         }
         break;
+      default:
+        actionText = action;
     }
 
     return actionText;
   }
 
   setActionOptions() {
-    this.actionOptions.push({
-      value: StandardActionTypes.NO_ACTION,
-      text: this.getActionText(StandardActionTypes.NO_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.FREE_ACTION,
-      text: this.getActionText(StandardActionTypes.FREE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.SINGLE_ACTION,
-      text: this.getActionText(StandardActionTypes.SINGLE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.DOUBLE_ACTION,
-      text: this.getActionText(StandardActionTypes.DOUBLE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.TRIPLE_ACTION,
-      text: this.getActionText(StandardActionTypes.TRIPLE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.REACTION_ACTION,
-      text: this.getActionText(StandardActionTypes.REACTION_ACTION, true)
+    const distinctActions = [...new Set(this.spellsData.map(spell => spell.castingTime))].sort();
+    distinctActions.forEach(action => {
+      this.actionOptions.push({
+        value: action,
+        text: this.getActionText(action, true)
+      });
     });
   }
 
