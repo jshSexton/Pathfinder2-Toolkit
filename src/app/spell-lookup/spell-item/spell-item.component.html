@@ -1,14 +1,19 @@
 <div *ngIf="spell" class="block mat-elevation-z1">
   <div class="header">
     <div class="name">{{ spell.name | uppercase }}</div>
-    <div class="level">SPELL {{ spell.level }}</div>
+    <div class="level">{{ spellLevel }}</div>
   </div>
 
   <mat-divider></mat-divider>
 
   <div class="traits-wrapper">
     <div class="trait" *ngFor="let trait of spell.traits">
-      <div class="trait-foreground">{{ trait.displayText | uppercase }}</div>
+      <div
+        class="trait-foreground"
+        [ngClass]="{ 'trait-uncommon': trait.name === 'UNCOMMON_TRAIT', 'trait-rare': trait.name === 'RARE_TRAIT' }"
+      >
+        {{ trait.displayText | uppercase }}
+      </div>
     </div>
   </div>
 
@@ -17,21 +22,50 @@
     <span>{{ spell.traditions.join(', ') | titlecase }}</span>
   </div>
 
+  <!-- Casting Info -->
   <div>
-    <span class="label">Cast</span>
-    <span *ngIf="actionSymbolUrl" class="symbol"><img src="{{ actionSymbolUrl }}"/></span>
-    <span *ngIf="actionSymbolUrl === ''">{{ spell.castingTime }}</span>
-    <span> ( {{ spell.components.join(', ') | lowercase }} )</span>
+    <span class="spacer-right">
+      <span class="label spacer-right-small">Cast</span>
+      <span *ngIf="actionSymbolUrl" class="symbol"><img src="{{ actionSymbolUrl }}"/></span>
+      <span *ngIf="actionSymbolUrl === ''">{{ spell.castingTime }}</span>
+      <span> ( {{ spell.components.join(', ') | lowercase }} )</span>
+    </span>
+    <span *ngIf="spell.trigger" class="spacer-right">
+      <span class="label spacer-right-small">Trigger</span>
+      <span>{{ spell.trigger }}</span>
+    </span>
+    <span *ngIf="spell.requirements">
+      <span class="label spacer-right-small">Requirements</span>
+      <span>{{ spell.requirements }}</span>
+    </span>
   </div>
 
-  <div *ngIf="spell.trigger">
-    <span class="label">Trigger</span>
-    <span>{{ spell.trigger }}</span>
+  <!-- Range, Targets, and Area -->
+  <div *ngIf="spell.range || spell.targets || spell.area">
+    <span *ngIf="spell.range" class="spacer-right">
+      <span class="label spacer-right-small">Range</span>
+      <span>{{ spell.range }};</span>
+    </span>
+    <span *ngIf="spell.area" class="spacer-right">
+      <span class="label spacer-right-small">Area</span>
+      <span>{{ spell.area }};</span>
+    </span>
+    <span *ngIf="spell.targets">
+      <span class="label spacer-right-small">Targets</span>
+      <span>{{ spell.targets }};</span>
+    </span>
   </div>
 
-  <div *ngIf="spell.requirements">
-    <span class="label">Requirements</span>
-    <span>{{ spell.requirements }}</span>
+  <!-- Saving Throw and Duration -->
+  <div *ngIf="spell.savingThrow || spell.duration">
+    <span *ngIf="spell.savingThrow" class="spacer-right">
+      <span class="label">Saving Throw</span>
+      <span>{{ spell.savingThrow | titlecase }};</span>
+    </span>
+    <span *ngIf="spell.duration">
+      <span class="label">Duration</span>
+      <span>{{ spell.duration }};</span>
+    </span>
   </div>
 
   <div class="divider">
@@ -57,6 +91,29 @@
   <div *ngIf="spell.critFailText" class="hanging-indent">
     <span class="label">Critical Failure</span>
     <span>{{ spell.critFailText }}</span>
+  </div>
+
+  <div *ngIf="spell.affliction" class="affliction hanging-indent">
+    <span class="label spacer-right-small">{{ spell.affliction.name }}</span>
+    <span class="spacer-right">({{ spell.affliction.type }});</span>
+    <span class="label spacer-right-small">Level {{ spell.affliction.level }}.</span>
+    <span class="spacer-right">{{ spell.affliction.ruleText }}</span>
+    <span *ngFor="let stage of spell.affliction.stages" class="spacer-right">
+      <span class="label spacer-right-small">Stage {{ stage.level }}</span>
+      <span>{{ stage.effect }} </span>
+      <span>{{ stage.duration }};</span>
+    </span>
+  </div>
+
+  <div *ngIf="spell.heightened && spell.heightened.length > 0">
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div *ngFor="let heightening of spell.heightened" class="description">
+      <span class="label">Heightened ({{ heightening.triggerLevel }})</span>
+      <span>{{ heightening.description }}</span>
+    </div>
   </div>
 </div>
 

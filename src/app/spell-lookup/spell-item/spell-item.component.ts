@@ -13,6 +13,7 @@ export class SpellItemComponent implements OnInit {
   @Input() spell: Spell;
   notFound = false;
   actionSymbolUrl: string;
+  spellLevel: string;
 
   constructor(private route: ActivatedRoute, private spellService: SpellLookupService, private utils: Utils) {}
 
@@ -40,6 +41,7 @@ export class SpellItemComponent implements OnInit {
 
   initAfterData() {
     this.actionSymbolUrl = this.utils.getActionSymbol(this.spell.castingTime);
+    this.spellLevel = this.spell.level === 0 ? 'Cantrip 1' : `Spell ${this.spell.level}`;
     this.parseDescriptionText();
     console.log('spell description:', this.spell.description);
   }

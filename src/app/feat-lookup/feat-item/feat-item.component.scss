@@ -1,66 +1,76 @@
-.feat-item-block {
+@import "theme-variables";
+
+.block {
   margin: 24px;
   padding: 8px;
 }
 
-.feat-item-header {
+.header {
   display: flex;
   justify-content: flex-start;
 }
 
-.feat-item-name {
+.name {
   margin: auto 20px 2px 0;
   font-size: 16px;
   font-weight: bold;
 }
 
-.feat-item-symbol {
+.symbol {
   img {
     height: 20px;
   }
 }
 
-.feat-item-level {
+.level {
   font-weight: bold;
   margin: auto 5px 2px auto;
 }
 
-.feat-item-traits-wrapper {
+.traits-wrapper {
   display: flex;
   margin: 5px 0;
 }
 
-.feat-item-trait {
-  background-color: goldenrod;
+.trait {
+  background-color: $brandy;
   padding: 0 3px;
   margin: 1px 3px;
 }
 
-.feat-item-trait-foreground {
-  background-color: darkred;
+.trait-foreground {
+  background-color: $rosewood;
   color: white;
   font-size: 12px;
   padding: 2px 4px;
 }
 
-.feat-item-divider {
+.trait-uncommon {
+  background-color: $sepia-skin;
+}
+
+.trait-rare {
+  background-color: $midnight-blue;
+}
+
+.divider {
   margin: 5px 0;
 }
 
-.feat-item-label {
+.label {
   font-weight: bold;
   margin-right: 10px;
 }
 
-.feat-item-description {
+.description {
   margin: 4px 0;
 }
 
-.feat-item-special {
+.special {
   margin: 4px 10px 4px 0;
 }
 
-.feat-item-hanging-indent {
+.hanging-indent {
   padding-left: 1.5em;
   text-indent: -1.5em;
 }

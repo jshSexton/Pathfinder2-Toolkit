@@ -1,3 +1,5 @@
+@import "theme-variables";
+
 .block {
   margin: 24px;
   padding: 8px;
@@ -31,16 +33,24 @@
 }
 
 .trait {
-  background-color: goldenrod;
+  background-color: $brandy;
   padding: 0 3px;
   margin: 1px 3px;
 }
 
 .trait-foreground {
-  background-color: darkred;
+  background-color: $rosewood;
   color: white;
   font-size: 12px;
   padding: 2px 4px;
+}
+
+.trait-uncommon {
+  background-color: $sepia-skin;
+}
+
+.trait-rare {
+  background-color: $midnight-blue;
 }
 
 .divider {
@@ -60,7 +70,19 @@
   margin: 4px 10px 4px 0;
 }
 
+.affliction {
+  margin: 10px 0;
+}
+
 .hanging-indent {
   padding-left: 1.5em;
   text-indent: -1.5em;
+}
+
+.spacer-right {
+  margin-right: 10px;
+}
+
+.spacer-right-small {
+  margin-right: 5px;
 }
