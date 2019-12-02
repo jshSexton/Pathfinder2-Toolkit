@@ -1,7 +1,7 @@
-<div *ngIf="!traitsData && !featsData" class="spinner-wrapper">
+<div *ngIf="!traitsData && !spellsData" class="spinner-wrapper">
   <mat-spinner></mat-spinner>
 </div>
-<div *ngIf="traitsData && featsData">
+<div *ngIf="traitsData && spellsData">
   <div class="filters-key">
     <div class="filters-wrapper">
       <div class="filters">
@@ -86,14 +86,14 @@
 
       <!-- Level Column -->
       <ng-container matColumnDef="level">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Level Requirement</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ row.levelRequirement }}</mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Spell Level</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.level }}</mat-cell>
       </ng-container>
 
       <!-- Actions Column -->
       <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Actions</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ utils.getActionText(row.actions) }}</mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Casting Time</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ getActionText(row.castingTime) }}</mat-cell>
       </ng-container>
 
       <!-- Traits Column -->
@@ -111,8 +111,8 @@
       <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
       <ng-container matColumnDef="expandedDetail">
         <mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length">
-          <div class="item-container" [@detailExpand]="visibleFeats.includes(row) ? 'expanded' : 'collapsed'">
-            <app-feat-item [feat]="row" routerLink="/feats/detail/{{ row.id }}"></app-feat-item>
+          <div class="item-container" [@detailExpand]="visibleSpells.includes(row) ? 'expanded' : 'collapsed'">
+            <app-spell-item [spell]="row" routerLink="/spells/detail/{{ row.id }}"></app-spell-item>
           </div>
         </mat-cell>
       </ng-container>
@@ -121,8 +121,8 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row
         *matRowDef="let row; columns: displayedColumns"
-        (click)="onFeatClick(row)"
-        [@rowExpand]="visibleFeats.includes(row) ? 'expanded' : 'collapsed'"
+        (click)="onSpellClick(row)"
+        [@rowExpand]="visibleSpells.includes(row) ? 'expanded' : 'collapsed'"
       ></mat-row>
       <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
     </mat-table>

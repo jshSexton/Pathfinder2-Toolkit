@@ -8,20 +8,19 @@ import {
   MatSort,
   MatTableDataSource
 } from '@angular/material';
-import { Feat, StandardActionSymbols, StandardActionTypes, Trait } from '@app/shared/app-interfaces-enums';
-import { FormControl } from '@angular/forms';
-import { FeatFilters, TableKey } from '@app/feat-lookup/feat-list/feat-list-interfaces-enums';
-import { forkJoin, Observable } from 'rxjs';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { Spell, StandardActionSymbols, StandardActionTypes, Trait } from '@app/shared/app-interfaces-enums';
+import { FormControl } from '@angular/forms';
+import { SpellFilters, TableKey } from '@app/spell-lookup/spell-list/spell-list-interfaces-enums';
+import { forkJoin, Observable } from 'rxjs';
 import { Options } from 'ng5-slider';
-import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
+import { SpellLookupService } from '@app/spell-lookup/spell-lookup.service';
 import { delay, map, startWith } from 'rxjs/operators';
-import { Utils } from '@app/shared/utils.service';
 
 @Component({
-  selector: 'app-feat-list',
-  templateUrl: './feat-list.component.html',
-  styleUrls: ['./feat-list.component.scss'],
+  selector: 'app-spell-list',
+  templateUrl: './spell-list.component.html',
+  styleUrls: ['./spell-list.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed, void', style({ height: '0px', minHeight: '0' })),
@@ -35,37 +34,36 @@ import { Utils } from '@app/shared/utils.service';
     ])
   ]
 })
-export class FeatListComponent implements OnInit {
+export class SpellListComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild('traitInput', { static: false }) traitInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto', { static: false }) matAutocomplete: MatAutocomplete;
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  featsData: Array<Feat>;
+  spellsData: Array<Spell>;
   traitsData: Array<Trait>;
-  dataSource: MatTableDataSource<Feat>;
+  dataSource: MatTableDataSource<Spell>;
   displayedColumns = ['name', 'level', 'actions', 'traits', 'shortDesc'];
-  visibleFeats: Array<any> = [];
+  visibleSpells: Array<any> = [];
   nameFilter = new FormControl('');
   traitsFilter = new FormControl('');
   actionFilter = new FormControl('');
-  levelFilter = new FormControl([1, 20]);
-  filterValues: FeatFilters = { name: '', traits: [], action: '', level: { value: 1, highValue: 20 } };
+  levelFilter = new FormControl([0, 10]);
+  filterValues: SpellFilters = { name: '', traits: [], action: '', level: { value: 0, highValue: 10 } };
   actionOptions: Array<any> = [];
   autoTraits: Observable<Array<Trait>>;
-  levelFilterOptions: Options = { floor: 1, ceil: 20, step: 1 };
+  levelFilterOptions: Options = { floor: 0, ceil: 10, step: 1 };
   tableKeys: Array<TableKey>;
 
-  constructor(private featService: FeatLookupService, private utils: Utils) {
-    this.setActionOptions();
+  constructor(private spellService: SpellLookupService) {
     this.setTableKeys();
   }
 
   ngOnInit() {
-    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats().pipe(delay(3000))]).subscribe(
-      ([traitRes, featRes]) => {
-        this.featsData = featRes;
+    forkJoin([this.spellService.getAllTraits(), this.spellService.getAllSpells().pipe(delay(3000))]).subscribe(
+      ([traitRes, spellRes]) => {
+        this.spellsData = spellRes;
         this.traitsData = traitRes;
 
         this.initAfterGetData();
@@ -74,7 +72,8 @@ export class FeatListComponent implements OnInit {
   }
 
   initAfterGetData() {
-    this.dataSource = new MatTableDataSource(this.featsData);
+    this.setActionOptions();
+    this.dataSource = new MatTableDataSource(this.spellsData);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sortData = this.sortData;
     this.dataSource.sort = this.sort;
@@ -87,30 +86,45 @@ export class FeatListComponent implements OnInit {
     return trait.displayText;
   }
 
+  getActionText(action: StandardActionTypes | string, noEmptyStrings: boolean = false): string {
+    let actionText: string;
+    switch (action) {
+      case StandardActionTypes.SINGLE_ACTION:
+        actionText = '1 Action';
+        break;
+      case StandardActionTypes.DOUBLE_ACTION:
+        actionText = '2 Actions';
+        break;
+      case StandardActionTypes.TRIPLE_ACTION:
+        actionText = '3 Actions';
+        break;
+      case StandardActionTypes.REACTION_ACTION:
+        actionText = 'Reaction';
+        break;
+      case StandardActionTypes.FREE_ACTION:
+        actionText = 'Free Action';
+        break;
+      case StandardActionTypes.NO_ACTION:
+        if (noEmptyStrings) {
+          actionText = 'No Action Specified';
+        } else {
+          actionText = '';
+        }
+        break;
+      default:
+        actionText = action;
+    }
+
+    return actionText;
+  }
+
   setActionOptions() {
-    this.actionOptions.push({
-      value: StandardActionTypes.NO_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.NO_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.FREE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.FREE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.SINGLE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.SINGLE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.DOUBLE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.DOUBLE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.TRIPLE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.TRIPLE_ACTION, true)
-    });
-    this.actionOptions.push({
-      value: StandardActionTypes.REACTION_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.REACTION_ACTION, true)
+    const distinctActions = [...new Set(this.spellsData.map(spell => spell.castingTime))].sort();
+    distinctActions.forEach(action => {
+      this.actionOptions.push({
+        value: action,
+        text: this.getActionText(action, true)
+      });
     });
   }
 
@@ -118,23 +132,23 @@ export class FeatListComponent implements OnInit {
     this.tableKeys = [];
     this.tableKeys.push({
       icon: StandardActionSymbols.FREE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.FREE_ACTION)
+      text: this.getActionText(StandardActionTypes.FREE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.SINGLE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.SINGLE_ACTION)
+      text: this.getActionText(StandardActionTypes.SINGLE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.DOUBLE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.DOUBLE_ACTION)
+      text: this.getActionText(StandardActionTypes.DOUBLE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.TRIPLE_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.TRIPLE_ACTION)
+      text: this.getActionText(StandardActionTypes.TRIPLE_ACTION)
     });
     this.tableKeys.push({
       icon: StandardActionSymbols.REACTION_ACTION,
-      text: this.utils.getActionText(StandardActionTypes.REACTION_ACTION)
+      text: this.getActionText(StandardActionTypes.REACTION_ACTION)
     });
   }
 
@@ -159,15 +173,15 @@ export class FeatListComponent implements OnInit {
     });
   }
 
-  onFeatClick(feat: any) {
-    if (this.visibleFeats.includes(feat)) {
-      this.visibleFeats.splice(this.visibleFeats.indexOf(feat), 1);
+  onSpellClick(spell: any) {
+    if (this.visibleSpells.includes(spell)) {
+      this.visibleSpells.splice(this.visibleSpells.indexOf(spell), 1);
     } else {
-      this.visibleFeats.push(feat);
+      this.visibleSpells.push(spell);
     }
   }
 
-  sortData(data: Feat[], sort: MatSort) {
+  sortData(data: Spell[], sort: MatSort) {
     if (!sort.active || sort.direction === '') {
       return data;
     }
@@ -186,18 +200,18 @@ export class FeatListComponent implements OnInit {
         case 'traits':
           return compare(a.traits.join(', '), b.traits.join(', '), isAsc);
         case 'actions':
-          const a_action = a.actions === StandardActionTypes.NO_ACTION ? '' : a.actions;
-          const b_action = b.actions === StandardActionTypes.NO_ACTION ? '' : b.actions;
+          const a_action = a.castingTime === StandardActionTypes.NO_ACTION ? '' : a.castingTime;
+          const b_action = b.castingTime === StandardActionTypes.NO_ACTION ? '' : b.castingTime;
           return compare(a_action, b_action, isAsc);
         case 'level':
-          return compare(a.levelRequirement, b.levelRequirement, isAsc);
+          return compare(a.level, b.level, isAsc);
         default:
           return 0;
       }
     });
   }
 
-  tableFilter(data: Feat, filter: string) {
+  tableFilter(data: Spell, filter: string) {
     const searchTerms = JSON.parse(filter);
 
     const nameCheck = data.name.toLowerCase().indexOf(searchTerms.name) !== -1;
@@ -209,9 +223,8 @@ export class FeatListComponent implements OnInit {
           }) !== undefined
         );
       }) || searchTerms.traits.length === 0;
-    const actionCheck = data.actions.indexOf(searchTerms.action) !== -1;
-    const levelCheck =
-      data.levelRequirement >= searchTerms.level.value && data.levelRequirement <= searchTerms.level.highValue;
+    const actionCheck = data.castingTime.indexOf(searchTerms.action) !== -1;
+    const levelCheck = data.level >= searchTerms.level.value && data.level <= searchTerms.level.highValue;
 
     return nameCheck && traitsCheck && actionCheck && levelCheck;
   }
@@ -268,7 +281,7 @@ export class FeatListComponent implements OnInit {
     this.traitsFilter.reset();
     this.filterValues.traits = [];
     this.actionFilter.reset();
-    this.levelFilter.setValue([1, 20]);
+    this.levelFilter.setValue([0, 10]);
   }
 
   private _filterAutoTraits(value: string) {

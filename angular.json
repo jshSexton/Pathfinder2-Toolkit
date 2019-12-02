@@ -30,6 +30,9 @@
               "src/assets"
             ],
             "styles": ["src/main.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/theme"]
+            },
             "scripts": []
           },
           "configurations": {

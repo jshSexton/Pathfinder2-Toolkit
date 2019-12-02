@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Feat, StandardActionSymbols, StandardActionTypes } from '@app/shared/app-interfaces-enums';
 import { ActivatedRoute } from '@angular/router';
 import { FeatLookupService } from '../feat-lookup.service';
+import { Utils } from '@app/shared/utils.service';
 
 @Component({
   selector: 'app-feat-item',
@@ -13,13 +14,13 @@ export class FeatItemComponent implements OnInit {
   notFound = false;
   actionSymbolUrl: string;
 
-  constructor(private route: ActivatedRoute, private featService: FeatLookupService) {}
+  constructor(private route: ActivatedRoute, private featService: FeatLookupService, private utils: Utils) {}
 
   ngOnInit() {
     if (!this.feat) {
       this.getFeat();
     } else {
-      this.setActionSymbol();
+      this.actionSymbolUrl = this.utils.getActionSymbol(this.feat.actions);
     }
   }
 
@@ -32,34 +33,7 @@ export class FeatItemComponent implements OnInit {
         return;
       }
       this.feat = featData;
-      this.setActionSymbol();
+      this.actionSymbolUrl = this.utils.getActionSymbol(this.feat.actions);
     });
-  }
-
-  setActionSymbol() {
-    switch (this.feat.actions) {
-      case StandardActionTypes.FREE_ACTION:
-        this.actionSymbolUrl = StandardActionSymbols.FREE_ACTION;
-        break;
-
-      case StandardActionTypes.SINGLE_ACTION:
-        this.actionSymbolUrl = StandardActionSymbols.SINGLE_ACTION;
-        break;
-
-      case StandardActionTypes.DOUBLE_ACTION:
-        this.actionSymbolUrl = StandardActionSymbols.DOUBLE_ACTION;
-        break;
-
-      case StandardActionTypes.TRIPLE_ACTION:
-        this.actionSymbolUrl = StandardActionSymbols.TRIPLE_ACTION;
-        break;
-
-      case StandardActionTypes.REACTION_ACTION:
-        this.actionSymbolUrl = StandardActionSymbols.REACTION_ACTION;
-        break;
-
-      default:
-        this.actionSymbolUrl = StandardActionSymbols.NO_ACTION;
-    }
   }
 }

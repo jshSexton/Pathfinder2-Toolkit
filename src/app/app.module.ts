@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from '@app/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeatLookupModule } from '@app/feat-lookup/feat-lookup.module';
+import { SpellLookupModule } from '@app/spell-lookup/spell-lookup.module';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { FeatLookupModule } from '@app/feat-lookup/feat-lookup.module';
     AboutModule,
     LoginModule,
     FeatLookupModule,
+    SpellLookupModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],

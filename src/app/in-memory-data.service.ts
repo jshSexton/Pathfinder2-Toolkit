@@ -1,5 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Feat, FeatureTypes, StandardActionTypes, Trait } from '@app/shared/app-interfaces-enums';
+import {
+  Affliction,
+  Feat,
+  FeatureTypes,
+  SavingThrowTypes,
+  Spell,
+  SpellComponents,
+  SpellTraditions,
+  StandardActionTypes,
+  Trait
+} from '@app/shared/app-interfaces-enums';
 
 @Injectable({
   providedIn: 'root'
@@ -282,6 +292,56 @@ export class InMemoryDataService {
         id: 55,
         name: 'ANIMALORDER_TRAIT',
         displayText: 'Animal Order'
+      },
+      {
+        id: 56,
+        name: 'CHAOTIC_TRAIT',
+        displayText: 'Chaotic'
+      },
+      {
+        id: 57,
+        name: 'DISEASE_TRAIT',
+        displayText: 'Disease'
+      },
+      {
+        id: 58,
+        name: 'ACID_TRAIT',
+        displayText: 'Acid'
+      },
+      {
+        id: 59,
+        name: 'CANTRIP_TRAIT',
+        displayText: 'Cantrip'
+      },
+      {
+        id: 60,
+        name: 'AIR_TRAIT',
+        displayText: 'Air'
+      },
+      {
+        id: 61,
+        name: 'CONJURATION_TRAIT',
+        displayText: 'Conjuration'
+      },
+      {
+        id: 62,
+        name: 'ABJURATION_TRAIT',
+        displayText: 'Abjuration'
+      },
+      {
+        id: 63,
+        name: 'DIVINATION_TRAIT',
+        displayText: 'Divination'
+      },
+      {
+        id: 64,
+        name: 'UNCOMMON_TRAIT',
+        displayText: 'Uncommon'
+      },
+      {
+        id: 65,
+        name: 'RARE_TRAIT',
+        displayText: 'Rare'
       }
     ];
     const feats: Array<Feat> = [
@@ -366,7 +426,7 @@ export class InMemoryDataService {
       } as Feat,
       {
         id: 5,
-        name: "Ancient's Blood",
+        name: 'Ancient’s Blood',
         type: FeatureTypes.FEAT_TYPE,
         traits: [traits[1], traits[22]],
         actions: StandardActionTypes.REACTION_ACTION,
@@ -575,7 +635,337 @@ export class InMemoryDataService {
         special: ''
       } as Feat
     ];
+    const spells: Array<Spell> = [
+      {
+        id: 1,
+        name: 'Abyssal Plague',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 5,
+        traits: [traits[27], traits[55], traits[56], traits[53], traits[46]],
+        traditions: [SpellTraditions.DIVINE, SpellTraditions.OCCULT],
+        castingTime: StandardActionTypes.DOUBLE_ACTION,
+        components: [SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        range: 'touch',
+        targets: '1 creature',
+        savingThrow: SavingThrowTypes.FORTITUDE_SAVE,
+        shortDesc: 'Inflict a draining curse.',
+        description:
+          'Your touch afflicts the target with Abyssal plague, which ' +
+          'siphons fragments of their soul away to empower the Abyss. ' +
+          'The effect is based on the target’s Fortitude save.',
+        critSuccessText: 'The target is unaffected',
+        successText:
+          'The target takes 2 evil damage per spell level, and ' +
+          'takes a –2 status penalty to saves against Abyssal plague for ' +
+          '1 day or until the target contracts it, whichever comes first.',
+        failText: 'The target is afflicted with Abyssal plague at stage 1.',
+        critFailText: 'The target is afflicted with Abyssal plague at stage 2.',
+        affliction: {
+          name: 'Abyssal Plague',
+          type: 'disease',
+          level: 9,
+          ruleText:
+            'The target can’t recover ' +
+            'from the drained condition from Abyssal plague until the ' +
+            'disease is cured.',
+          stages: [
+            {
+              level: 1,
+              effect: 'drained 1',
+              duration: '(1 day)'
+            },
+            {
+              level: 2,
+              effect: 'drained increases by 2',
+              duration: '(1 day)'
+            }
+          ]
+        } as Affliction
+      } as Spell,
+      {
+        id: 2,
+        name: 'Acid Arrow',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 2,
+        traits: [traits[57], traits[27], traits[43]],
+        traditions: [SpellTraditions.ARCANE, SpellTraditions.PRIMAL],
+        castingTime: StandardActionTypes.DOUBLE_ACTION,
+        components: [SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        range: '120 feet',
+        targets: '1 creature or object',
+        shortDesc: 'Magical arrow deals acid damage persistently.',
+        description:
+          'You conjure an arrow of acid that continues corroding the ' +
+          'target after it hits. Make a spell attack against the target. ' +
+          'On a hit, you deal 3d8 acid damage plus 1d6 persistent acid ' +
+          'damage. On a critical hit, double the initial damage, but not the ' +
+          'persistent damage.',
+        heightened: [
+          {
+            triggerLevel: '+2',
+            description: 'The initial damage increases by 2d8, and the ' + 'persistent acid damage increases by 1d6.'
+          }
+        ]
+      } as Spell,
+      {
+        id: 3,
+        name: 'Acid Splash',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 0,
+        traits: [traits[57], traits[27], traits[58], traits[43]],
+        traditions: [SpellTraditions.ARCANE, SpellTraditions.PRIMAL],
+        castingTime: StandardActionTypes.DOUBLE_ACTION,
+        components: [SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        range: '30 feet',
+        targets: '1 creature or object',
+        shortDesc: 'Damage creatures with acid.',
+        description:
+          'You splash a glob of acid that splatters creatures and objects ' +
+          'alike. Make a spell attack. If you hit, you deal 1d6 acid damage ' +
+          'plus 1 splash acid damage. On a critical success, the target also ' +
+          'takes 1 persistent acid damage.',
+        heightened: [
+          {
+            triggerLevel: '3rd',
+            description:
+              'The initial damage increases to 1d6 + your ' +
+              'spellcasting ability modifier, and the persistent damage ' +
+              'increases to 2.'
+          },
+          {
+            triggerLevel: '5th',
+            description:
+              'The initial damage increases to 2d6 + your ' +
+              'spellcasting ability modifier, the persistent damage increases ' +
+              'to 3, and the splash damage increases to 2.'
+          },
+          {
+            triggerLevel: '7th',
+            description:
+              'The initial damage increases to 3d6 + your ' +
+              'spellcasting ability modifier, the persistent damage increases ' +
+              'to 4, and the splash damage increases to 3.'
+          },
+          {
+            triggerLevel: '9th',
+            description:
+              'The initial damage increases to 4d6 + your ' +
+              'spellcasting ability modifier, the persistent damage increases ' +
+              'to 5, and the splash damage increases to 4.'
+          }
+        ]
+      } as Spell,
+      {
+        id: 4,
+        name: 'Aerial Form',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 4,
+        traits: [traits[44], traits[41]],
+        traditions: [SpellTraditions.PRIMAL, SpellTraditions.ARCANE],
+        castingTime: StandardActionTypes.DOUBLE_ACTION,
+        components: [SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        duration: '1 minute',
+        shortDesc: 'Turn into a flying combatant',
+        description:
+          'You harness your mastery of primal forces to reshape your ' +
+          'body into a Medium flying animal battle form. When you cast ' +
+          'this spell, choose bat, bird, pterosaur, or wasp. You can decide ' +
+          'the specific type of animal (such as an owl or eagle for bird), but ' +
+          'this has no effect on the form’s Size or statistics. While in this ' +
+          'form, you gain the animal trait. You can Dismiss the spell.<br />' +
+          '&emsp;You gain the following statistics and abilities regardless of ' +
+          'which battle form you choose:' +
+          '<ul>' +
+          '<li>AC = 18 + your level. Ignore your armor’s check penalty and Speed reduction.</li>' +
+          '<li>5 temporary Hit Points</li>' +
+          '<li>Low-light vision</li>' +
+          '<li>One or more unarmed melee attacks specific to the ' +
+          'battle form you choose, which are the only attacks you ' +
+          'can use. You’re trained with them. Your attack modifier ' +
+          'is +16, and your damage bonus is +5. These attacks are ' +
+          'Dexterity based (for the purpose of the clumsy condition, ' +
+          'for example). If your attack modifier for Dexterity-based ' +
+          'unarmed attacks is higher, you can use it instead.</li>' +
+          '<li>Acrobatics modifier of +16, unless your own modifier is higher.</li>' +
+          '</ul>' +
+          '&emsp;You also gain specific abililties based on the form you choose:' +
+          '<ul>' +
+          '<li>' +
+          '<b>Bat</b> Speed 20 feet, fly Speed 30 feet; precise echolocation 40 feet; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) fangs, <b>Damage</b> 2d8 piercing; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) wing (agile), <b>Damage</b> 2d6 bludgeoning;' +
+          '</li>' +
+          '<li>' +
+          '<b>Bird</b> Speed 10 feet, fly Speed 50 feet; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) beak, <b>Damage</b> 2d8 piercing; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) talon (agile), <b>Damage</b> 1d10 slashing; ' +
+          '</li>' +
+          '<li>' +
+          '<b>Pterosaur</b> Speed 10 feet, fly Speed 40 feet; imprecise scent 30 feet; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) beak, <b>Damage</b> 3d6 piercing;' +
+          '</li>' +
+          '<li>' +
+          '<b>Wasp</b> Speed 20 feet, fly Speed 40 feet; ' +
+          '<b>Melee</b> (((ICON-SINGLE-ACTION))) stinger, <b>Damage</b> 1d8 piercing plus 1d6 persistent poison;' +
+          '</li>' +
+          '</ul>',
+        heightened: [
+          {
+            triggerLevel: '5th',
+            description:
+              'Your battle form is Large and your fly ' +
+              'Speed gains a +10-foot status bonus. You must have enough ' +
+              'space to expand into or the spell is lost. You instead gain 10 ' +
+              'temporary HP, attack modifier +18, damage bonus +8, and ' +
+              'Acrobatics +20.'
+          },
+          {
+            triggerLevel: '6th',
+            description:
+              'Your battle form is Huge, your fly Speed ' +
+              'gains a +15-foot status bonus, and your attacks have 10-foot ' +
+              'reach. You must have enough space to expand into or the spell ' +
+              'is lost. You instead gain AC = 21 + your level, 15 temporary ' +
+              'HP, attack modifier +21, damage bonus +4 and double damage ' +
+              'dice (including persistent damage), and Acrobatics +23.'
+          }
+        ]
+      } as Spell,
+      {
+        id: 5,
+        name: 'Air Bubble',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 1,
+        traits: [traits[59], traits[60]],
+        traditions: [SpellTraditions.ARCANE, SpellTraditions.DIVINE, SpellTraditions.PRIMAL],
+        castingTime: StandardActionTypes.REACTION_ACTION,
+        components: [SpellComponents.VERBAL],
+        trigger: 'A creature within range enters an environment where it can’t breathe.',
+        range: '60 feet',
+        targets: 'the triggering creature',
+        duration: '1 minute',
+        shortDesc: 'React to create air for a creature to breathe.',
+        description:
+          'A bubble of pure air appears around the target’s head, allowing ' +
+          'it to breathe normally. The effect ends as soon as the target ' +
+          'returns to an environment where it can breathe normally.'
+      } as Spell,
+      {
+        id: 6,
+        name: 'Alarm',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 1,
+        traits: [traits[61]],
+        traditions: [SpellTraditions.ARCANE, SpellTraditions.DIVINE, SpellTraditions.OCCULT, SpellTraditions.PRIMAL],
+        castingTime: '10 minutes',
+        components: [SpellComponents.MATERIAL, SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        requirements: '3 gp silver bell focus',
+        range: 'touch',
+        area: '20-foot burst',
+        duration: '8 hours',
+        shortDesc: 'Be alerted if a creature enters a warded area.',
+        description:
+          'You ward an area to alert you when creatures enter without your ' +
+          'permission. When you cast alarm, select a password. Whenever ' +
+          'a Small or larger corporeal creature enters the spell’s area without ' +
+          'speaking the password, alarm sends your choice of a mental ' +
+          'alert (in which case the spell gains the mental trait) or an audible ' +
+          'alarm with the sound and volume of a hand bell (in which case ' +
+          'the spell gains the auditory trait). Either option automatically ' +
+          'awakens you, and the bell allows each creature in the area to ' +
+          'attempt a DC 15 Perception check to wake up. A creature aware ' +
+          'of the alarm must succeed at a Stealth check against the spell’s ' +
+          'DC or trigger the spell when moving into the area.',
+        heightened: [
+          {
+            triggerLevel: '3rd',
+            description:
+              'You can specify criteria for which creatures sound the alarm spell-for instance, ' +
+              'orcs or masked people'
+          }
+        ]
+      } as Spell,
+      {
+        id: 7,
+        name: 'Alter Reality',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 10,
+        traits: [traits[62]],
+        traditions: [SpellTraditions.OCCULT],
+        castingTime: StandardActionTypes.TRIPLE_ACTION,
+        components: [SpellComponents.MATERIAL, SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        shortDesc: 'Warp reality to duplicate occult spells.',
+        description:
+          'You use your occult lore and the power of your mind to manipulate ' +
+          'the spiritual multiverse, resulting in any of the following effects:' +
+          '<ul>' +
+          '<li>Duplicate any occult spell of 9th level or lower.</li>' +
+          '<li>Duplicate any non-occult spell of 7th level or lower.</li>' +
+          '<li>Produce any effect whose power is equivalent to any occult spell 9th level or lower, ' +
+          'or non-occult spell 7th level or lower.</li>' +
+          '<li>Reverse certain effects that refer to the wish spell</li>' +
+          '</ul>' +
+          'At the GM’s discretion, you can try to produce greater effects, ' +
+          'but this is dangerous and the spell may have only a partial effect.'
+      } as Spell,
+      {
+        id: 8,
+        name: 'Bind Soul',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 9,
+        traits: [traits[63], traits[53], traits[46]],
+        traditions: [SpellTraditions.DIVINE, SpellTraditions.OCCULT],
+        castingTime: StandardActionTypes.DOUBLE_ACTION,
+        components: [SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        requirements: 'black sapphire with a gp value of at least the target’s level x100',
+        range: '30 feet',
+        targets: '1 creature that died within the last minute',
+        duration: 'unlimited',
+        shortDesc: 'Imprison a dead creature’s soul',
+        description:
+          'You wrench the target’s soul away before it can pass on to the ' +
+          'afterlife and imprison it in a black sapphire.<br />' +
+          '&emsp;While the soul is in the gem, the target can’t be returned to ' +
+          'life through any means, even powerful magic such as wish. If ' +
+          'the gem is destroyed or bind soul is counteracted on the gem, ' +
+          'the soul is freed. The gem has AC 16 and Hardness 10. A gem ' +
+          'can’t hold more than one soul, and any attempt wastes the spell.'
+      } as Spell,
+      {
+        id: 9,
+        name: 'Antimagic Field',
+        type: FeatureTypes.SPELL_TYPE,
+        level: 8,
+        traits: [traits[64], traits[61]],
+        traditions: [SpellTraditions.ARCANE, SpellTraditions.DIVINE, SpellTraditions.OCCULT],
+        castingTime: StandardActionTypes.TRIPLE_ACTION,
+        components: [SpellComponents.MATERIAL, SpellComponents.SOMATIC, SpellComponents.VERBAL],
+        area: '10-foot emanation',
+        duration: 'sustained up to 1 minute',
+        shortDesc: 'Magic doesn’t function in an area around you.',
+        description:
+          'You repel all magic from the target area, preventing spells ' +
+          'and other magic from functioning. Spells can’t penetrate the ' +
+          'area, magic items cease to function within it, and no one ' +
+          'inside can cast spells or use magic abilities. Likewise, spells— ' +
+          'such as dispel magic—can’t affect the field itself unless they ' +
+          'are of a higher level. Magic effects resume the moment they ' +
+          'pass outside the field. For example, a ray fired from one side ' +
+          'of the field could target a creature on the other side (as long ' +
+          'as caster and target are both outside the field). A summoned ' +
+          'creature winks out of existence but reappears if the field ' +
+          'moves or ends. Invested magic items cease to function, but ' +
+          'they remain invested and resume functioning when they exit ' +
+          'the field; the ability boost from an apex item isn’t suppressed ' +
+          'within the field. Spells of a higher level than the antimagic ' +
+          'field overcome its effects, and can even be cast by a creature ' +
+          'within the field.<br />' +
+          '&emsp;The field disrupts only magic, so a +3 longsword still ' +
+          'functions as a longsword. Magically created creatures (such ' +
+          'as golems) function normally within an antimagic field.'
+      } as Spell
+    ];
 
-    return { traits, feats };
+    return { traits, feats, spells };
   }
 }

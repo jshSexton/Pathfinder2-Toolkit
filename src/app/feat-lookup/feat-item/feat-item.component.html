@@ -1,70 +1,75 @@
-<div *ngIf="feat" class="feat-item-block mat-elevation-z1">
-  <div class="feat-item-header">
-    <div class="feat-item-name">{{ feat.name | uppercase }}</div>
-    <div *ngIf="actionSymbolUrl" class="feat-item-symbol"><img src="{{ actionSymbolUrl }}" /></div>
-    <div class="feat-item-level">FEAT {{ feat.levelRequirement }}</div>
+<div *ngIf="feat" class="block mat-elevation-z1">
+  <div class="header">
+    <div class="name">{{ feat.name | uppercase }}</div>
+    <div *ngIf="actionSymbolUrl" class="symbol"><img src="{{ actionSymbolUrl }}" /></div>
+    <div class="level">FEAT {{ feat.levelRequirement }}</div>
   </div>
 
   <mat-divider></mat-divider>
 
-  <div class="feat-item-traits-wrapper">
-    <div class="feat-item-trait" *ngFor="let trait of feat.traits">
-      <div class="feat-item-trait-foreground">{{ trait.displayText | uppercase }}</div>
+  <div class="traits-wrapper">
+    <div class="trait" *ngFor="let trait of feat.traits">
+      <div
+        class="trait-foreground"
+        [ngClass]="{ 'trait-uncommon': trait.name === 'UNCOMMON_TRAIT', 'trait-rare': trait.name === 'RARE_TRAIT' }"
+      >
+        {{ trait.displayText | uppercase }}
+      </div>
     </div>
   </div>
 
   <div *ngIf="feat.prerequisites">
-    <span class="feat-item-label">Prerequisites</span>
+    <span class="label">Prerequisites</span>
     <span>{{ feat.prerequisites }}</span>
   </div>
 
   <div *ngIf="feat.frequency">
-    <span class="feat-item-label">Frequency</span>
+    <span class="label">Frequency</span>
     <span>{{ feat.frequency }}</span>
   </div>
 
   <div *ngIf="feat.trigger">
-    <span class="feat-item-label">Trigger</span>
+    <span class="label">Trigger</span>
     <span>{{ feat.trigger }}</span>
   </div>
 
   <div *ngIf="feat.cost">
-    <span class="feat-item-label">Cost</span>
+    <span class="label">Cost</span>
     <span>{{ feat.cost }}</span>
   </div>
 
   <div *ngIf="feat.requirements">
-    <span class="feat-item-label">Requirements</span>
+    <span class="label">Requirements</span>
     <span>{{ feat.requirements }}</span>
   </div>
 
-  <div class="feat-item-divider">
+  <div class="divider">
     <mat-divider></mat-divider>
   </div>
 
-  <div class="feat-item-description">
+  <div class="description">
     <span>{{ feat.description }}</span>
   </div>
 
-  <div *ngIf="feat.critSuccessText" class="feat-item-hanging-indent">
-    <span class="feat-item-label">Critical Success</span>
+  <div *ngIf="feat.critSuccessText" class="hanging-indent">
+    <span class="label">Critical Success</span>
     <span>{{ feat.critSuccessText }}</span>
   </div>
-  <div *ngIf="feat.successText" class="feat-item-hanging-indent">
-    <span class="feat-item-label">Success</span>
+  <div *ngIf="feat.successText" class="hanging-indent">
+    <span class="label">Success</span>
     <span>{{ feat.successText }}</span>
   </div>
-  <div *ngIf="feat.failText" class="feat-item-hanging-indent">
-    <span class="feat-item-label">Failure</span>
+  <div *ngIf="feat.failText" class="hanging-indent">
+    <span class="label">Failure</span>
     <span>{{ feat.failText }}</span>
   </div>
-  <div *ngIf="feat.critFailText" class="feat-item-hanging-indent">
-    <span class="feat-item-label">Critical Failure</span>
+  <div *ngIf="feat.critFailText" class="hanging-indent">
+    <span class="label">Critical Failure</span>
     <span>{{ feat.critFailText }}</span>
   </div>
 
-  <div *ngIf="feat.special" class="feat-item-special feat-item-hanging-indent">
-    <span class="feat-item-label">Special</span>
+  <div *ngIf="feat.special" class="special hanging-indent">
+    <span class="label">Special</span>
     <span>{{ feat.special }}</span>
   </div>
 </div>
