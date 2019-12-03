@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HandleError, FeatLookupHttpErrorHandlerService } from './feat-lookup-http-error-handler.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Feat, Trait } from '@app/shared/app-interfaces-enums';
+import {
+  FeatLookupHttpErrorHandlerService,
+  HandleError
+} from '@app/feat-lookup/services/feat-lookup-http-error-handler.service';
 
 @Injectable({
   providedIn: 'root'

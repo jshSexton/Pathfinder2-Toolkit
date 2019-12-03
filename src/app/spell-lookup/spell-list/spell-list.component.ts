@@ -14,7 +14,7 @@ import { FormControl } from '@angular/forms';
 import { SpellFilters, TableKey } from '@app/spell-lookup/spell-list/spell-list-interfaces-enums';
 import { forkJoin, Observable } from 'rxjs';
 import { Options } from 'ng5-slider';
-import { SpellLookupService } from '@app/spell-lookup/spell-lookup.service';
+import { SpellLookupService } from '@app/spell-lookup/services/spell-lookup.service';
 import { delay, map, startWith } from 'rxjs/operators';
 
 @Component({

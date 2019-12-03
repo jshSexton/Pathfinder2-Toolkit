@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Spell, StandardActionTypes } from '@app/shared/app-interfaces-enums';
 import { ActivatedRoute } from '@angular/router';
-import { SpellLookupService } from '@app/spell-lookup/spell-lookup.service';
+import { SpellLookupService } from '@app/spell-lookup/services/spell-lookup.service';
 import { Utils } from '@app/shared/utils.service';
 
 @Component({

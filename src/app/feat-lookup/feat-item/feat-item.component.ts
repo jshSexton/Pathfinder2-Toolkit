@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Feat, StandardActionSymbols, StandardActionTypes } from '@app/shared/app-interfaces-enums';
 import { ActivatedRoute } from '@angular/router';
-import { FeatLookupService } from '../feat-lookup.service';
+import { FeatLookupService } from '../services/feat-lookup.service';
 import { Utils } from '@app/shared/utils.service';
 
 @Component({

@@ -14,7 +14,7 @@ import { FeatFilters, TableKey } from '@app/feat-lookup/feat-list/feat-list-inte
 import { forkJoin, Observable } from 'rxjs';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Options } from 'ng5-slider';
-import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
+import { FeatLookupService } from '@app/feat-lookup/services/feat-lookup.service';
 import { delay, map, startWith } from 'rxjs/operators';
 import { Utils } from '@app/shared/utils.service';
 

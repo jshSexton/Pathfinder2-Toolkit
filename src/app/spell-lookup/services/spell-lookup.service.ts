@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   HandleError,
   SpellLookupHttpErrorHandlerService
-} from '@app/spell-lookup/spell-lookup-http-error-handler.service';
+} from '@app/spell-lookup/services/spell-lookup-http-error-handler.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Spell, Trait } from '@app/shared/app-interfaces-enums';

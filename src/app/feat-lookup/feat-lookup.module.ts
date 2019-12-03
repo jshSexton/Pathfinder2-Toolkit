@@ -10,8 +10,8 @@ import { InMemoryDataService } from '../in-memory-data.service';
 import { FeatLookupComponent } from './feat-lookup.component';
 import { FeatListComponent } from './feat-list/feat-list.component';
 import { FeatLookupRoutingModule } from '@app/feat-lookup/feat-lookup-routing.module';
-import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
-import { FeatLookupHttpErrorHandlerService } from '@app/feat-lookup/feat-lookup-http-error-handler.service';
+import { FeatLookupService } from '@app/feat-lookup/services/feat-lookup.service';
+import { FeatLookupHttpErrorHandlerService } from '@app/feat-lookup/services/feat-lookup-http-error-handler.service';
 import { FeatItemComponent } from './feat-item/feat-item.component';
 import { SharedModule } from '@app/shared';
 

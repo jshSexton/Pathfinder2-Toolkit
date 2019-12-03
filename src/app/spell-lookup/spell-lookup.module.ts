@@ -12,8 +12,8 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { SharedModule } from '@app/shared';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '@app/in-memory-data.service';
-import { SpellLookupService } from '@app/spell-lookup/spell-lookup.service';
-import { SpellLookupHttpErrorHandlerService } from '@app/spell-lookup/spell-lookup-http-error-handler.service';
+import { SpellLookupService } from '@app/spell-lookup/services/spell-lookup.service';
+import { SpellLookupHttpErrorHandlerService } from '@app/spell-lookup/services/spell-lookup-http-error-handler.service';
 
 @NgModule({
   declarations: [SpellLookupComponent, SpellItemComponent, SpellListComponent],
