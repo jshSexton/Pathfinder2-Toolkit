@@ -37,7 +37,7 @@
           <mat-label>Trait Filter</mat-label>
           <mat-chip-list #chipList>
             <mat-chip *ngFor="let trait of filterValues.traits" (removed)="removeTraitChip(trait)">
-              {{ trait.displayText }}
+              {{ trait.name }}
               <mat-icon matChipRemove>cancel</mat-icon>
             </mat-chip>
             <input
@@ -57,7 +57,7 @@
             (optionSelected)="traitFilterSelected($event)"
           >
             <mat-option *ngFor="let trait of autoTraits | async" [value]="trait">
-              {{ trait.displayText }}
+              {{ trait.name }}
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>

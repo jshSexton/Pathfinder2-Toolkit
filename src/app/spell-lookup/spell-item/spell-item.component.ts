@@ -47,42 +47,42 @@ export class SpellItemComponent implements OnInit {
 
   parseDescriptionText() {
     this.spell.description = this.spell.description.replace(
-      /\(\(\(ICON-SINGLE-ACTION\)\)\)/g,
+      /\[\b(\w*one-action\w*)\b]/g,
       `<span>
                     <img src="${this.utils.getActionSymbol(StandardActionTypes.SINGLE_ACTION)}"
-                        style="height: 20px; margin-top: -4px"/>
+                        style="height: 20px; margin-top: -4px" alt="One Action"/>
                    </span>`
     );
 
     this.spell.description = this.spell.description.replace(
-      /\(\(\(ICON-DOUBLE-ACTION\)\)\)/g,
+      /\[\b(\w*two-action\w*)\b]/g,
       `<span>
                     <img src="${this.utils.getActionSymbol(StandardActionTypes.DOUBLE_ACTION)}"
-                        style="height: 20px; margin-top: -4px"/>
+                        style="height: 20px; margin-top: -4px" alt="Two Actions"/>
                    </span>`
     );
 
     this.spell.description = this.spell.description.replace(
-      /\(\(\(ICON-TRIPLE-ACTION\)\)\)/g,
+      /\[\b(\w*three-action\w*)\b]/g,
       `<span>
                     <img src="${this.utils.getActionSymbol(StandardActionTypes.TRIPLE_ACTION)}"
-                        style="height: 20px; margin-top: -4px"/>
+                        style="height: 20px; margin-top: -4px" alt="Three Actions"/>
                    </span>`
     );
 
     this.spell.description = this.spell.description.replace(
-      /\(\(\(ICON-REACTION-ACTION\)\)\)/g,
+      /\[\b(\w*reaction\w*)\b]/g,
       `<span>
                     <img src="${this.utils.getActionSymbol(StandardActionTypes.REACTION_ACTION)}"
-                        style="height: 20px; margin-top: -4px"/>
+                        style="height: 20px; margin-top: -4px" alt="Reaction"/>
                    </span>`
     );
 
     this.spell.description = this.spell.description.replace(
-      /\(\(\(ICON-FREE-ACTION\)\)\)/g,
+      /\[\b(\w*free-action\w*)\b]/g,
       `<span>
                     <img src="${this.utils.getActionSymbol(StandardActionTypes.FREE_ACTION)}"
-                        style="height: 20px; margin-top: -4px"/>
+                        style="height: 20px; margin-top: -4px" alt="Free Action"/>
                    </span>`
     );
   }
