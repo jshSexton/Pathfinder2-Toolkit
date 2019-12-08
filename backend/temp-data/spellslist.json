@@ -630,5 +630,112 @@
     "successText": "You take half the listed damage from the effect.",
     "failText": "You take the full damage listed from the effect.",
     "critFailText": "You take double the listed damage from the effect."
+  },
+  {
+    "spell_name": "Chain Lighting",
+    "source": "Core Rulebook pg. 322",
+    "level": 6,
+    "traits": ["Electricity", "Evocation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "500 feet",
+    "targets": "1 creature, plus any number of additional creatures",
+    "saving_throw": "REFLEX",
+    "short_description": "",
+    "description": "You discharge a powerful bolt of lightning at the target, dealing 8d12 electricity damage. The target must attempt a basic Reflex save. The electricity arcs to another creature within 30 feet of the first target, jumps to another creature within 30 feet of that target, and so on. You can end the chain at any point. You can’t target the same creature more than once, and you must have line of effect to all targets. Roll the damage only once, and apply it to each target (halving or doubling as appropriate for its saving throw outcome). The chain ends if any one of the targets critically succeeds at its save.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 1d12."
+      }
+    ]
+  },
+  {
+    "spell_name": "Charm",
+    "source": "Core Rulebook pg. 322",
+    "level": 1,
+    "traits": ["Emotion", "Enchantment", "Incapacitation", "Mental"],
+    "traditions": ["ARCANE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "saving_throw": "WILL",
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used hostile actions against it.<br />&emsp;You can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn’t necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.",
+    "critSuccessText": "The target is unaffected and aware you tried to charm it.",
+    "successText": "The target is unaffected but thinks your spell was something harmless instead of charm, unless it identifies the spell (usually with Identify Magic).",
+    "failText": "The target’s attitude becomes friendly toward you. If it was friendly, it becomes helpful. It can’t use hostile actions against you.",
+    "critFailText": "The target’s attitude becomes helpful toward you, and it can’t use hostile actions against you.",
+    "heightened": [
+      {
+        "trigger_level": "(4th)",
+        "description": "The duration lasts until the next time you make your daily preparations."
+      },
+      {
+        "trigger_level": "(8th)",
+        "description": "The duration lasts until the next time you make your daily preparations, and you can target up to 10 creatures."
+      }
+    ]
+  },
+  {
+    "spell_name": "Chill Touch",
+    "source": "Core Rulebook pg. 323",
+    "level": 0,
+    "traits": ["Attack", "Cantrip", "Necromancy", "Negative"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 living or undead creature",
+    "saving_throw": "FORTITUDE",
+    "short_description": "",
+    "description": "Siphoning negative energy into yourself, your hand radiates a pale darkness. Your touch weakens the living and disorients undead, possibly even causing them to flee. The effect depends on whether the target is living or undead.<ul><li><b>Living Creature</b> The spell deals negative damage equal to 1d4 plus your spellcasting modifier. The target attempts a basic Fortitude save, but is also enfeebled 1 for 1 round on a critical failure.</li><li<b>>Undead Creature</b> The target is flat-footed for 1 round on a failed Fortitude save. On a critical failure, the target is also fleeing for 1 round unless it succeeds at a Will save.</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The negative damage to living creatures increases by 1d4."
+      }
+    ]
+  },
+  {
+    "spell_name": "Chilling Darkness",
+    "source": "Core Rulebook pg. 323",
+    "level": 3,
+    "traits": ["Attack", "Cold", "Darkness", "Evocation", "Evil"],
+    "traditions": ["DIVINE"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "targets": "1 creature",
+    "short_description": "",
+    "description": "You shoot an utterly cold ray of darkness tinged with unholy energy. Make a ranged spell attack against the target. You deal 5d6 cold damage, plus 5d6 evil damage if the target is a celestial.<br />&emsp;If the ray passes through an area of magical light or targets a creature affected by magical light, chilling darkness attempts to counteract the light. If you need to determine whether the ray passes through an area of light, draw a line between yourself and the spell’s target.",
+    "critSuccessText": "The target takes double damage.",
+    "successText": "The target takes full damage.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The cold damage increases by 2d6, and the evil damage celestials increases by 2d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Chromatic Wall",
+    "source": "Core Rulebook pg. 323",
+    "level": 5,
+    "traits": ["Abjuration"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "You create an opaque wall of light in a single vibrant color. The wall is straight and vertical, stretching 60 feet long and 30 feet high. If the wall would pass through a creature, the spell is lost. The wall sheds bright light for 20 feet on each side, and dim light for the next 20 feet. You can ignore the wall’s effects.<br />&emsp;Roll 1d4 to determine the color of the wall. Each color has a particular effect on items, effects, or creatures that attempt to pass through. Chromatic wall can’t be counteracted normally; rather, each color is automatically counteracted when targeted by a specific spell, even if that spell’s level is lower than that of chromatic wall.<ul><li><b>1. Red</b> The wall destroys ranged weapon ammunition (such as arrows and crossbow bolts) that would pass through, and it deals 20 fire damage to anyone passing through, with a basic Reflex save. Cone of cold can counteract a red chromatic wall.</li><li><b>2. Orange</b> The wall destroys thrown weapons that would pass through, and it deals 25 acid damage to anyone passing through, with a basic Reflex save. Gust of wind can counteract an orange chromatic wall.</li><li><b>3. Yellow</b> The wall stops acid, cold, electricity, fire, force, negative, positive, and sonic effects from passing through, and it deals 30 electricity damage to anyone passing through, with a basic Reflex save. Disintegrate can counteract a yellow chromatic wall.</li><li><b>4. Green</b> The wall stops toxins, gases, and breath weapons from passing through. It deals 10 poison damage to anyone passing through and makes them enfeebled 1 for 1 minute. A basic Fortitude save reduces the damage and negates the enfeebled condition on a success. Passwall can counteract a green chromatic wall.</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "(7th)",
+        "description": "The spell’s duration increases to 1 hour. Roll 1d8 to determine the wall’s color; the results for 5–8 are below. A red, orange, yellow, or green wall deals an extra 10 damage.<ul><li>5. Blue The wall stops auditory, petrification, and visual effects from passing through, and creatures passing through are subject to the effects of flesh to stone. Magic missile can counteract a blue chromatic wall.</li><li>6. Indigo The wall stops divination and mental effects from passing through, and those passing through are subject to the effects of warp mind. Searing light can counteract an indigo chromatic wall.</li><li>7. Violet The wall prevents spells from targeting the other side (area effects still cross as normal). Creatures passing through must succeed at a Will save or they are slowed 1 for 1 minute; on a critical failure, the creature is instead sent to another plane, with the effect of plane shift. Dispel magic can counteract a violet chromatic wall.</li><li>8. Reroll, and creatures that pass through the wall take a –2 circumstance penalty to their saves.</li></ul>"
+      }
+    ]
   }
 ]
