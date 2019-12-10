@@ -10,8 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
 import { SharedModule } from '@app/shared';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from '@app/in-memory-data.service';
 import { SpellLookupService } from '@app/spell-lookup/services/spell-lookup.service';
 import { SpellLookupHttpErrorHandlerService } from '@app/spell-lookup/services/spell-lookup-http-error-handler.service';
 
@@ -25,11 +23,7 @@ import { SpellLookupHttpErrorHandlerService } from '@app/spell-lookup/services/s
     HttpClientModule,
     ReactiveFormsModule,
     Ng5SliderModule,
-    SharedModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-      passThruUnknownUrl: false
-    })
+    SharedModule
   ],
   providers: [SpellLookupService, SpellLookupHttpErrorHandlerService]
 })

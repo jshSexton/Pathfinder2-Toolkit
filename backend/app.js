@@ -1,9 +1,12 @@
-let express = require('express'),
-  path = require('path'),
-  mongoose = require('mongoose'),
-  cors = require('cors'),
-  bodyParser = require('body-parser'),
-  dataBaseConfig = require('./database/db');
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const dataBaseConfig = require('./database/db');
+const featRoute = require('./routes/feat.route');
+const spellRoute = require('./routes/spell.route');
+const traitRoute = require('./routes/trait.route');
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
@@ -16,13 +19,15 @@ mongoose.connect(dataBaseConfig.db, { useNewUrlParser: true }).then(
   }
 );
 
-// ToDo: Require routes
-
 // Set up express js port
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+
+app.use('/api', featRoute);
+app.use('/api', spellRoute);
+app.use('/api', traitRoute);
 
 // PORT
 const port = process.env.PORT || 4000;

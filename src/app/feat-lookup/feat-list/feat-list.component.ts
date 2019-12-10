@@ -63,14 +63,12 @@ export class FeatListComponent implements OnInit {
   }
 
   ngOnInit() {
-    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats().pipe(delay(3000))]).subscribe(
-      ([traitRes, featRes]) => {
-        this.featsData = featRes;
-        this.traitsData = traitRes;
+    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats()]).subscribe(([traitRes, featRes]) => {
+      this.featsData = featRes;
+      this.traitsData = traitRes;
 
-        this.initAfterGetData();
-      }
-    );
+      this.initAfterGetData();
+    });
   }
 
   initAfterGetData() {
@@ -236,7 +234,8 @@ export class FeatListComponent implements OnInit {
       if ((value || '').trim()) {
         const tempTrait: Trait = {
           id: -1,
-          name: value
+          name: value,
+          type: ['UNTYPED']
         };
         this.filterValues.traits.push(tempTrait);
         this.dataSource.filter = JSON.stringify(this.filterValues);

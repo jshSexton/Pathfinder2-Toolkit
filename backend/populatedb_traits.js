@@ -4,7 +4,7 @@ console.log('This script populates some test traits to your database.');
 
 // Get arguments passed on command line
 const async = require('async');
-const Trait = require('./model/Trait');
+const Trait = require('./models/Trait');
 
 const mongoose = require('mongoose');
 const mongoDB =
@@ -27,17 +27,20 @@ function traitCreate(name, types, cb) {
     types: types
   };
 
-  const trait = new Trait(traitDetail);
-
-  trait.save(err => {
-    if (err) {
-      cb(err, null);
-      return;
+  Trait.findOneAndUpdate(
+    { trait_name: traitDetail.trait_name },
+    traitDetail,
+    { upsert: true, new: true },
+    (err, traitResult) => {
+      if (err) {
+        cb(err, null);
+        return;
+      }
+      console.log('New Trait: ', traitResult);
+      traits.push(traitResult);
+      cb(null, traitResult);
     }
-    console.log('New Trait: ', trait);
-    traits.push(trait);
-    cb(null, trait);
-  });
+  );
 }
 
 async.series(

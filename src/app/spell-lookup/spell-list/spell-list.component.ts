@@ -249,7 +249,8 @@ export class SpellListComponent implements OnInit {
       if ((value || '').trim()) {
         const tempTrait: Trait = {
           id: -1,
-          name: value
+          name: value,
+          type: ['UNTYPED']
         };
         this.filterValues.traits.push(tempTrait);
         this.dataSource.filter = JSON.stringify(this.filterValues);

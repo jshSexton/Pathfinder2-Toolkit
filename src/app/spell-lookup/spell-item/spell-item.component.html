@@ -12,7 +12,7 @@
         class="trait-foreground"
         [ngClass]="{ 'trait-uncommon': trait.name === 'UNCOMMON_TRAIT', 'trait-rare': trait.name === 'RARE_TRAIT' }"
       >
-        {{ trait.displayText | uppercase }}
+        {{ trait.name | uppercase }}
       </div>
     </div>
   </div>
@@ -29,6 +29,10 @@
       <span *ngIf="actionSymbolUrl" class="symbol"><img src="{{ actionSymbolUrl }}"/></span>
       <span *ngIf="actionSymbolUrl === ''">{{ spell.castingTime }}</span>
       <span> ( {{ spell.components.join(', ') | lowercase }} )</span>
+    </span>
+    <span>
+      <span class="label spacer-right-small">Cost</span>
+      <span>{{ spell.cost }}</span>
     </span>
     <span *ngIf="spell.trigger" class="spacer-right">
       <span class="label spacer-right-small">Trigger</span>
@@ -112,7 +116,7 @@
 
     <div *ngFor="let heightening of spell.heightened" class="description">
       <span class="label">Heightened ({{ heightening.triggerLevel }})</span>
-      <span>{{ heightening.description }}</span>
+      <span [innerHTML]="heightening.description | safeHtml"></span>
     </div>
   </div>
 </div>

@@ -16,8 +16,7 @@ let FeatSchema = new Schema(
     critFailText: String,
     actions: {
       type: String,
-      enum: ACTION_TYPES,
-      required: true
+      enum: ACTION_TYPES
     },
     level_requirement: { type: Number, min: 1, max: 20 },
     prerequisites: String,

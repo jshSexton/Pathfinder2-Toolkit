@@ -20,6 +20,7 @@ let SpellSchema = new Schema(
     traditions: [{ type: String, enum: TRADITION_TYPES, required: true }],
     casting_time: { type: String, required: true },
     component: [{ type: String, enum: CASTING_COMPONENT_TYPES }],
+    cost: String,
     requirements: String,
     trigger: String,
     range: String,

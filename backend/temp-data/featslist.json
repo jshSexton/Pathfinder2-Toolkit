@@ -1,0 +1,918 @@
+[
+  {
+    "feat_name": "",
+    "source": "Core Rulebook pg. xxx",
+    "level_requirement": 1,
+    "traits": [""],
+    "prerequisites": "",
+    "actions": "",
+    "frequency": "",
+    "cost": "",
+    "trigger": "",
+    "requirements": "",
+    "short_description": "",
+    "description": "",
+    "successText": "",
+    "critSuccessText": "",
+    "failText": "",
+    "critFailText": "",
+    "special": ""
+  },
+  {
+    "feat_name": "Dwarven Lore",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 1,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "You eagerly absorbed the old stories and traditions of your ancestors, your gods, and your people, studying in subjects and techniques passed down for generation upon generation. You gain the trained proficiency rank in Crafting and Religion. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. You also become trained in Dwarven Lore."
+  },
+  {
+    "feat_name": "Dwarven Weapon Familiarity",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 1,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "Your kin have instilled in you an affinity for hard-hitting weapons, and you prefer these to more elegant arms. You are trained with the battle axe, pick, and warhammer.<br />&emsp;You also gain access to all uncommon dwarf weapons. For the purpose of determining your proficiency, martial dwarf weapons are simple weapons and advanced dwarf weapons are martial weapons."
+  },
+  {
+    "feat_name": "Rock Runner",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 1,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "Your innate connection to stone makes you adept at moving across uneven surfaces. You can ignore difficult terrain caused by rubble and uneven ground made of stone and earth. In addition, when you use the Acrobatics skill to Balance on narrow surfaces or uneven ground made of stone or earth, you aren’t flat-footed, and when you roll a success at one of these Acrobatics checks, you get a critical success instead."
+  },
+  {
+    "feat_name": "Stonecunning",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 1,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "You have a knack for noticing even small inconsistencies and craftsmanship techniques in the stonework around you. You gain a +2 circumstance bonus to Perception checks to notice unusual stonework. This bonus applies to checks to discover mechanical traps made of stone or hidden within stone.<br />&emsp;If you aren’t using the Seek action or searching, the GM automatically rolls a secret check for you to notice unusual stonework anyway. This check doesn’t gain the circumstance bonus, and it takes a –2 circumstance penalty."
+  },
+  {
+    "feat_name": "Unburdened Iron",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 1,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "You’ve learned techniques first devised by your ancestors during their ancient wars, allowing you to comfortably wear massive suits of armor. Ignore the reduction to your Speed from any armor you wear.<br />&emsp;In addition, any time you’re taking a penalty to your Speed from some other reason (such as from the encumbered condition or from a spell), deduct 5 feet from the penalty. For example, the encumbered condition normally gives a –10-foot penalty to Speed, but it gives you only a –5-foot penalty. If your Speed is taking multiple penalties, pick only one penalty to reduce."
+  },
+  {
+    "feat_name": "Vengeful Hatred",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 1,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "You heart aches for vengeance against those who have wronged your people. Choose one of the following dwarven ancestral foes when you gain Vengeful Hatred: drow, duergar, giant, or orc. You gain a +1 circumstance bonus to damage with weapons and unarmed attacks against creatures with that trait. If your attack would deal more than one weapon die of damage (as is common at higher levels than 1st), the bonus is equal to the number of weapon dice or unarmed attack dice.<br />&emsp;In addition, if a creature critically succeeds at an attack against you and deals damage to you, you gain your bonus to damage against that creature for 1 minute regardless of whether it has the chosen trait.",
+    "special": "Your GM can add appropriate creature traits to the ancestral foes list if your character is from a community that commonly fights other types of enemies."
+  },
+  {
+    "feat_name": "Boulder Roll",
+    "source": "Core Rulebook pg. 36",
+    "level_requirement": 5,
+    "traits": ["Dwarf"],
+    "prerequisites": "Rock Runner",
+    "actions": "2_ACTION",
+    "short_description": "",
+    "description": "Your dwarven build allows you to push foes around, just like a mighty boulder tumbles through a subterranean cavern. Take a Step into the square of a foe that is your size or smaller, and the foe must move into the empty space directly behind it. The foe must move even if doing so places it in harm’s way. The foe can attempt a Fortitude saving throw against your Athletics DC to block your Step. If the foe attempts this saving throw, unless it critically succeeds, it takes bludgeoning damage equal to your level plus your Strength modifier.<br />&emsp;If the foe can’t move into an empty space (if it is surrounded by solid objects or other creatures, for example), your Boulder Roll has no effect."
+  },
+  {
+    "feat_name": "Dwarven Weapon Cunning",
+    "source": "Core Rulebook pg. 37",
+    "level_requirement": 5,
+    "traits": ["Dwarf"],
+    "prerequisites": "Dwarven Weapon Familiarity",
+    "short_description": "",
+    "description": "You’ve learned cunning techniques to get the best effects out of your dwarven weapons. Whenever you critically hit using a battle axe, pick, warhammer, or a dwarf weapon, you apply the weapon’s critical specialization effect."
+  },
+  {
+    "feat_name": "MOUNTAIN’S STOUTNESS",
+    "source": "Core Rulebook pg. 37",
+    "level_requirement": 9,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "Your hardiness lets you withstand more punishment than most before going down. Increase your maximum Hit Points by your level. You also decrease the DC of recovery checks when you have the dying condition by 1.<br />&emsp;If you also have the Toughness feat, the Hit Points gained from it and this feat are cumulative, and you decrease the DC of recovery checks by 4."
+  },
+  {
+    "feat_name": "Stonewalker",
+    "source": "Core Rulebook pg. 37",
+    "level_requirement": 9,
+    "traits": ["Dwarf"],
+    "short_description": "",
+    "description": "You have a deep reverence for and connection to stone. You gain meld into stone as a 3rd‑level divine innate spell that you can cast once per day.<br />&emsp;If you have the Stonecunning dwarf ancestry feat, you can attempt to find unusual stonework and stonework traps that require legendary proficiency in Perception. If you have both Stonecunning and legendary proficiency in Perception, when you’re not Seeking and the GM rolls a secret check for you to notice unusual stonework, you keep the bonus from Stonecunning and don’t take the –2 circumstance penalty."
+  },
+  {
+    "feat_name": "Dwarven Weapon Expertise",
+    "source": "Core Rulebook pg. 37",
+    "level_requirement": 13,
+    "traits": ["Dwarf"],
+    "prerequisites": "Dwarven Weapon Familiarity",
+    "short_description": "",
+    "description": "Your dwarven affinity blends with your training, granting you great skill with dwarven weapons. Whenever you gain a class feature that grants you expert or greater proficiency in certain weapons, you also gain that proficiency for battle axes, picks, warhammers, and all dwarven weapons in which you are trained."
+  },
+  {
+    "feat_name": "Ancestral Longevity",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "prerequisites": "at least 100 years old",
+    "short_description": "",
+    "description": "You have accumulated a vast array of lived knowledge over the years. During your daily preparations, you can reflect upon your life experiences to gain the trained proficiency rank in one skill of your choice. This proficiency lasts until you prepare again. Since this proficiency is temporary, you can’t use it as a prerequisite for a skill increase or a permanent character option like a feat."
+  },
+  {
+    "feat_name": "Elven Lore",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "You’ve studied in traditional elven arts, learning about arcane magic and the world around you. You gain the trained proficiency rank in Arcana and Nature. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. You also become trained in Elven Lore."
+  },
+  {
+    "feat_name": "Elven Weapon Familiarity",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "You favor bows and other elegant weapons. You are trained with longbows, composite longbows, longswords, rapiers, shortbows, and composite shortbows.<br />&emsp;In addition, you gain access to all uncommon elf weapons. For the purpose of determining your proficiency, martial elf weapons are simple weapons and advanced elf weapons are martial weapons."
+  },
+  {
+    "feat_name": "Forlorn",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "Watching your friends age and die fills you with moroseness that protects you against harmful emotions. You gain a +1 circumstance bonus to saving throws against emotion effects. If you roll a success on a saving throw against an emotion effect, you get a critical success instead."
+  },
+  {
+    "feat_name": "Nimble Elf",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "Your muscles are tightly honed. Your Speed increases by 5 feet."
+  },
+  {
+    "feat_name": "Otherworldly Magic",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "Your elven magic manifests as a simple arcane spell, even if you aren’t formally trained in magic. Choose one cantrip from the arcane spell list (page 307). You can cast this cantrip as an arcane innate spell at will. A cantrip is heightened to a spell level equal to half your level rounded up."
+  },
+  {
+    "feat_name": "Unwavering Mien",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 1,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "Your mystic control and meditations allow you to resist external influences upon your consciousness. Whenever you are affected by a mental effect that lasts at least 2 rounds, you can reduce the duration by 1 round.<br />&emsp;You still require natural sleep, but you treat your saving throws against effects that would cause you to fall asleep as one degree of success better. This protects only against sleep effects, not against other forms of falling unconscious."
+  },
+  {
+    "feat_name": "Ageless Patience",
+    "source": "Core Rulebook pg. 40",
+    "level_requirement": 5,
+    "traits": ["Elf"],
+    "short_description": "",
+    "description": "You work at a pace born from longevity that enhances your thoroughness. You can voluntarily spend twice as much time as normal on a Perception check or skill check to gain a +2 circumstance bonus to that check. You also don’t treat a natural 1 as worse than usual on these checks; you get a critical failure only if your result is 10 lower than the DC. For example, you could get these benefits if you spent 2 actions to Seek, which normally takes 1 action. You can get these benefits during exploration by taking twice as long exploring as normal, or in downtime by spending twice as much downtime.<br />&emsp;The GM might determine a situation doesn’t grant you a benefit if a delay would be directly counterproductive to your success, such as a tense negotiation with an impatient creature."
+  },
+  {
+    "feat_name": "Elven Weapon Elegance",
+    "source": "Core Rulebook pg. 41",
+    "level_requirement": 5,
+    "traits": ["Elf"],
+    "prerequisites": "Elven Weapon Familiarity",
+    "short_description": "",
+    "description": "You are attuned to the weapons of your elven ancestors and are particularly deadly when using them. Whenever you critically hit using an elf weapon or one of the weapons listed in Elven Weapon Familiarity, you apply the weapon’s critical specialization effect."
+  },
+  {
+    "feat_name": "Elf Step",
+    "source": "Core Rulebook pg. 41",
+    "level_requirement": 9,
+    "traits": ["Elf"],
+    "actions": "1_ACTION",
+    "short_description": "",
+    "description": "You move in a graceful dance, and even your steps are broad. You Step 5 feet twice."
+  },
+  {
+    "feat_name": "Expert Longevity",
+    "source": "Core Rulebook pg. 41",
+    "level_requirement": 9,
+    "traits": ["Elf"],
+    "prerequisites": "Ancestral Longevity",
+    "short_description": "",
+    "description": "You’ve continued to refine the knowledge and skills you’ve gained through your life. When you choose a skill in which to become trained with Ancestral Longevity, you can also choose a skill in which you are already trained and become an expert in that skill. This lasts until your Ancestral Longevity expires.<br />&emsp;When the effects of Ancestral Longevity and Expert Longevity expire, you can retrain one of your skill increases. The skill increase you gain from this retraining must either make you trained in the skill you chose with Ancestral Longevity or make you an expert in the skill you chose with Expert Longevity."
+  },
+  {
+    "feat_name": "Universal Longevity",
+    "source": "Core Rulebook pg. 41",
+    "level_requirement": 13,
+    "traits": ["Elf"],
+    "prerequisites": "Expert Longevity",
+    "frequency": "once per day",
+    "short_description": "",
+    "description": "You’ve perfected your ability to keep up with all the skills you’ve learned over your long life, so you’re almost never truly untrained at a skill. You reflect on your life experiences, changing the skills you selected with Elven Longevity and Expert Longevity."
+  },
+  {
+    "feat_name": "Elven Weapon Expertise",
+    "source": "Core Rulebook pg. 41",
+    "level_requirement": 13,
+    "traits": ["Elf"],
+    "prerequisites": "Elven Weapon Familiarity",
+    "short_description": "",
+    "description": "Your elven affinity blends with your class training, granting you great skill with elven weapons. Whenever you gain a class feature that grants you expert or greater proficiency in certain weapons, you also gain that proficiency in longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and all elf weapons in which you are trained."
+  },
+  {
+    "feat_name": "Animal Accomplice",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "You build a rapport with an animal, which becomes magically bonded to you. You gain a familiar using the rules on page 217. The type of animal is up to you, but most gnomes choose animals with a burrow Speed."
+  },
+  {
+    "feat_name": "Burrow Elocutionist",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "You recognize the chittering of ground creatures as its own peculiar language. You can ask questions of, receive answers from, and use the Diplomacy skill with animals that have a burrow Speed, such as badgers, ground squirrels, moles, and prairie dogs. The GM determines which animals count for this ability."
+  },
+  {
+    "feat_name": "Fey Fellowship",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "Your enhanced fey connection affords you a warmer reception from creatures of the First World as well as tools to foil their tricks. You gain a +2 circumstance bonus to both Perception checks and saving throws against fey.<br />&emsp;In addition, whenever you meet a fey creature in a social situation, you can immediately attempt a Diplomacy check to Make an Impression on that creature rather than needing to converse for 1 minute. You take a –5 penalty to the check. If you fail, you can engage in 1 minute of conversation and attempt a new check at the end of that time rather than accepting the failure or critical failure result.",
+    "special": "If you have the Glad-Hand skill feat, you don’t take the penalty on your immediate Diplomacy check if the target is a fey."
+  },
+  {
+    "feat_name": "First World Magic",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "Your connection to the First World grants you a primal innate spell, much like those of the fey. Choose one cantrip from the primal spell list (page 314). You can cast this spell as a primal innate spell at will. A cantrip is heightened to a spell level equal to half your level rounded up."
+  },
+  {
+    "feat_name": "Gnome Obsession",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "You might have a flighty nature, but when a topic captures your attention, you dive into it headfirst. Pick a Lore skill. You gain the trained proficiency rank in that skill. At 2nd level, you gain expert proficiency in the chosen Lore as well as the Lore granted by your background, if any. At 7th level you gain master proficiency in these Lore skills, and at 15th level you gain legendary proficiency in them."
+  },
+  {
+    "feat_name": "Gnome Weapon Familiarity",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "You favor unusual weapons tied to your people, such as blades with curved and peculiar shapes. You are trained with the glaive and kukri. In addition, you gain access to all uncommon gnome weapons. For the purpose of determining your proficiency, martial gnome weapons are simple weapons and advanced gnome weapons are martial weapons."
+  },
+  {
+    "feat_name": "Illusion Sense",
+    "source": "Core Rulebook pg. 44",
+    "level_requirement": 1,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "Your ancestors spent their days cloaked and cradled in illusions, and as a result, sensing illusion magic is second nature to you. You gain a +1 circumstance bonus to both Perception checks and Will saves against illusions.<br />&emsp;When you come within 10 feet of an illusion that can be disbelieved, the GM rolls a secret check for you to disbelieve it, even if you didn’t spend an action to Interact with the illusion."
+  },
+  {
+    "feat_name": "Animal Elocutionist",
+    "source": "Core Rulebook pg. 45",
+    "level_requirement": 5,
+    "traits": ["Gnome"],
+    "prerequisites": "Burrow Elocutionist",
+    "short_description": "",
+    "description": "You hear animal sounds as conversations instead of unintelligent noise, and can respond in turn. You can speak to all animals, not just animals with a burrow Speed. You gain a +1 circumstance bonus to Make an Impression on animals (which usually uses the Diplomacy skill)."
+  },
+  {
+    "feat_name": "Energized Font",
+    "source": "Core Rulebook pg. 45",
+    "level_requirement": 5,
+    "traits": ["Gnome"],
+    "prerequisites": "focus pool, at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells",
+    "frequency": "once per day",
+    "short_description": "",
+    "description": "The magic within you provides increased energy you can use to focus. You regain 1 Focus Point, up to your usual maximum."
+  },
+  {
+    "feat_name": "Gnome Weapon Innovator",
+    "source": "Core Rulebook pg. 45",
+    "level_requirement": 5,
+    "traits": ["Gnome"],
+    "prerequisites": "Gnome Weapon Familiarity",
+    "short_description": "",
+    "description": "You produce outstanding results when wielding unusual weapons. Whenever you critically hit using a glaive, kukri, or gnome weapon, you apply the weapon’s critical specialization effect."
+  },
+  {
+    "feat_name": "First World Adept",
+    "source": "Core Rulebook pg. 45",
+    "level_requirement": 9,
+    "traits": ["Gnome"],
+    "prerequisites": "at least one primal innate spell",
+    "short_description": "",
+    "description": "Over time your fey magic has grown stronger. You gain faerie fire and invisibility as 2nd-level primal innate spells. You can cast each of these primal innate spells once per day."
+  },
+  {
+    "feat_name": "Vivacious Conduit",
+    "source": "Core Rulebook pg. 45",
+    "level_requirement": 9,
+    "traits": ["Gnome"],
+    "short_description": "",
+    "description": "Your connection to the First World has grown, and its positive energy flows into you rapidly. If you rest for 10 minutes, you gain Hit Points equal to your Constitution modifier × half your level. This is cumulative with any healing you receive from Treat Wounds."
+  },
+  {
+    "feat_name": "Gnome Weapon Expertise",
+    "source": "Core Rulebook pg. 45",
+    "level_requirement": 13,
+    "traits": ["Gnome"],
+    "prerequisites": "Gnome Weapon Familiarity",
+    "short_description": "",
+    "description": "Your gnome affinity blends with your class training, granting you great skill with gnome weapons. Whenever you gain a class feature that grants you expert or greater proficiency in a given weapon or weapons, you also gain that proficiency in the glaive, kukri, and all gnome weapons in which you are trained."
+  },
+  {
+    "feat_name": "Alchemical Familiar",
+    "source": "Core Rulebook pg. 76",
+    "level_requirement": 1,
+    "traits": ["Alchemist"],
+    "description": "You have used alchemy to create life, a simple creature formed from alchemical materials, reagents, and a bit of your own blood. This alchemical familiar appears to be a small creature of flesh and blood, though it might have some unusual or distinguishing aspects depending on your creative process. Like other familiars, your alchemical familiar assists you in your laboratory and on adventures. The familiar uses your Intelligence modifier to determine its Perception, Acrobatics, and Stealth modifiers (see Familiars on page 217 for more information)."
+  },
+  {
+    "feat_name": "Alchemical Savant",
+    "source": "Core Rulebook pg. 76",
+    "level_requirement": 1,
+    "traits": ["Alchemist"],
+    "prerequisites": "trained in Crafting",
+    "short_description": "",
+    "description": "You can identify alchemical items quickly. When using the Crafting skill to Identify Alchemy on an alchemical item you hold, you can do so as a single action, which has the concentrate and manipulate traits, instead of spending 10 minutes. If you have the formula for the item you are attempting to identify, you gain a +2 circumstance bonus to your check, and if you roll a critical failure, you get a failure instead."
+  },
+  {
+    "feat_name": "Far Lobber",
+    "source": "Core Rulebook pg. 76",
+    "level_requirement": 1,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You’ve learned how to throw a longer distance. When you throw an alchemical bomb, it has a range increment of 30 feet instead of the usual 20 feet."
+  },
+  {
+    "feat_name": "Quick Bomber",
+    "source": "Core Rulebook pg. 76",
+    "level_requirement": 1,
+    "traits": ["Alchemist"],
+    "prerequisites": "",
+    "actions": "1_ACTION",
+    "short_description": "",
+    "description": "You keep your bombs in easy-to-reach pouches from which you draw without thinking. You Interact to draw a bomb, then Strike with it."
+  },
+  {
+    "feat_name": "Poison Resistance",
+    "source": "Core Rulebook pg. 77",
+    "level_requirement": 2,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Repeated exposure to toxic reagents has fortified your body against poisons of all kinds. You gain poison resistance equal to half your level, and you gain a +1 status bonus to saving throws against poisons."
+  },
+  {
+    "feat_name": "Revivfying Mutagen",
+    "source": "Core Rulebook pg. 77",
+    "level_requirement": 2,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "While under the effect of a mutagen, you can metabolize that mutagen’s power to heal yourself. This uses a single action, which has the concentrate and manipulate traits. Once the action is complete, you regain 1d6 Hit Points for every 2 item levels of the mutagen (minimum 1d6), but the mutagen’s duration immediately ends, even if you are under the effect of Persistent Mutagen."
+  },
+  {
+    "feat_name": "Smoke Bomb",
+    "source": "Core Rulebook pg. 77",
+    "level_requirement": 2,
+    "traits": ["Additive", "Alchemist"],
+    "actions": "FREE",
+    "frequency": "once per round",
+    "trigger": "You use Quick Alchemy to craft an alchemical bomb with a level at least 1 lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "You cause the bomb to create a cloud of thick smoke, in addition to its normal effects. When thrown, the bomb creates a cloud of smoke in a 10-foot-radius burst. You choose which corner of the target’s space (or the space in which the bomb lands) the cloud is centered on. Creatures within that area have the concealed condition, and all other creatures are concealed to them. The smoke lasts for 1 minute or until dissipated by a strong wind."
+  },
+  {
+    "feat_name": "Calculated Splash",
+    "source": "Core Rulebook pg. 77",
+    "level_requirement": 4,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You have calculated all the angles to maximize a bomb’s splash. When you throw an alchemical bomb with the splash trait, you can cause the bomb to deal splash damage equal to your Intelligence modifier (minimum 0) instead of the normal amount."
+  },
+  {
+    "feat_name": "Efficient Alchemy",
+    "source": "Core Rulebook pg. 77",
+    "level_requirement": 4,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Thanks to the time you’ve spent studying and experimenting, you know how to scale your formulas into larger batches that don’t require any additional attention. When spending downtime to Craft alchemical items, you can produce twice as many alchemical items in a single batch without spending additional preparatory time. For instance, if you are creating elixirs of life, you can craft up to eight elixirs in a single batch using downtime, rather than four. This does not reduce the amount of alchemical reagents required or other ingredients needed to craft each item, nor does it increase your rate of progress for days past the base downtime spent. This also does not change the number of items you can create in a batch using advanced alchemy."
+  },
+  {
+    "feat_name": "Enduring Alchemy",
+    "source": "Core Rulebook pg. 78",
+    "level_requirement": 4,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You’ve learned how to make your personal energy last just a little bit longer when quickly brewing ad hoc concoctions. When using Quick Alchemy to create an alchemical tool or elixir, that tool or elixir remains potent until the end of your next turn, instead of losing its potency at the start of your next turn."
+  },
+  {
+    "feat_name": "Combine Elixirs",
+    "source": "Core Rulebook pg. 78",
+    "level_requirement": 6,
+    "traits": ["Additive", "Alchemist"],
+    "actions": "FREE",
+    "frequency": "once per round",
+    "trigger": "You use Quick Alchemy to craft an alchemical item that has the elixir trait and is at least 2 levels lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "You’ve discovered how to mix two elixirs into a single hybrid concoction. You can spend 2 additional batches of infused reagents to add a second elixir to the one you’re crafting. The second elixir must also be at least 2 levels lower than your advanced alchemy level, and the combination elixir is an alchemical item two levels higher than the higher of the two elixirs’ levels. When this combination elixir is consumed, both the constituent elixirs take effect. For example, you can combine two elixirs of life to create a combined elixir that heals twice the normal amount, or you can combine a lesser darkvision elixir with a lesser eagle-eye elixir to both gain darkvision and find secret doors."
+  },
+  {
+    "feat_name": "Debilitating Bomb",
+    "source": "Core Rulebook pg. 78",
+    "level_requirement": 6,
+    "traits": ["Additive", "Alchemist"],
+    "actions": "FREE",
+    "frequency": "once per round",
+    "trigger": "You use Quick Alchemy to craft an alchemical bomb that is at least 2 levels lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "Your bombs impose additional effects on your enemies. You mix a substance into the bomb that causes one of the following: dazzled, deafened, flat-footed, or a –5-foot status penalty to Speeds. If the attack with that bomb hits, the target must succeed at a Fortitude saving throw or suffer that effect until the start of your next turn. Use your class DC for this saving throw (even if someone else throws the bomb)."
+  },
+  {
+    "feat_name": "Directional Bombs",
+    "source": "Core Rulebook pg. 78",
+    "level_requirement": 6,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You can lob bombs with great force and a precise trajectory to angle the splash in a cone spraying in a single direction. When throwing an alchemical bomb with the splash trait, instead of splashing all squares adjacent to the target, you can treat the target’s space as the first affected square of a 15-foot cone directed away from you, potentially allowing you to avoid allies and splash deeper into enemy lines. If the target takes up more than a single square, the target’s square closest to you is the first affected square of the cone."
+  },
+  {
+    "feat_name": "Feral Mutagen",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 8,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Your bestial mutagen brings out the beast lurking within you, granting you especially sharp claws and teeth as well as a ferocious appearance. Whenever you’re affected by a bestial mutagen you created, you gain the mutagen’s item bonus to your Intimidation checks. In addition, your claws and jaws are increasingly vicious, and they gain the deadly d10 trait. Finally, you can increase the mutagen’s penalty to AC from –1 to –2 and, in exchange, increase the damage die size of your claws and jaws by one step."
+  },
+  {
+    "feat_name": "Powerful Alchemy",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 8,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Alchemical items you create on the fly are particularly potent. When you use Quick Alchemy to create an infused alchemical item that allows a saving throw, you can change its DC to your class DC."
+  },
+  {
+    "feat_name": "Sticky Bomb",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 8,
+    "traits": ["Additive", "Alchemist"],
+    "actions": "FREE",
+    "frequency": "once per round",
+    "trigger": "You use Quick Alchemy to craft an alchemical bomb, and that bomb’s level is at least 2 levels lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "You mix in an additive to make your bomb’s contents adhere to the target and continue to deal damage. A creature that takes a direct hit from one of your sticky bombs also takes persistent damage equal to and of the same type as the bomb’s splash damage. If the bomb already deals persistent damage, combine the two amounts."
+  },
+  {
+    "feat_name": "Elastic Mutagen",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 10,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You can cause your body to twist and flow like the quicksilver within your mutagens. Whenever you are under the effects of a quicksilver mutagen you created, you can stretch your legs and Step up to 10 feet, and you can squish and compress your body, allowing you to make it through tight spaces as if you were one size smaller, in addition to any effect from Squeezing."
+  },
+  {
+    "feat_name": "Expanded Splash",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 10,
+    "traits": ["Alchemist"],
+    "prerequisites": "Calculated Splash",
+    "short_description": "",
+    "description": "The particularly volatile compounds that you brew into your bombs result in them creating especially large and powerful explosions. When you throw an alchemical bomb you created and that bomb has the splash trait, you can add your Intelligence modifier to the bomb’s usual splash damage, and it deals splash damage to every creature within 10 feet of the target."
+  },
+  {
+    "feat_name": "Greater Debilitating Bomb",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 10,
+    "traits": ["Alchemist"],
+    "prerequisites": "Debilitating Bomb",
+    "short_description": "",
+    "description": "You have learned enhanced techniques and alchemical secrets that allow you to expand the range of effects you can impose with your bombs. When you use Debilitating Bomb, add the following to the list you can choose from: clumsy 1, enfeebled 1, stupefied 1, or –10-foot status penalty to Speeds."
+  },
+  {
+    "feat_name": "Merciful Elixir",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 10,
+    "traits": ["Additive", "Alchemist"],
+    "actions": "FREE",
+    "frequency": "once per round",
+    "trigger": "You craft an elixir of life using Quick Alchemy, and that elixir is at least 2 levels lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "You mix a special additive into your elixir that calms the drinker’s body and mind. The elixir of life attempts to counteract one fear effect or one effect imposing the paralyzed condition on the drinker."
+  },
+  {
+    "feat_name": "Potent Poisoner",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 10,
+    "traits": ["Alchemist"],
+    "prerequisites": "Powerful Alchemy",
+    "short_description": "",
+    "description": "By concentrating your poisons’ toxic components, you make them harder for victims to resist. When you craft an alchemical item with the poison trait by any means, the DC is increased by up to 4, to a maximum of your class DC."
+  },
+  {
+    "feat_name": "Extended Elixir",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 12,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Integrating your own personal energy into the elixirs you create causes them to affect you for longer. When you consume one of your alchemical items that has the elixir and infused traits and a duration of 1 minute or longer, that elixir’s duration is doubled."
+  },
+  {
+    "feat_name": "Invincible Mutagen",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 12,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "The fortifying additives you brew into your mutagens make your juggernaut form impervious. Whenever you’re affected by a juggernaut mutagen you created, you gain resistance to all physical damage equal to your Intelligence modifier (minimum 0)."
+  },
+  {
+    "feat_name": "Uncanny Bombs",
+    "source": "Core Rulebook pg. 79",
+    "level_requirement": 12,
+    "traits": ["Alchemist"],
+    "prerequisites": "Far Lobber",
+    "short_description": "",
+    "description": "You lob bombs unerringly, despite obstructions or distance. When you throw an alchemical item with the bomb trait, its range increment increases to 60 feet, you reduce any circumstance bonus to the target’s AC from cover by 1, and you automatically succeed at the flat check when targeting a concealed creature."
+  },
+  {
+    "feat_name": "Glib Mutagen",
+    "source": "Core Rulebook pg. 80",
+    "level_requirement": 14,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Your silvertongue mutagen transcends languages and plausibility. When affected by a silvertongue mutagen you have created, you ignore circumstance penalties to Deception, Diplomacy, Intimidation, and Performance checks. In addition, your words transcend linguistic barriers; everyone listening to you speak hears your words as if you were speaking in their own language (though you do not actually speak that language, nor does this ability allow you to understand any additional languages)."
+  },
+  {
+    "feat_name": "Greater Merciful Elixir",
+    "source": "Core Rulebook pg. 80",
+    "level_requirement": 14,
+    "traits": ["Alchemist"],
+    "prerequisites": "Merciful Elixir",
+    "short_description": "",
+    "description": "Your additives contain panaceas that can remedy a plethora of maladies. When you use Merciful Elixir, your elixir can instead attempt to counteract the blinded, deafened, sickened, or slowed condition."
+  },
+  {
+    "feat_name": "True Debilitating Bomb",
+    "source": "Core Rulebook pg. 80",
+    "level_requirement": 14,
+    "traits": ["Alchemist"],
+    "prerequisites": "Greater Debilitating Bomb",
+    "short_description": "",
+    "description": "Ever inventive, you have discovered increasingly devastating ways for your bombs to impede and hamper your foes. When you use Debilitating Bomb, add the following to the list of effects you can choose from: enfeebled 2, stupefied 2, or a –15-foot status penalty to Speeds. If you instead apply one of the effects listed in Debilitating Bomb, the target avoids the effect only if the result of its saving throw is a critical success."
+  },
+  {
+    "feat_name": "Eternal Elixir",
+    "source": "Core Rulebook pg. 80",
+    "level_requirement": 16,
+    "traits": ["Alchemist"],
+    "prerequisites": "Extend Elixir",
+    "short_description": "",
+    "description": "Your body readily accepts and retains minor changes. When you drink one of your alchemical items that has the elixir and infused traits and a duration of 1 minute or more, you can make the elixir’s duration indefinite. You can do so only if the elixir’s level is half your level or lower. If you later consume a different elixir and make it indefinite, the effect of the previous indefinite elixir ends."
+  },
+  {
+    "feat_name": "Exploitive Bomb",
+    "source": "Core Rulebook pg. 80",
+    "level_requirement": 16,
+    "traits": ["Additive", "Alchemist"],
+    "actions": "FREE",
+    "frequency": "once per round",
+    "trigger": "You craft an alchemical bomb using Quick Alchemy that’s at least 2 levels lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "You mix a substance into the bomb to foil resistances. The bomb reduces any resistance the enemy has to its damage type by an amount equal to your level, but only for that attack."
+  },
+  {
+    "feat_name": "Genius Mutagen",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 16,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Specialized tweaks to your formula that supplements your genius considerably broaden the benefits you gain from cognitive mutagens. When you’re affected by a cognitive mutagen you created, you also gain the mutagen’s item bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks. In addition, you can communicate telepathically with creatures within 60 feet with whom you share a language. The communication is two-way once you establish it, so a creature you contact can also communicate with you."
+  },
+  {
+    "feat_name": "Persistent Mutagen",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 16,
+    "traits": ["Alchemist"],
+    "prerequisites": "Extend Elixir",
+    "short_description": "",
+    "description": "You’ve trained your physical form to remain stable within the a given altered state. Once per day, when you consume an alchemical item with the infused and mutagen traits that you have crafted, you can retain its effects until the next time you make your daily preparations instead of its normal duration."
+  },
+  {
+    "feat_name": "Improbable Elixirs",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 18,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Your mastery of alchemical secrets enables you to replicate effects most believe can be achieved only via magic. Select a number of potions equal to your Intelligence modifier (minimum 1) of 9th level or lower. You gain formulas to Craft these potions as alchemical items with the elixir trait. When Crafting these alchemical elixirs, you can substitute alchemical reagents for an equal value of magical components, and you can use alchemist’s tools instead of any other required tool kits. Other than that, the formula does not change. Once you’ve chosen the potion formulas, they can’t be changed."
+  },
+  {
+    "feat_name": "Mindblank Mutagen",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 18,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "With a minor adjustment of ratios in the formula for your serene mutagen, you gain mental protections. When you’re affected by a serene mutagen you created, detection, revelation, and scrying effects of 9th level or lower detect nothing from you or your possessions and auras. For instance, detect magic would still detect other magic in the area, but not any magic on you."
+  },
+  {
+    "feat_name": "Miracle Worker",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 18,
+    "traits": ["Alchemist"],
+    "frequency": "once every 10 minutes",
+    "short_description": "",
+    "description": "Your alchemical mastery can resuscitate the recently slain. You can administer a true elixir of life to a creature who has been dead for no more than 2 rounds. When you do, that creature is immediately returned to life with 1 Hit Point and becomes wounded 1."
+  },
+  {
+    "feat_name": "Perfect Debilitation",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 18,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You have perfected the formulas for bombs that impede your enemies. When you use Debilitating Bomb, your target avoids the condition the bomb imposes only if it critically succeeds at its saving throw."
+  },
+  {
+    "feat_name": "Craft PHILOSOPHER’S STONE",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 20,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "Your research has paid off, culminating in the legendary philosopher’s stone. You learn the formula for the philosopher’s stone (page 554) and can add it to your formula book."
+  },
+  {
+    "feat_name": "Mega Bomb",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 20,
+    "traits": ["Additive", "Alchemist"],
+    "prerequisites": "Expanded Splash",
+    "actions": "1_ACTION",
+    "requirements": "You are holding an infused alchemical bomb you crafted, with a level at least 3 lower than your advanced alchemy level.",
+    "short_description": "",
+    "description": "You add an incredibly powerful additive to a held bomb to create a mega bomb, greatly increasing its area and power. You use an Interact action to throw the mega bomb, rather than Strike, and you don’t make an attack roll. The mega bomb affects creatures in a 30-foot-radius burst, centered within 60 feet of you. The bomb deals damage as if each creature were the primary target, with a basic Reflex save. On a failed save, a creature also takes any extra effects that affect a primary target (such as flat-footed from bottled lightning). While all targets in the area take splash damage as primary targets, there is no further splash beyond that area. If your next action after creating a mega bomb isn’t an Interact action to throw it, the mega bomb denatures and loses all effects."
+  },
+  {
+    "feat_name": "Perfect Mutagen",
+    "source": "Core Rulebook pg. 81",
+    "level_requirement": 20,
+    "traits": ["Alchemist"],
+    "short_description": "",
+    "description": "You have enhanced the formulas for your mutagens, aligning them perfectly to your physiology. When under the effect of a mutagen you crafted, you do not suffer its drawback."
+  },
+  {
+    "feat_name": "Additional Lore",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Lore",
+    "description": "Your knowledge has expanded to encompass a new field. Choose an additional Lore skill subcategory. You become trained in it. At 3rd, 7th, and 15th levels, you gain an additional skill increase you can apply only to the chosen Lore subcategory.",
+    "special": "You can select this feat more than once. Each time you must select a new subcategory of Lore and you gain the additional skill increases to that subcategory for the listed levels."
+  },
+  {
+    "feat_name": "Adopted Ancestry",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General"],
+    "short_description": "",
+    "description": "You’re fully immersed in another ancestry’s culture and traditions, whether born into them, earned through rite of passage, or bonded through a deep friendship or romance. Choose a common ancestry. You can select ancestry feats from the ancestry you chose, in addition to your character’s own ancestry, as long as the ancestry feats don’t require any physiological feature that you lack, as determined by the GM."
+  },
+  {
+    "feat_name": "Alchemical Crafting",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Crafting",
+    "short_description": "",
+    "description": "You can use the Craft activity to create alchemical items. When you select this feat, you immediately add the formulas for four common 1st-level alchemical items to your formula book."
+  },
+  {
+    "feat_name": "Ancestral Paragon",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 3,
+    "traits": ["General"],
+    "short_description": "",
+    "description": "Whether through instinct, study, or magic, you feel a deeper connection to your ancestry. You gain a 1st-level ancestry feat."
+  },
+  {
+    "feat_name": "Arcane Sense",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Arcana",
+    "short_description": "",
+    "description": "Your study of magic allows you to instinctively sense its presence. You can cast 1st-level detect magic at will as an arcane innate spell. If you’re a master in Arcana, the spell is heightened to 3rd level; if you’re legendary, it is heightened to 4th level."
+  },
+  {
+    "feat_name": "Armor Proficiency",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General"],
+    "description": "You become trained in light armor. If you already were trained in light armor, you gain training in medium armor. If you were trained in both, you become trained in heavy armor.",
+    "special": "You can select this feat more than once. Each time, you become trained in the next type of armor above."
+  },
+  {
+    "feat_name": "Assurance",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["Fortune", "General", "Skill"],
+    "prerequisites": "trained in at least one skill",
+    "description": "Even in the worst circumstances, you can perform basic tasks. Choose a skill you’re trained in. You can forgo rolling a skill check for that skill to instead receive a result of 10 + your proficiency bonus (do not apply any other bonuses, penalties, or modifiers).",
+    "special": "You can select this feat multiple times. Each time, choose a different skill and gain the benefits for that skill."
+  },
+  {
+    "feat_name": "Automatic Knowledge",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 2,
+    "traits": ["General", "Skill"],
+    "prerequisites": "expert in a skill with the Recall Knowledge action, Assurance in that skill",
+    "description": "You know basic facts off the top of your head. Choose a skill you’re an expert in that has the Recall Knowledge action and for which you have the Assurance feat. You can use the Recall Knowledge action with that skill as a free action once per round. If you do, you must use Assurance on the skill check.",
+    "special": "You can select this feat multiple times, choosing a different skill each time. You can use Automatic Knowledge with any skills you have chosen, but you can still use Automatic Knowledge only once per round."
+  },
+  {
+    "feat_name": "Bargain Hunter",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Diplomacy",
+    "description": "You can Earn Income (page 236) using Diplomacy, spending your days hunting for bargains and reselling at a profit. You can also spend time specifically sniffing out a great bargain on an item; this works as if you were using Earn Income with Diplomacy, except instead of gaining money, you purchase the item at a discount equal to the money you would have gained, gaining the item for free if your earned income equals or exceeds its cost. Finally, if you select Bargain Hunter during character creation at 1st level, you start play with an additional 2 gp."
+  },
+  {
+    "feat_name": "Battle Cry",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 7,
+    "traits": ["General", "Skill"],
+    "prerequisites": "master in Intimidation",
+    "short_description": "",
+    "description": "When you roll initiative, you can yell a mighty battle cry and Demoralize an observed foe as a free action. If you’re legendary in Intimidation, you can use a reaction to Demoralize your foe when you critically succeed at an attack roll."
+  },
+  {
+    "feat_name": "Battle Medicine",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 1,
+    "traits": ["General", "Healing", "Manipulate", "Skill"],
+    "prerequisites": "trained in Medicine",
+    "actions": "1_ACTION",
+    "short_description": "",
+    "description": "You can patch up yourself or an adjacent ally, even in combat. Attempt a Medicine check with the same DC as for Treat Wounds and provide the corresponding amount of healing. As with Treat Wounds, you can attempt checks against higher DCs if you have the minimum proficiency rank. The target is then temporarily immune to your Battle Medicine for 1 day."
+  },
+  {
+    "feat_name": "Bizarre Magic",
+    "source": "Core Rulebook pg. 258",
+    "level_requirement": 7,
+    "traits": ["General", "Skill"],
+    "prerequisites": "master in Occultism",
+    "short_description": "",
+    "description": "You can draw upon strange variations in your spellcasting, whether or not you can cast occult spells. The DCs to Recognize Spells you cast and Identify Magic you use increase by 5."
+  },
+  {
+    "feat_name": "Bonded Animal",
+    "source": "Core Rulebook pg. 259",
+    "level_requirement": 2,
+    "traits": ["Downtime", "General", "Skill"],
+    "prerequisites": "expert in Nature",
+    "short_description": "",
+    "description": "You forge strong connections with animals. You can spend 7 days of downtime trying to bond with a normal animal (not a companion or other special animal). After this duration, attempt a DC 20 Nature check. If successful, you bond with the animal. The animal is permanently helpful to you, unless you do something egregious to break your bond. A helpful animal is easier to direct, as described under Command an Animal on page 249.<br />&emsp;Bonding with a new animal ends any previous bond you had. You can’t have both a bonded animal and an animal companion (though you can have both a bonded animal and a familiar)."
+  },
+  {
+    "feat_name": "Breath Control",
+    "source": "Core Rulebook pg. 259",
+    "level_requirement": 1,
+    "traits": ["General"],
+    "short_description": "",
+    "description": "You have incredible breath control, which grants you advantages when air is hazardous or sparse. You can hold your breath for 25 times as long as usual before suffocating. You gain a +1 circumstance bonus to saving throws against inhaled threats, such as inhaled poisons, and if you roll a success on such a saving throw, you get a critical success instead."
+  },
+  {
+    "feat_name": "Canny Acumen",
+    "source": "Core Rulebook pg. 259",
+    "level_requirement": 1,
+    "traits": ["General"],
+    "short_description": "",
+    "description": "Your avoidance or observation is beyond the ken of most in your profession. Choose Fortitude saves, Reflex saves, Will saves, or Perception. You become an expert in your choice. At 17th level, you become a master in your choice."
+  },
+  {
+    "feat_name": "Cat Fall",
+    "source": "Core Rulebook pg. 259",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Acrobatics",
+    "short_description": "",
+    "description": "Your catlike aerial acrobatics allow you to cushion your falls. Treat falls as 10 feet shorter. If you’re an expert in Acrobatics, treat falls as 25 feet shorter. If you’re a master in Acrobatics, treat them as 50 feet shorter. If you’re legendary in Acrobatics, you always land on your feet and don’t take damage, regardless of the distance of the fall."
+  },
+  {
+    "feat_name": "Charming Liar",
+    "source": "Core Rulebook pg. 259",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Deception",
+    "short_description": "",
+    "description": "Your charm allows you to win over those you lie to. When you get a critical success using the Lie action, the target’s attitude toward you improves by one step, as though you’d succeeded at using Diplomacy to Make an Impression. This works only once per conversation, and if you critically succeed against multiple targets using the same result, you choose one creature’s attitude to improve. You must be lying to impart seemingly important information, inflate your status, or ingratiate yourself, which trivial or irrelevant lies can’t achieve."
+  },
+  {
+    "feat_name": "Cloud Jump",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 15,
+    "traits": ["General", "Skill"],
+    "prerequisites": "legendary in Athletics",
+    "short_description": "",
+    "description": "Your unparalleled athletic skill allows you to jump impossible distances. Triple the distance you Long Jump (so you could jump 60 feet on a successful DC 20 check). When you High Jump, use the calculation for a Long Jump but don’t triple the distance.<br />&emsp;When you Long Jump or High Jump, you can also increase the number of actions you use (up to the number of actions you have remaining in your turn) to jump even further. For each extra action, add your Speed to the maximum distance you jump."
+  },
+  {
+    "feat_name": "Combat Climber",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Athletics",
+    "short_description": "",
+    "description": "Your techniques allow you to fight as you climb. You’re not flat-footed while Climbing and can Climb with a hand occupied. You must still use another hand and both legs to Climb."
+  },
+  {
+    "feat_name": "Confabulator",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 2,
+    "traits": ["General", "Skill"],
+    "prerequisites": "expert in Deception",
+    "short_description": "",
+    "description": "Even when caught in falsehoods, you pile lie upon lie. Reduce the circumstance bonus a target gains for your previous attempts to Create a Diversion or Lie to it from +4 to +2. If you’re a master in Deception, reduce the bonus to +1, and if you’re legendary, your targets don’t get these bonuses at all."
+  },
+  {
+    "feat_name": "Connections",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 2,
+    "traits": ["General", "Skill"],
+    "prerequisites": "expert in Society, Courtly Graces",
+    "short_description": "",
+    "description": "You have social connections you can leverage to trade favors or meet important people. When you’re in an area with connections (typically a settlement where you’ve spent downtime building connections, or possibly another area in the same nation), you can attempt a Society check to arrange a meeting with an important political figure or ask for a favor in exchange for a later favor of your contact’s choice. The GM decides the DC based on the difficulty of the favor and the figure’s prominence."
+  },
+  {
+    "feat_name": "Continual Recovery",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 2,
+    "traits": ["General", "Skill"],
+    "prerequisites": "expert in Medicine",
+    "short_description": "",
+    "description": "You zealously monitor a patient’s progress to administer treatment faster. When you Treat Wounds, your patient becomes immune for only 10 minutes instead of 1 hour. This applies only to your Treat Wounds activities, not any other the patient receives."
+  },
+  {
+    "feat_name": "Courtly Graces",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in Society",
+    "short_description": "",
+    "description": "You were raised among the nobility or have learned proper etiquette and bearing, allowing you to present yourself as a noble and play games of influence and politics. You can use Society to Make an Impression on a noble, as well as with Impersonate to pretend to be a noble if you aren’t one. If you want to impersonate a specific noble, you still need to use Deception to Impersonate normally, and to Lie when necessary."
+  },
+  {
+    "feat_name": "Craft Anything",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 15,
+    "traits": ["General", "Skill"],
+    "prerequisites": "legendary in Crafting",
+    "short_description": "",
+    "description": "You can find ways to craft just about anything, despite restrictions. As long as you have the appropriate Crafting skill feat (such as Magical Crafting for magic items) and meet the item’s level and proficiency requirement, you ignore just about any other requirement, such as being of a specific ancestry or providing spells. The only exceptions are requirements that add to the item’s cost, including castings of spells that themselves have a cost, and requirements of special items such as the philosopher’s stone that have exclusive means of access and Crafting. The GM decides whether you can ignore a requirement."
+  },
+  {
+    "feat_name": "Diehard",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 1,
+    "traits": ["General"],
+    "short_description": "",
+    "description": "It takes more to kill you than most. You die from the dying condition at dying 5, rather than dying 4."
+  },
+  {
+    "feat_name": "Divine Guidance",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 15,
+    "traits": ["General", "Skill"],
+    "prerequisites": "legendary in Religion",
+    "short_description": "",
+    "description": "You’re so immersed in divine scripture that you find meaning and guidance in your texts in any situation. Spend 10 minutes Deciphering Writing on religious scriptures of your deity or philosophy while thinking about a particular problem or conundrum you face, and then attempt a Religion check (DC determined by the GM). If you succeed, you unearth a relevant passage, parable, or aphorism that can help you move forward or change your thinking to help solve your conundrum. For example, the GM might provide you with a cryptic poem or hint that can guide you to the next step of solving your problem."
+  },
+  {
+    "feat_name": "Dubious Knowledge",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 1,
+    "traits": ["General", "Skill"],
+    "prerequisites": "trained in a skill with the Recall Knowledge action",
+    "short_description": "",
+    "description": "You’re a treasure trove of information, but not all of it comes from reputable sources. When you fail a Recall Knowledge check using any skill, you learn a bit of true knowledge and a bit of erroneous knowledge, but you don’t have any way to differentiate which is which."
+  },
+  {
+    "feat_name": "Expeditious Search",
+    "source": "Core Rulebook pg. 260",
+    "level_requirement": 7,
+    "traits": ["General"],
+    "prerequisites": "master in Perception",
+    "short_description": "",
+    "description": "You have a system that lets you search at great speed, finding details and secrets twice as quickly as others can. When Searching, you take half as long as usual to Search a given area. This means that while exploring, you double the Speed you can move while ensuring you’ve Searched an area before walking into it (up to half your Speed). If you’re legendary in Perception, you instead Search areas four times as quickly."
+  }
+]

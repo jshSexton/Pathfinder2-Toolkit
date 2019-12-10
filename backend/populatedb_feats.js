@@ -1,15 +1,15 @@
 #! /usr/bin/env node
 
-console.log('This script populates or updates some test spells to your database.');
+console.log('This script populates or updates some test feats to your database.');
 
 // Get arguments passed on command line
 const async = require('async');
-const Spell = require('./models/Spell');
+const Feat = require('./models/Feat');
 const Trait = require('./models/Trait');
 const Affliction = require('./models/Affliction');
 
 const fs = require('fs');
-const spellsFromJson = JSON.parse(fs.readFileSync('temp-data/spellslist.json', 'utf8'));
+const featsFromJson = JSON.parse(fs.readFileSync('temp-data/featslist.json', 'utf8'));
 
 const mongoose = require('mongoose');
 const mongoDB =
@@ -18,19 +18,19 @@ mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, { useNewUrlParser: true }).then(
   () => {
     console.log('________Database connected successfully________');
-    addSpellsToDB();
+    addFeatsToDB();
   },
   error => {
     console.error(`Could not connected to database: ${error}`);
   }
 );
 
-function spellCreate(spellData, cb) {
-  if (!spellData.traits) {
-    spellData.traits = [];
+function featCreate(featData, cb) {
+  if (!featData.traits) {
+    featData.traits = [];
   }
 
-  let getTraitIdFunctions = spellData.traits.map(trait => {
+  let getTraitIdFunctions = featData.traits.map(trait => {
     return callback => {
       Trait.find({ trait_name: trait })
         .lean()
@@ -38,7 +38,7 @@ function spellCreate(spellData, cb) {
           if (error) {
             console.error('GET_TRAIT_ID_ERROR: ', error, `Find trait: ${trait}`);
           } else if (data.length === 0) {
-            console.error('FAILED_TO_FIND_ID', `Find trait: ${trait}`);
+            console.error('FAILED_TO_FIND_ID');
             callback('FAILED_TO_FIND_ID', null);
           } else {
             callback(null, data[0]);
@@ -50,20 +50,20 @@ function spellCreate(spellData, cb) {
   let trait_ids = [];
   async.parallel(getTraitIdFunctions, (error, results) => {
     if (error) {
-      cb(`TRAIT_ID_ERROR: Name-${spellData.spell_name}`, null);
+      cb(`TRAIT_ID_ERROR: Name-${featData.feat_name}`, null);
       return;
     }
 
     trait_ids = results.map(res => {
       return res._id;
     });
-    spellData.traits = trait_ids;
+    featData.traits = trait_ids;
 
-    if (spellData.affliction) {
+    if (featData.affliction) {
       // Create and Save affliction
       Affliction.findOneAndUpdate(
-        { affliction_name: spellData.affliction.affliction_name },
-        spellData.affliction,
+        { affliction_name: featData.affliction.affliction_name },
+        featData.affliction,
         { upsert: true, new: true },
         (err, afflictionResult) => {
           if (err) {
@@ -72,49 +72,44 @@ function spellCreate(spellData, cb) {
           }
           console.log('-------------------');
           console.log('New Affliction: ', afflictionResult);
-          spellData.affliction = afflictionResult.id;
-          spellCreateSaveToDB(spellData, cb);
+          featData.affliction = afflictionResult.id;
+          featCreateSaveToDB(featData, cb);
         }
       );
     } else {
-      spellCreateSaveToDB(spellData, cb);
+      featCreateSaveToDB(featData, cb);
     }
   });
 }
 
-function spellCreateSaveToDB(spellData, cb) {
-  Spell.findOneAndUpdate(
-    { spell_name: spellData.spell_name },
-    spellData,
-    { upsert: true, new: true },
-    (err, spellResult) => {
-      if (err) {
-        cb(err, null);
-        return;
-      }
-      console.log('*****************************');
-      console.log('New Spell: ', spellResult);
-      cb(null, spellResult);
+function featCreateSaveToDB(featData, cb) {
+  Feat.findOneAndUpdate({ feat_name: featData.feat_name }, featData, { upsert: true, new: true }, (err, featResult) => {
+    if (err) {
+      cb(err, null);
+      return;
     }
-  );
+    console.log('*****************************');
+    console.log('New Feat: ', featResult);
+    cb(null, featResult);
+  });
 }
 
-function addSpellsToDB() {
-  let spellSaveFunctions = spellsFromJson.map(spell => {
+function addFeatsToDB() {
+  let featSaveFunctions = featsFromJson.map(feat => {
     return callback => {
-      spellCreate(spell, callback);
+      featCreate(feat, callback);
     };
   });
 
   async.series(
-    spellSaveFunctions,
+    featSaveFunctions,
     // Optional callback
     function(err, results) {
       if (err) {
         console.error('FINAL ERR: ' + err);
       } else {
         console.log('------------------------------**********************------------------------------');
-        console.log('SPELLS Results: ', results);
+        console.log('FEATS Results: ', results);
       }
 
       // All done, disconnect from database

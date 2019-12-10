@@ -5,8 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgPipesModule } from 'angular-pipes';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng5SliderModule } from 'ng5-slider';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from '../in-memory-data.service';
 import { FeatLookupComponent } from './feat-lookup.component';
 import { FeatListComponent } from './feat-list/feat-list.component';
 import { FeatLookupRoutingModule } from '@app/feat-lookup/feat-lookup-routing.module';
@@ -25,11 +23,7 @@ import { SharedModule } from '@app/shared';
     HttpClientModule,
     ReactiveFormsModule,
     Ng5SliderModule,
-    SharedModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-      passThruUnknownUrl: false
-    })
+    SharedModule
   ],
   providers: [FeatLookupService, FeatLookupHttpErrorHandlerService]
 })

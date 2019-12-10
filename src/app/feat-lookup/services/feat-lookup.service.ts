@@ -12,8 +12,8 @@ import {
   providedIn: 'root'
 })
 export class FeatLookupService {
-  traitsUrl = 'api/traits'; // URL to web api
-  featsUrl = 'api/feats'; // URL to web api
+  traitsUrl = '/traits'; // URL to web api
+  featsUrl = '/feats'; // URL to web api
   private handleError: HandleError;
 
   constructor(private http: HttpClient, httpErrorHandler: FeatLookupHttpErrorHandlerService) {

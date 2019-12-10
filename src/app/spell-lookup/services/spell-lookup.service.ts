@@ -12,8 +12,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SpellLookupService {
-  traitsUrl = 'api/traits'; // URL to web api
-  spellsUrl = 'api/spells'; // URL to web api
+  traitsUrl = '/traits'; // URL to web api
+  spellsUrl = '/spells'; // URL to web api
   private handleError: HandleError;
 
   constructor(private http: HttpClient, httpErrorHandler: SpellLookupHttpErrorHandlerService) {

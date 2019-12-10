@@ -69,6 +69,7 @@ export interface Spell extends Feature {
   traditions: Array<SpellTraditions>;
   castingTime: StandardActionTypes | string;
   components: Array<SpellComponents | string>;
+  cost: string;
   requirements: string;
   trigger: string;
   range: string;
