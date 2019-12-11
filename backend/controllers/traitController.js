@@ -9,6 +9,15 @@ exports.trait_list = (req, res, next) => {
         return next(error);
       }
 
-      res.json(result);
+      // Remap db fields to fields front-end expects
+      res.json(
+        result.map(trait => {
+          return {
+            id: trait._id,
+            name: trait.trait_name,
+            type: trait.types
+          };
+        })
+      );
     });
 };

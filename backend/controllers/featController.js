@@ -19,6 +19,35 @@ exports.feat_list = (req, res, next) => {
       if (error) {
         return next(error);
       }
-      res.json(result);
+      // Remap db fields to fields front-end expects
+      res.json(
+        result.map(feat => {
+          return {
+            id: feat._id,
+            name: feat.feat_name,
+            traits: feat.traits.map(trait => {
+              return {
+                id: trait._id,
+                name: trait.trait_name,
+                type: trait.types
+              };
+            }),
+            description: feat.description,
+            shortDesc: feat.short_description,
+            successText: feat.successText,
+            critSuccessText: feat.critSuccessText,
+            failText: feat.failText,
+            critFailText: feat.critFailText,
+            actions: feat.actions,
+            levelRequirement: feat.level_requirement,
+            prerequisites: feat.prerequisites,
+            frequency: feat.frequency,
+            cost: feat.cost,
+            trigger: feat.trigger,
+            requirements: feat.requirements,
+            special: feat.special
+          };
+        })
+      );
     });
 };
