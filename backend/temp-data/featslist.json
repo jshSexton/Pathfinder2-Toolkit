@@ -1,6 +1,6 @@
 [
   {
-    "feat_name": "",
+    "feat_name": "Template",
     "source": "Core Rulebook pg. xxx",
     "level_requirement": 1,
     "traits": [""],
@@ -87,7 +87,7 @@
     "description": "You’ve learned cunning techniques to get the best effects out of your dwarven weapons. Whenever you critically hit using a battle axe, pick, warhammer, or a dwarf weapon, you apply the weapon’s critical specialization effect."
   },
   {
-    "feat_name": "MOUNTAIN’S STOUTNESS",
+    "feat_name": "Mountain’s Stoutness",
     "source": "Core Rulebook pg. 37",
     "level_requirement": 9,
     "traits": ["Dwarf"],

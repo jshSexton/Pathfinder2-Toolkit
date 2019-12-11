@@ -1,5 +1,49 @@
 [
   {
+    "spell_name": "Template",
+    "source": "Core Rulebook pg. xxx",
+    "level": 0,
+    "traits": [""],
+    "traditions": [""],
+    "casting_time": "",
+    "component": [""],
+    "cost": "",
+    "requirements": "",
+    "trigger": "",
+    "range": "",
+    "area": "",
+    "targets": "",
+    "saving_throw": "",
+    "duration": "",
+    "short_description": "",
+    "description": "",
+    "critSuccessText": "",
+    "successText": "",
+    "failText": "",
+    "critFailText": "",
+    "heightened": [
+      {
+        "trigger_level": "",
+        "description": ""
+      }
+    ],
+    "affliction": {
+      "affliction_name": "",
+      "source": "Core Rulebook pg. xxx",
+      "level": 0,
+      "type": "",
+      "onset": "",
+      "rule_text": "",
+      "stages": [
+        {
+          "level": 0,
+          "effect": "",
+          "duration": ""
+        }
+      ]
+    }
+  },
+  {
     "spell_name": "Abyssal Plague",
     "source": "Core Rulebook pg. 316",
     "level": 5,
