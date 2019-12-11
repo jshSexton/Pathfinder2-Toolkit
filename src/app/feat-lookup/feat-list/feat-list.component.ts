@@ -63,7 +63,7 @@ export class FeatListComponent implements OnInit {
   }
 
   ngOnInit() {
-    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats()]).subscribe(([traitRes, featRes]) => {
+    forkJoin([this.featService.getAllTraits(), this.featService.getFeats()]).subscribe(([traitRes, featRes]) => {
       this.featsData = featRes;
       this.traitsData = traitRes;
 

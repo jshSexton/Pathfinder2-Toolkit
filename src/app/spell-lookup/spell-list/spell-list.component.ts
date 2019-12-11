@@ -61,14 +61,12 @@ export class SpellListComponent implements OnInit {
   }
 
   ngOnInit() {
-    forkJoin([this.spellService.getAllTraits(), this.spellService.getSpells().pipe(delay(3000))]).subscribe(
-      ([traitRes, spellRes]) => {
-        this.spellsData = spellRes;
-        this.traitsData = traitRes;
+    forkJoin([this.spellService.getAllTraits(), this.spellService.getSpells()]).subscribe(([traitRes, spellRes]) => {
+      this.spellsData = spellRes;
+      this.traitsData = traitRes;
 
-        this.initAfterGetData();
-      }
-    );
+      this.initAfterGetData();
+    });
   }
 
   initAfterGetData() {

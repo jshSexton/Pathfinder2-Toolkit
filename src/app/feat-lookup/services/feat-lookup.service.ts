@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Feat, Trait } from '@app/shared/app-interfaces-enums';
+import { Feat, StandardActionTypes, Trait } from '@app/shared/app-interfaces-enums';
 import {
   FeatLookupHttpErrorHandlerService,
   HandleError
@@ -20,14 +20,37 @@ export class FeatLookupService {
     this.handleError = httpErrorHandler.createHandleError('FeatLookupService');
   }
 
-  getAllFeats(): Observable<Array<Feat>> {
-    return this.http.get<Array<Feat>>(this.featsUrl).pipe(catchError(this.handleError('getFeats', [])));
+  getFeatById(featId: string): Observable<Feat> {
+    return this.http
+      .get<Feat>(`${this.featsUrl}/single`, {
+        params: new HttpParams().set('featId', featId)
+      })
+      .pipe(catchError(this.handleError(`getFeat: id=${featId}`, {} as Feat)));
   }
 
-  getFeatById(featId: number): Observable<Feat> {
+  getFeats(
+    filterName: string = '',
+    filterLevelMin: number = 1,
+    filterLevelMax: number = 20,
+    filterAction: StandardActionTypes | string = '',
+    filterTraits: Array<Trait> = [],
+    sortOrder: string = 'asc',
+    pageNumber: number = 0,
+    pageSize: number = 50
+  ): Observable<Array<Feat>> {
     return this.http
-      .get<Feat>(`${this.featsUrl}/${featId}`)
-      .pipe(catchError(this.handleError(`getFeat: id=${featId}`, {} as Feat)));
+      .get<Array<Feat>>(`${this.featsUrl}/list`, {
+        params: new HttpParams()
+          .set('filterName', filterName)
+          .set('filterLevelMin', filterLevelMin.toString())
+          .set('filterLevelMax', filterLevelMax.toString())
+          .set('filterAction', filterAction)
+          .set('filterTraits', filterTraits.join())
+          .set('sortOrder', sortOrder)
+          .set('pageNumber', pageNumber.toString())
+          .set('pageSize', pageSize.toString())
+      })
+      .pipe(catchError(this.handleError('getFeats', [])));
   }
 
   getAllTraits(): Observable<Array<Trait>> {

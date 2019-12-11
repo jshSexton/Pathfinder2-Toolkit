@@ -25,7 +25,7 @@ export class FeatItemComponent implements OnInit {
   }
 
   getFeat(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.featService.getFeatById(id).subscribe(featData => {
       if (featData.constructor === Object && Object.entries(featData).length === 0) {
         // API returned empty feat object, handle it
