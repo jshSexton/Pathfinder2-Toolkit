@@ -1,0 +1,1412 @@
+[
+  {
+    "spell_name": "Template",
+    "source": "Core Rulebook pg. xxx",
+    "level": 0,
+    "traits": [""],
+    "traditions": [""],
+    "casting_time": "",
+    "component": [""],
+    "cost": "",
+    "requirements": "",
+    "trigger": "",
+    "range": "",
+    "area": "",
+    "targets": "",
+    "saving_throw": "",
+    "duration": "",
+    "short_description": "",
+    "description": "",
+    "critSuccessText": "",
+    "successText": "",
+    "failText": "",
+    "critFailText": "",
+    "heightened": [
+      {
+        "trigger_level": "",
+        "description": ""
+      }
+    ],
+    "affliction": {
+      "affliction_name": "",
+      "source": "Core Rulebook pg. xxx",
+      "level": 0,
+      "type": "",
+      "onset": "",
+      "rule_text": "",
+      "stages": [
+        {
+          "level": 0,
+          "effect": "",
+          "duration": ""
+        }
+      ]
+    }
+  },
+  {
+    "spell_name": "Abyssal Plague",
+    "source": "Core Rulebook pg. 316",
+    "level": 5,
+    "traits": ["Attack", "Chaotic", "Disease", "Evil", "Necromancy"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "saving_throw": "FORTITUDE",
+    "short_description": "",
+    "description": "Your touch afflicts the target with Abyssal plague, which siphons fragments of their soul away to empower the Abyss. The effect is based on the target’s Fortitude save.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target takes 2 evil damage per spell level, and takes a –2 status penalty to saves against Abyssal plague for 1 day or until the target contracts it, whichever comes first.",
+    "failText": "The target is afflicted with Abyssal plague at stage 1.",
+    "critFailText": "The target is afflicted with Abyssal plague at stage 2.",
+    "affliction": {
+      "affliction_name": "Abyssal Plague",
+      "source": "Core Rulebook pg. 316",
+      "level": 9,
+      "type": "disease",
+      "rule_text": "The target can’t recover from the drained condition from Abyssal plague until the disease is cured.",
+      "stages": [
+        {
+          "level": 1,
+          "effect": "drained 1",
+          "duration": "(1 day)"
+        },
+        {
+          "level": 2,
+          "effect": "drained increased by 2",
+          "duration": "(1 day)"
+        }
+      ]
+    }
+  },
+  {
+    "spell_name": "Acid Arrow",
+    "source": "Core Rulebook pg. 316",
+    "level": 2,
+    "traits": ["Acid", "Attack", "Evocation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "trigger": "1 creature or object",
+    "range": "120 feet",
+    "short_description": "",
+    "description": "You conjure an arrow of acid that continues corroding the target after it hits. Make a spell attack against the target. On a hit, you deal 3d8 acid damage plus 1d6 persistent acid damage. On a critical hit, double the initial damage, but not the persistent damage.",
+    "heightened": [
+      {
+        "trigger_level": "(+2)",
+        "description": "The initial damage increases by 2d8, and the persistent acid damage increases by 1d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Acid Splash",
+    "source": "Core Rulebook pg. 316",
+    "level": 0,
+    "traits": ["Acid", "Attack", "Cantrip", "Evocation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature or object",
+    "short_description": "",
+    "description": "You splash a glob of acid that splatters creatures and objects alike. Make a spell attack. If you hit, you deal 1d6 acid damage plus 1 splash acid damage. On a critical success, the target also takes 1 persistent acid damage.",
+    "heightened": [
+      {
+        "trigger_level": "(3rd)",
+        "description": "The initial damage increases to 1d6 + your spellcasting ability modifier, and the persistent damage increases to 2."
+      },
+      {
+        "trigger_level": "(5th)",
+        "description": "The initial damage increases to 2d6 + your spellcasting ability modifier, the persistent damage increases to 3, and the splash damage increases to 2."
+      },
+      {
+        "trigger_level": "(7th)",
+        "description": "The initial damage increases to 3d6 + your spellcasting ability modifier, the persistent damage increases to 4, and the splash damage increases to 3."
+      },
+      {
+        "trigger_level": "(9th)",
+        "description": "The initial damage increases to 4d6 + your spellcasting ability modifier, the persistent damage increases to 5, and the splash damage increases to 4."
+      }
+    ]
+  },
+  {
+    "spell_name": "Aerial Form",
+    "source": "Core Rulebook pg. 316",
+    "level": 4,
+    "traits": ["Polymorph", "Transmutation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You harness your mastery of primal forces to reshape your body into a Medium flying animal battle form. When you cast this spell, choose bat, bird, pterosaur, or wasp. You can decide the specific type of animal (such as an owl or eagle for bird), but this has no effect on the form’s Size or statistics. While in this form, you gain the animal trait. You can Dismiss the spell.<br />&emsp;You gain the following statistics and abilities regardless of which battle form you choose:<ul><li>AC = 18 + your level. Ignore your armor’s check penalty and Speed reduction.</li><li>5 temporary Hit Points</li><li>Low-light vision</li><li>One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can use. You’re trained with them. Your attack modifier is +16, and your damage bonus is +5. These attacks are Dexterity based (for the purpose of the clumsy condition, for example). If your attack modifier for Dexterity-based unarmed attacks is higher, you can use it instead.</li><li>Acrobatics modifier of +16, unless your own modifier is higher.</li></ul>&emsp;You also gain specific abililties based on the form you choose:<ul><li><b>Bat</b> Speed 20 feet, fly Speed 30 feet; precise echolocation 40 feet; <b>Melee</b> [one-action] fangs, <b>Damage</b> 2d8 piercing; <b>Melee</b> [one-action] wing (agile), <b>Damage</b> 2d6 bludgeoning;</li><li><b>Bird</b> Speed 10 feet, fly Speed 50 feet; <b>Melee</b> [one-action] beak, <b>Damage</b> 2d8 piercing; <b>Melee</b> [one-action] talon (agile), <b>Damage</b> 1d10 slashing; </li><li><b>Pterosaur</b> Speed 10 feet, fly Speed 40 feet; imprecise scent 30 feet; <b>Melee</b> [one-action] beak, <b>Damage</b> 3d6 piercing;</li><li><b>Wasp</b> Speed 20 feet, fly Speed 40 feet; <b>Melee</b> [one-action] stinger, <b>Damage</b> 1d8 piercing plus 1d6 persistent poison;</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "5th",
+        "description": "Your battle form is Large and your fly Speed gains a +10-foot status bonus. You must have enough space to expand into or the spell is lost. You instead gain 10 temporary HP, attack modifier +18, damage bonus +8, and Acrobatics +20."
+      },
+      {
+        "trigger_level": "6th",
+        "description": "Your battle form is Huge, your fly Speed gains a +15-foot status bonus, and your attacks have 10-foot reach. You must have enough space to expand into or the spell is lost. You instead gain AC = 21 + your level, 15 temporary HP, attack modifier +21, damage bonus +4 and double damage dice (including persistent damage), and Acrobatics +23."
+      }
+    ]
+  },
+  {
+    "spell_name": "Air Bubble",
+    "source": "Core Rulebook pg. 316",
+    "level": 1,
+    "traits": ["Air", "Conjuration"],
+    "traditions": ["ARCANE", "DIVINE", "PRIMAL"],
+    "casting_time": "REACTION",
+    "component": ["VERBAL"],
+    "trigger": "A creature within range enters an environment where it can't breathe.",
+    "range": "60 feet",
+    "targets": "the triggering creature",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "A bubble of pure air appears around the target’s head, allowing it to breathe normally. The effect ends as soon as the target returns to an environment where it can breathe normally."
+  },
+  {
+    "spell_name": "Air Walk",
+    "source": "Core Rulebook pg. 317",
+    "level": 4,
+    "traits": ["Air", "Transmutation"],
+    "traditions": ["DIVINE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 creature",
+    "duration": "5 minutes",
+    "short_description": "",
+    "description": "The target can walk on air as if it were solid ground. It can ascend and descend in this way at a maximum of a 45-degree angle."
+  },
+  {
+    "spell_name": "Alarm",
+    "source": "Core Rulebook pg. 317",
+    "level": 1,
+    "traits": ["Abjuration"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "requirements": "3 gp silver bell focus",
+    "range": "touch",
+    "duration": "8 hours",
+    "area": "20-foot burst",
+    "short_description": "",
+    "description": "You ward an area to alert you when creatures enter without your permission. When you cast alarm, select a password. Whenever a Small or larger corporeal creature enters the spell’s area without speaking the password, alarm sends your choice of a mental alert (in which case the spell gains the mental trait) or an audible alarm with the sound and volume of a hand bell (in which case the spell gains the auditory trait). Either option automatically awakens you, and the bell allows each creature in the area to attempt a DC 15 Perception check to wake up. A creature aware of the alarm must succeed at a Stealth check against the spell’s DC or trigger the spell when moving into the area.",
+    "heightened": [
+      {
+        "trigger_level": "(3rd)",
+        "description": "You can specify criteria for which creatures sound the alarm spell—for instance, orcs or masked people."
+      }
+    ]
+  },
+  {
+    "spell_name": "Alter Reality",
+    "source": "Core Rulebook pg. 317",
+    "level": 10,
+    "traits": ["Divination"],
+    "traditions": ["OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "short_description": "",
+    "description": "You use your occult lore and the power of your mind to manipulate the spiritual multiverse, resulting in any of the following effects:<ul><li>Duplicate any occult spell of 9th level or lower.</li><li>Duplicate any non-occult spell of 7th level or lower.</li><li>Produce any effect whose power is equivalent to any occult spell 9th level or lower, or non-occult spell 7th level or lower.</li><li>Reverse certain effects that refer to the wish spell</li></ul>At the GM’s discretion, you can try to produce greater effects, but this is dangerous and the spell may have only a partial effect."
+  },
+  {
+    "spell_name": "Anathematic Reprisal",
+    "source": "Core Rulebook pg. 317",
+    "level": 4,
+    "traits": ["Enchantment", "Mental"],
+    "traditions": ["DIVINE"],
+    "casting_time": "REACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "trigger": "A creature performs an act anathema to your deity.",
+    "range": "30 feet",
+    "targets": "the triggering creature",
+    "saving_throw": "WILL",
+    "short_description": "",
+    "description": "You punish a creature that transgresses against your deity, drawing upon the anguish you feel upon seeing one of your deity’s anathema committed.&emsp;You can cast this spell only when a creature actively commits a unique act of anathema. For example, if creating undead were anathema to your deity, you could use anathematic reprisal on a necromancer who had just created undead in front of you, but not on an undead creature just for existing.&emsp;You deal 4d6 mental damage to the target, but a basic Will save can reduce this damage. If it fails, it is also stupefied 1 for 1 round. The creature is then temporarily immune for 1 minute.",
+    "critSuccessText": "",
+    "successText": "",
+    "failText": "",
+    "critFailText": "",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 1d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Animal Form",
+    "source": "Core Rulebook pg. 317",
+    "level": 2,
+    "traits": ["Polymorph", "Transmutation"],
+    "traditions": ["PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You call upon primal energy to transform yourself into a Medium animal battle form. When you first cast this spell, choose ape, bear, bull, canine, cat, deer, frog, shark, or snake. You can decide the specific type of animal (such as lion or snow leopard for cat), but this has no effect on the form’s Size or statistics. While in this form, you gain the animal trait. You can Dismiss the spell.<br />&emsp;You gain the following statistics and abilities regardless of which battle form you choose:<ul><li> AC = 16 + your level. Ignore your armor’s check penalty and Speed reduction.</li><li>5 temporary Hit Points.</li><li>Low-light vision and imprecise scent 30 feet.</li><li>One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can use. You’re trained with them. Your attack modifier is +9, and your damage bonus is +1. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If your unarmed attack bonus is higher, you can use it instead.</li><li>Athletics modifier of +9, unless your own modifier is higher.</ul>&emsp;You also gain specific abilities based on the type of animal you choose:<ul><li><b>Ape</b> Speed 25 feet, climb Speed 20 feet; <b>Melee</b> [one-action] fist, <b>Damage</b> 2d6 bludgeoning.</li><li><b>Bear</b> Speed 30 feet; <b>Melee</b> [one-action] jaws, <b>Damage</b> 2d8 piercing; <b>Melee</b> [one-action] claw (agile), <b>Damage</b> 1d8 slashing.</li><li><b>Bull</b> Speed 30 feet; <b>Melee</b> [one-action] horn, <b>Damage</b> 2d8 piercing.</li><li><b>Canine</b> Speed 40 feet; <b>Melee</b> [one-action] jaws, <b>Damage</b> 2d8 piercing.</li><li><b>Cat</b> Speed 40 feet; <b>Melee</b> [one-action] jaws, <b>Damage</b> 2d6 piercing; <b>Melee</b> [one-action] claw (agile), <b>Damage</b> 1d10 slashing.</li><li><b>Deer</b> Speed 50 feet; <b>Melee</b> [one-action] antler, <b>Damage</b> 2d6 piercing.</li><li><b>Frog</b> Speed 25 feet, swim Speed 25 feet; <b>Melee</b> [one-action] jaws, <b>Damage</b> 2d6 bludgeoning; <b>Melee</b> [one-action] tongue (reach 15 feet), <b>Damage</b> 2d4 bludgeoning.</li><li><b>Shark</b> swim Speed 35 feet; <b>Melee</b> [one-action] jaws, <b>Damage</b> 2d8 piercing; breathe underwater but not in air.</li><li><b>Snake</b> Speed 20 feet, climb Speed 20 feet, swim Speed 20 feet; <b>Melee</b> [one-action] fangs, <b>Damage</b> 2d4 piercing plus 1d6 poison.</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "(3rd)",
+        "description": "You instead gain 10 temporary HP, AC = 17 + your level, attack modifier +14, damage bonus +5, and Athletics +14."
+      },
+      {
+        "trigger_level": "(4th)",
+        "description": "Your battle form is Large and your attacks have 10-foot reach. You must have enough space to expand into or the spell is lost. You instead gain 15 temporary HP, AC = 18 + your level, attack modifier +16, damage bonus +9, and Athletics +16."
+      },
+      {
+        "trigger_level": "(5th)",
+        "description": "Your battle form is Huge and your attacks have 15-foot reach. You must have enough space to expand into or the spell is lost. You instead gain 20 temporary HP, AC = 18 + your level, attack modifier +18, damage bonus +7 and double the number of damage dice, and Athletics +20."
+      }
+    ]
+  },
+  {
+    "spell_name": "Animal Messenger",
+    "source": "Core Rulebook pg. 318",
+    "level": 2,
+    "traits": ["Enchantment", "Mental"],
+    "traditions": ["PRIMAL"],
+    "casting_time": "1 minute",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "duration": "until delivered",
+    "short_description": "",
+    "description": "You offer a gift of food, and an ordinary Tiny wild animal within range approaches to eat it. You imprint the image, direction, and distance of an obvious place or landmark well known to you within the animal. Optionally, you can attach a small object or note up to light Bulk to it. The animal does its best to reach the destination; if it makes it there, it waits nearby until the duration expires, allowing other nonhostile creatures to approach it and remove the attached object.<br />&emsp;If there are no Tiny wild animals in range, the spell is lost."
+  },
+  {
+    "spell_name": "Animal Vision",
+    "source": "Core Rulebook pg. 318",
+    "level": 3,
+    "traits": ["Divination", "Mental"],
+    "traditions": ["PRIMAL"],
+    "casting_time": "1 minute",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "targets": "1 animal",
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "You tap into the target’s senses, allowing you to see, hear, and otherwise sense whatever it senses for the spell’s duration. If the target wishes to prevent you from doing so, it can attempt a Will save, negating the spell on a success, but most animals don’t bother to do so. While tapping into the target’s senses, you can’t use your own body’s senses, but you can change back and forth from your body’s senses to the target’s senses using a single action, which has the concentrate trait."
+  },
+  {
+    "spell_name": "Ant haul",
+    "source": "Core Rulebook pg. 318",
+    "level": 1,
+    "traits": ["Transmutation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 creature",
+    "duration": "8 hours",
+    "short_description": "",
+    "description": "You reinforce the target’s musculoskeletal system to bear more weight. The target can carry 3 more Bulk than normal before becoming encumbered and up to a maximum of 6 more Bulk."
+  },
+  {
+    "spell_name": "Antimagic Field",
+    "source": "Core Rulebook pg. 318",
+    "level": 8,
+    "traits": ["Rare", "Abjuration"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "area": "10-foot emanation",
+    "duration": "sustained up to 1 minute",
+    "short_description": "",
+    "description": "You repel all magic from the target area, preventing spells and other magic from functioning. Spells can’t penetrate the area, magic items cease to function within it, and no one inside can cast spells or use magic abilities. Likewise, spells— such as dispel magic—can’t affect the field itself unless they are of a higher level. Magic effects resume the moment they pass outside the field. For example, a ray fired from one side of the field could target a creature on the other side (as long as caster and target are both outside the field). A summoned creature winks out of existence but reappears if the field moves or ends. Invested magic items cease to function, but they remain invested and resume functioning when they exit the field; the ability boost from an apex item isn’t suppressed within the field. Spells of a higher level than the antimagic field overcome its effects, and can even be cast by a creature within the field.<br />&emsp;The field disrupts only magic, so a +3 longsword still functions as a longsword. Magically created creatures (such as golems) function normally within an antimagic field."
+  },
+  {
+    "spell_name": "Augury",
+    "source": "Core Rulebook pg. 318",
+    "level": 2,
+    "traits": ["Divination", "Prediction"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "10 minutes",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "short_description": "",
+    "description": "You gain a vague glimpse of the future. During the casting of this spell, ask about the results of a particular course of action. The spell can predict results up to 30 minutes into the future and reveals the GM’s best guess among the following outcomes:<ul><li><b>Weal</b> The results will be good.</li><li><b>Woe</b> The results will be bad.</li><li><b>Weal and Woe</b> The results will be a mix of good and bad.</li><li><b>Nothing</b> There won’t be particularly good or bad results.</ul><br />&emsp;The GM rolls a secret DC 6 flat check. On a failure, the result is always “nothing.” This makes it impossible to tell whether a “nothing” result is accurate. If anyone asks about the same topic as the first casting of augury during an additional casting, the GM uses the secret roll result from the first casting. If circumstances change, though, it’s possible to get a different result."
+  },
+  {
+    "spell_name": "Avatar",
+    "source": "Core Rulebook pg. 318",
+    "level": 10,
+    "traits": ["Polymorph", "Transmutation"],
+    "traditions": ["DIVINE"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You transform into an avatar of your deity, assuming a Huge battle form. You must have space to expand or the spell is lost. You have hands in this battle form and can take manipulate actions. You can Dismiss this spell.<br />&emsp;You gain the following statistics and abilities regardless of which deity’s battle form you assume:<ul><li>AC = 25 + your level. Ignore your armor’s check penalty and Speed reduction.</li><li>30 temporary Hit Points.</li><li>Darkvision.</li><li>One or more attacks specific to your deity’s battle form, which are the only attacks you can use. You’re trained with them. Your attack modifier is +33, and you use the listed damage. Melee attacks are Strength based (for the purposes of the enfeebled condition, for example) unless they have the finesse trait, and all ranged attacks are Dexterity based. Attacks that deal positive or negative damage don’t heal creatures.</li><li>Athletics modifier of +35, unless your own is higher.</ul>You also gain the specific abilities listed for your deity below:<ul><li><b>Abadar</b> Speed 50 feet, burrow Speed 30 feet, immune to immobilized; <b>Ranged</b> [one-action] crossbow (range increment 120 feet, reload 1), <b>Damage</b> 6d10+3 piercing.</li><li><b>Asmodeus</b> Speed 70 feet, air walk; <b>Melee</b> [one-action] mace (reach 15 feet), <b>Damage</b> 6d10+6 bludgeoning; <b>Ranged</b> [one-action] hellfire (range 120 feet), <b>Damage</b> 6d6+3 fire.</li><li><b>Calistria</b> Speed 30 feet, fly Speed 70 feet; <b>Melee</b> [one‑action] whip (disarm, finesse, nonlethal, reach 20 feet), <b>Damage</b> 6d4+6 slashing; <b>Ranged</b> [one-action] savored sting (range 60 feet), <b>Damage</b> 6d6+3 poison.</li><li><b>Cayden Cailean</b> Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; <b>Melee</b> [one-action] rapier (deadly, reach 15 feet), <b>Damage</b> 6d6+6 piercing; <b>Ranged</b> [one-action] ale splash (range 120 feet), <b>Damage</b> 6d6+3 poison.</li><li><b>Desna</b> Speed 30 feet, fly Speed 70 feet; <b>Melee</b> [one-action] starknife (agile, deadly, finesse, reach 15 feet, silver, thrown 60 feet), <b>Damage</b> 6d4+6 piercing; <b>Ranged</b> [one-action] moonbeam (range 120 feet, silver), <b>Damage</b> 6d6+3 fire.</li><li><b>Erastil</b> Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; <b>Ranged</b> [one-action] longbow (deadly d8, range increment 150 feet), <b>Damage</b> 6d8+3 piercing.</li><li><b>Gorum</b> Speed 70 feet, immune to immobilized; <b>Melee</b> [one-action] greatsword (versatile P, reach 15 feet), <b>Damage</b> 6d12+6 slashing.</li><li><b>Gozreh</b> no land Speed, fly Speed 70 feet, swim Speed 70 feet; ignore difficult terrain and greater difficult terrain; <b>Melee</b> [one-action] waves (bull rush, reach 15 feet, thrown 20 feet), <b>Damage</b> 6d8+6 bludgeoning; <b>Ranged</b> [one-action] wind (versatile electricity, range 120 feet), <b>Damage</b> 6d6+3 bludgeoning.</li><li><b>Iomedae</b> Speed 70 feet, air walk; shield (15 Hardness, can’t be damaged); <b>Melee</b> [one-action] longsword (versatile P, reach 15 feet), <b>Damage</b> 6d8+6 slashing.</li><li><b>Irori</b> Speed 80 feet, air walk; <b>Melee</b> [one-action] unfettered strike (agile, versatile P or S, finesse, reach 15 feet), <b>Damage</b> 6d8+6 bludgeoning; <b>Ranged</b> [one-action] wind strike (range 60 feet), <b>Damage</b> 6d4+6 bludgeoning.• Lamashtu Speed 30 feet, fly Speed 70 feet; <b>Melee</b> [one‑action] falchion (forceful, reach 15 feet), <b>Damage</b> 6d10+6 slashing; <b>Ranged</b> [one-action] waters of Lamashtu (range 120 feet), <b>Damage</b> 6d6+3 poison.</li><li><b>Nethys</b> Speed 70 feet, air walk; <b>Ranged</b> [one-action] raw magic (range 120 feet; versatile cold, electricity, or fire), <b>Damage</b> 6d6 force.</li><li><b>Norgorber</b> Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; <b>Melee</b> [one-action] shortsword (agile, finesse, versatile S, reach 15 feet), <b>Damage</b> 6d6+6 piercing; <b>Ranged</b> [one-action] blackfinger toss (range 120 feet), <b>Damage</b> 6d6+3 poison.</li><li><b>Pharasma</b> Speed 70 feet, air walk; <b>Melee</b> [one-action] dagger (agile, finesse, reach 15 feet, thrown 40 feet), <b>Damage</b> 6d6+6 slashing; <b>Ranged</b> [one-action] spiral blast (range 120 feet, damages only undead), <b>Damage</b> 6d8+3 positive.</li><li><b>Rovagug</b> Speed 50 feet, burrow Speed 30 feet, immune to immobilized; <b>Melee</b> [one-action] jaws (reach 15 feet), <b>Damage</b> 6d12+6 piercing; <b>Melee</b> [one-action] leg (agile, versatile P, reach 15 feet), <b>Damage</b> 6d8+6 bludgeoning.</li><li><b>Sarenrae</b> Speed 30 feet, fly Speed 70 feet; <b>Melee</b> [one-action] scimitar (forceful, nonlethal, reach 15 feet), <b>Damage</b> 6d6+6 slashing; <b>Ranged</b> [one-action] everflame (nonlethal, range 120 feet), <b>Damage</b> 6d6+3 fire.</li><li><b>Shelyn</b> Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; <b>Melee</b> [one-action] glaive (deadly d8, nonlethal, reach 20 feet), <b>Damage</b> 6d8+6 slashing; <b>Ranged</b> [one-action] melody of inner beauty, (nonlethal, range 120 feet), <b>Damage</b> 6d6+3 sonic.</li><li><b>Torag</b> Speed 50 feet, burrow Speed 30 feet, immune to immobilized; shield (15 Hardness, can’t be damaged); <b>Melee</b> [one-action] warhammer (bull rush, reach 15 feet), <b>Damage</b> 6d8+6 bludgeoning.</li><li><b>Urgathoa</b> Speed 70 feet, air walk; <b>Melee</b> [one-action] scythe (deadly d10, trip, reach 15 feet), <b>Damage</b> 6d10+6 slashing; <b>Ranged</b> [one-action] pallid plague (range 120 feet), <b>Damage</b> 6d6+3 negative.</li><li><b>Zon-Kuthon</b> Speed 70 feet, air walk, ignore difficult terrain and greater difficult terrain; <b>Melee</b> [one-action] spiked chain (disarm, trip, reach 15 feet), <b>Damage</b> 6d8+6 slashing; <b>Ranged</b> [one-action] midnight pain (mental, nonlethal, range 120 feet), <b>Damage</b> 6d6+3 mental.</li></ul>"
+  },
+  {
+    "spell_name": "Baleful Polymorph",
+    "source": "Core Rulebook pg. 320",
+    "level": 6,
+    "traits": ["Incapacitation", "Polymorph", "Transmutation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "FORTITUDE",
+    "duration": "varies",
+    "short_description": "",
+    "description": "You transform the target creature into a harmless animal appropriate to the area, with effects based on its Fortitude save.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target’s body gains minor features of the harmless animal. Its insides churn as they partially transform, causing it to be sickened 1. When it recovers from the sickened condition, its features revert to normal.",
+    "failText": "The target transforms for 1 minute but keeps its mind. If it spends all its actions on its turn concentrating on its original form, it can attempt a Will save to end the effect immediately.",
+    "critFailText": "The target is transformed into the chosen harmless animal, body and mind, for an unlimited duration."
+  },
+  {
+    "spell_name": "Bane",
+    "source": "Core Rulebook pg. 320",
+    "level": 1,
+    "traits": ["Enchantment", "Mental"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "5-foot emanation",
+    "targets": "enemies in the area",
+    "saving_throw": "WILL",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You fill the minds of your enemies with doubt. Targets that fail their Will saves take a –1 status penalty to attack rolls as long as they are in the area. Once per turn, starting the turn after you cast bane, you can use a single action, which has the concentrate trait, to increase the emanation’s radius by 5 feet and force enemies in the area that weren’t yet affected to attempt another saving throw. Bane can counteract bless."
+  },
+  {
+    "spell_name": "Banishment",
+    "source": "Core Rulebook pg. 320",
+    "level": 5,
+    "traits": ["Abjuration", "Incapacitation"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature that isn’t on its home plane",
+    "saving_throw": "WILL",
+    "short_description": "",
+    "description": "You send the target back to its home plane. The target must attempt a Will save. You can spend an extra action while Casting this Spell and add a material component to give the creature a –2 circumstance penalty to its save. The component must be a specially gathered object that is anathema to the creature, and not from a spell component pouch. This spell fails if you aren’t on your home plane when you cast it.",
+    "critSuccessText": "The target resists being banished and you are stunned 1.",
+    "successText": "The target resists being banished.",
+    "failText": "The target is banished.",
+    "critFailText": "The target is banished and can’t return by any means to the plane it’s banished from for 1 week.",
+    "heightened": [
+      {
+        "trigger_level": "(9th)",
+        "description": "You can target up to 10 creatures. The extra material component affects targets to which it is anathema."
+      }
+    ]
+  },
+  {
+    "spell_name": "Barkskin",
+    "source": "Core Rulebook pg. 320",
+    "level": 2,
+    "traits": ["Abjuration", "Plant"],
+    "traditions": ["PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 willing creature",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "The target’s skin becomes covered in bark. The target gains resistance 2 to bludgeoning and piercing damage and weakness 3 to fire. After the target takes fire damage, it can Dismiss the spell as a free action triggered by taking the damage; doing so doesn’t reduce the fire damage the target was dealt.",
+    "heightened": [
+      {
+        "trigger_level": "(+2)",
+        "description": "The resistances increase by 2, and the weakness increases by 3."
+      }
+    ]
+  },
+  {
+    "spell_name": "Bind Soul",
+    "source": "Core Rulebook pg. 320",
+    "level": 9,
+    "traits": ["Uncommon", "Evil", "Necromancy"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "requirements": "black sapphire with a gp value of at least the target’s level × 100",
+    "range": "30 feet",
+    "targets": "1 creature that died within the last minute",
+    "duration": "unlimited",
+    "short_description": "",
+    "description": "You wrench the target’s soul away before it can pass on to the afterlife and imprison it in a black sapphire.<br />&emsp;While the soul is in the gem, the target can’t be returned to life through any means, even powerful magic such as wish. If the gem is destroyed or bind soul is counteracted on the gem, the soul is freed. The gem has AC 16 and Hardness 10. A gem can’t hold more than one soul, and any attempt wastes the spell."
+  },
+  {
+    "spell_name": "Bind Undead",
+    "source": "Core Rulebook pg. 321",
+    "level": 3,
+    "traits": ["Necromancy"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 mindless undead creature with a level no greater than bind undead’s spell level",
+    "duration": "1 day",
+    "short_description": "",
+    "description": "With a word of necromantic power, you seize control of the target. It gains the minion trait. If you or an ally uses any hostile actions against the target, the spell ends."
+  },
+  {
+    "spell_name": "Black Tentacles",
+    "source": "Core Rulebook pg. 321",
+    "level": 5,
+    "traits": ["Conjuration"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "area": "20-foot burst adjacent to a flat surface",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "Oily black tentacles rise up and attempt to Grapple each creature in the area. Make spell attack rolls against the Fortitude DC of each creature. Any creature you succeed against is grabbed and takes 3d6 bludgeoning damage. Whenever a creature ends its turn in the area, the tentacles attempt to grab that creature if they haven’t already, and they deal 1d6 bludgeoning damage to any creature already grabbed.<br />&emsp;The tentacles’ Escape DC is equal to your spell DC. A creature can attack a tentacle in an attempt to release its grip. Its AC is equal to your spell DC, and it is destroyed if it takes 12 or more damage. Even if destroyed, additional tentacles continue to grow in the area until the duration ends. You can Dismiss the spell."
+  },
+  {
+    "spell_name": "Blade Barrier",
+    "source": "Core Rulebook pg. 321",
+    "level": 6,
+    "traits": ["Evocation", "Force"],
+    "traditions": ["DIVINE"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "Blades of force form a churning wall. The wall is a straight line 20 feet high, 120 feet long, and 2 inches thick, and it provides cover. The wall deals 7d8 force damage to each creature that’s in the wall’s space when it is created, that attempts to pass through the wall, or that ends its turn inside the wall. A basic Reflex save reduces the damage. A creature that succeeds at this save when the wall is created is pushed to the nearest space on the side of its choice. Creatures trying to move through the wall fail to do so if they critically fail the save, ending their movement adjacent to the wall.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 1d8."
+      }
+    ]
+  },
+  {
+    "spell_name": "Bless",
+    "source": "Core Rulebook pg. 321",
+    "level": 1,
+    "traits": ["Enchantment", "Mental"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "5-foot emanation",
+    "targets": "you and allies in the area",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "Blessings from beyond help your companions strike true. You and your allies in the area gain a +1 status bonus to attack rolls. Once per turn, starting the turn after you cast bless, you can use a single action, which has the concentrate trait, to increase the emanation’s radius by 5 feet. Bless can counteract bane."
+  },
+  {
+    "spell_name": "Blindness",
+    "source": "Core Rulebook pg. 321",
+    "level": 3,
+    "traits": ["Incapacitation", "Necromancy"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "FORTITUDE",
+    "short_description": "",
+    "description": "You blind the target. The effect is determined by the target’s Fortitude save. The target then becomes temporarily immune for 1 minute.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target is blinded until its next turn begins.",
+    "failText": "The target is blinded for 1 minute.",
+    "critFailText": "The target is blinded permanently."
+  },
+  {
+    "spell_name": "Blink",
+    "source": "Core Rulebook pg. 321",
+    "level": 4,
+    "traits": ["Conjuration", "Teleportation"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You blink quickly between the Material Plane and the Ethereal Plane. You gain resistance 5 to all damage (except force). You can Sustain the Spell to vanish and reappear 10 feet away in a random direction determined by the GM; the movement doesn’t trigger reactions. At the end of your turn, you vanish and reappear as above.",
+    "heightened": [
+      {
+        "trigger_level": "(+2)",
+        "description": "The resistance increases by 3."
+      }
+    ]
+  },
+  {
+    "spell_name": "Blur",
+    "source": "Core Rulebook pg. 321",
+    "level": 2,
+    "traits": ["Illusion", "Visual"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 creature",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "The target’s form appears blurry. It becomes concealed. As the nature of this effect still leaves the target’s location obvious, the target can’t use this concealment to Hide or Sneak."
+  },
+  {
+    "spell_name": "Breath of Life",
+    "source": "Core Rulebook pg. 322",
+    "level": 5,
+    "traits": ["Healing", "Necromancy", "Positive"],
+    "traditions": ["DIVINE"],
+    "casting_time": "REACTION",
+    "component": ["VERBAL"],
+    "trigger": "A living creature within range would die.",
+    "range": "60 feet",
+    "targets": "the triggering creature",
+    "short_description": "",
+    "description": "Your blessing revives a creature at the moment of its death. You prevent the target from dying and restore Hit Points to the target equal to 4d8 plus your spellcasting ability modifier. You can’t use breath of life if the triggering effect was disintegrate or a death effect."
+  },
+  {
+    "spell_name": "Burning Hands",
+    "source": "Core Rulebook pg. 322",
+    "level": 1,
+    "traits": ["Evocation", "Fire"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "15-foot cone",
+    "saving_throw": "REFLEX",
+    "short_description": "",
+    "description": "Gouts of flame rush from your hands. You deal 2d6 fire damage to creatures in the area.",
+    "critSuccessText": "You take no damage from the spell, hazard, or effect that caused you to attempt the save.",
+    "successText": "You take half the listed damage from the effect.",
+    "failText": "You take the full damage listed from the effect.",
+    "critFailText": "You take double the listed damage from the effect.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 2d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Calm Emotions",
+    "source": "Core Rulebook pg. 322",
+    "level": 2,
+    "traits": ["Emotion", "Enchantment", "Incapacitation", "Mental"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "area": "10-foot burst",
+    "saving_throw": "WILL",
+    "duration": "sustained up to 1 minute",
+    "short_description": "",
+    "description": "You forcibly calm creatures in the area, soothing them into a nonviolent state; each creature must attempt a Will save.",
+    "critSuccessText": "The creature is unaffected.",
+    "successText": "Calming urges impose a –1 status penalty to the creature’s attack rolls.",
+    "failText": "Any emotion effects that would affect the creature are suppressed and the creature can’t use hostile actions. If the target is subject to hostility from any other creature, it ceases to be affected by calm emotions.",
+    "critFailText": "As failure, but hostility doesn’t end the effect."
+  },
+  {
+    "spell_name": "Cataclysm",
+    "source": "Core Rulebook pg. 322",
+    "level": 10,
+    "traits": ["Acid", "Air", "Cold", "Earth", "Electricity", "Evocation", "Fire", "Water"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "1,000 feet",
+    "area": "60-foot burst",
+    "saving_throw": "REFLEX",
+    "short_description": "",
+    "description": "You call upon the unimaginable power of world-ending cataclysms, ripping a small piece of each cataclysm and combining them together into one horrifically powerful attack. The following effects come down upon all creatures in the area. Treat the resistances of creatures in the area as if they were 10 lower for the purpose of determining the cataclysm’s damage. Each creature attempts one basic Reflex save that applies to all six types of damage.<ul><li>Flesh-dissolving acid rain deals 3d10 acid damage.</li><li>A roaring earthquake shakes and bludgeons creatures on the ground, dealing 3d10 bludgeoning damage.</li><li>A blast of freezing wind deals 3d10 cold damage.</li><li>Incredible lightning lashes the area, dealing 3d10 electricity damage.</li><li>Beating winds churn across the sky, dealing 3d10 bludgeoning damage to creatures flying in the area.</li><li>An instant tsunami sweeps over creatures in the area, dealing 3d10 bludgeoning damage with the water trait (doubled for creatures swimming in the area).</li><li>A massive wildfire burns in a sudden inferno, dealing 3d10 fire damage.</li></ul>",
+    "critSuccessText": "You take no damage from the spell, hazard, or effect that caused you to attempt the save.",
+    "successText": "You take half the listed damage from the effect.",
+    "failText": "You take the full damage listed from the effect.",
+    "critFailText": "You take double the listed damage from the effect."
+  },
+  {
+    "spell_name": "Chain Lighting",
+    "source": "Core Rulebook pg. 322",
+    "level": 6,
+    "traits": ["Electricity", "Evocation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "500 feet",
+    "targets": "1 creature, plus any number of additional creatures",
+    "saving_throw": "REFLEX",
+    "short_description": "",
+    "description": "You discharge a powerful bolt of lightning at the target, dealing 8d12 electricity damage. The target must attempt a basic Reflex save. The electricity arcs to another creature within 30 feet of the first target, jumps to another creature within 30 feet of that target, and so on. You can end the chain at any point. You can’t target the same creature more than once, and you must have line of effect to all targets. Roll the damage only once, and apply it to each target (halving or doubling as appropriate for its saving throw outcome). The chain ends if any one of the targets critically succeeds at its save.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 1d12."
+      }
+    ]
+  },
+  {
+    "spell_name": "Charm",
+    "source": "Core Rulebook pg. 322",
+    "level": 1,
+    "traits": ["Emotion", "Enchantment", "Incapacitation", "Mental"],
+    "traditions": ["ARCANE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "saving_throw": "WILL",
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used hostile actions against it.<br />&emsp;You can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn’t necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.",
+    "critSuccessText": "The target is unaffected and aware you tried to charm it.",
+    "successText": "The target is unaffected but thinks your spell was something harmless instead of charm, unless it identifies the spell (usually with Identify Magic).",
+    "failText": "The target’s attitude becomes friendly toward you. If it was friendly, it becomes helpful. It can’t use hostile actions against you.",
+    "critFailText": "The target’s attitude becomes helpful toward you, and it can’t use hostile actions against you.",
+    "heightened": [
+      {
+        "trigger_level": "(4th)",
+        "description": "The duration lasts until the next time you make your daily preparations."
+      },
+      {
+        "trigger_level": "(8th)",
+        "description": "The duration lasts until the next time you make your daily preparations, and you can target up to 10 creatures."
+      }
+    ]
+  },
+  {
+    "spell_name": "Chill Touch",
+    "source": "Core Rulebook pg. 323",
+    "level": 0,
+    "traits": ["Attack", "Cantrip", "Necromancy", "Negative"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 living or undead creature",
+    "saving_throw": "FORTITUDE",
+    "short_description": "",
+    "description": "Siphoning negative energy into yourself, your hand radiates a pale darkness. Your touch weakens the living and disorients undead, possibly even causing them to flee. The effect depends on whether the target is living or undead.<ul><li><b>Living Creature</b> The spell deals negative damage equal to 1d4 plus your spellcasting modifier. The target attempts a basic Fortitude save, but is also enfeebled 1 for 1 round on a critical failure.</li><li<b>>Undead Creature</b> The target is flat-footed for 1 round on a failed Fortitude save. On a critical failure, the target is also fleeing for 1 round unless it succeeds at a Will save.</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The negative damage to living creatures increases by 1d4."
+      }
+    ]
+  },
+  {
+    "spell_name": "Chilling Darkness",
+    "source": "Core Rulebook pg. 323",
+    "level": 3,
+    "traits": ["Attack", "Cold", "Darkness", "Evocation", "Evil"],
+    "traditions": ["DIVINE"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "targets": "1 creature",
+    "short_description": "",
+    "description": "You shoot an utterly cold ray of darkness tinged with unholy energy. Make a ranged spell attack against the target. You deal 5d6 cold damage, plus 5d6 evil damage if the target is a celestial.<br />&emsp;If the ray passes through an area of magical light or targets a creature affected by magical light, chilling darkness attempts to counteract the light. If you need to determine whether the ray passes through an area of light, draw a line between yourself and the spell’s target.",
+    "critSuccessText": "The target takes double damage.",
+    "successText": "The target takes full damage.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The cold damage increases by 2d6, and the evil damage celestials increases by 2d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Chromatic Wall",
+    "source": "Core Rulebook pg. 323",
+    "level": 5,
+    "traits": ["Abjuration"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "You create an opaque wall of light in a single vibrant color. The wall is straight and vertical, stretching 60 feet long and 30 feet high. If the wall would pass through a creature, the spell is lost. The wall sheds bright light for 20 feet on each side, and dim light for the next 20 feet. You can ignore the wall’s effects.<br />&emsp;Roll 1d4 to determine the color of the wall. Each color has a particular effect on items, effects, or creatures that attempt to pass through. Chromatic wall can’t be counteracted normally; rather, each color is automatically counteracted when targeted by a specific spell, even if that spell’s level is lower than that of chromatic wall.<ul><li><b>1. Red</b> The wall destroys ranged weapon ammunition (such as arrows and crossbow bolts) that would pass through, and it deals 20 fire damage to anyone passing through, with a basic Reflex save. Cone of cold can counteract a red chromatic wall.</li><li><b>2. Orange</b> The wall destroys thrown weapons that would pass through, and it deals 25 acid damage to anyone passing through, with a basic Reflex save. Gust of wind can counteract an orange chromatic wall.</li><li><b>3. Yellow</b> The wall stops acid, cold, electricity, fire, force, negative, positive, and sonic effects from passing through, and it deals 30 electricity damage to anyone passing through, with a basic Reflex save. Disintegrate can counteract a yellow chromatic wall.</li><li><b>4. Green</b> The wall stops toxins, gases, and breath weapons from passing through. It deals 10 poison damage to anyone passing through and makes them enfeebled 1 for 1 minute. A basic Fortitude save reduces the damage and negates the enfeebled condition on a success. Passwall can counteract a green chromatic wall.</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "(7th)",
+        "description": "The spell’s duration increases to 1 hour. Roll 1d8 to determine the wall’s color; the results for 5–8 are below. A red, orange, yellow, or green wall deals an extra 10 damage.<ul><li>5. Blue The wall stops auditory, petrification, and visual effects from passing through, and creatures passing through are subject to the effects of flesh to stone. Magic missile can counteract a blue chromatic wall.</li><li>6. Indigo The wall stops divination and mental effects from passing through, and those passing through are subject to the effects of warp mind. Searing light can counteract an indigo chromatic wall.</li><li>7. Violet The wall prevents spells from targeting the other side (area effects still cross as normal). Creatures passing through must succeed at a Will save or they are slowed 1 for 1 minute; on a critical failure, the creature is instead sent to another plane, with the effect of plane shift. Dispel magic can counteract a violet chromatic wall.</li><li>8. Reroll, and creatures that pass through the wall take a –2 circumstance penalty to their saves.</li></ul>"
+      }
+    ]
+  },
+  {
+    "spell_name": "Circle of Protection",
+    "source": "Core Rulebook pg. 324",
+    "level": 3,
+    "traits": ["Uncommon", "Abjuration"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "touch",
+    "area": "10-foot emanation centered on the touched creature",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You ward a creature and those nearby against a specified alignment. Choose chaotic, evil, good, or lawful; this spell gains the opposing trait. Creatures in the area gain a +1 status bonus to AC against attacks by creatures of the chosen alignment and to saves against effects from such creatures. This bonus increases to +3 against effects from such creatures that directly control the target and attacks made by summoned creatures of the chosen alignment. Summoned creatures of the chosen alignment can’t willingly enter the area without succeeding at a Will save; repeated attempts use the first save result.",
+    "heightened": [
+      {
+        "trigger_level": "(4th)",
+        "description": "The duration increases to 1 hour."
+      }
+    ]
+  },
+  {
+    "spell_name": "Clairaudience",
+    "source": "Core Rulebook pg. 324",
+    "level": 3,
+    "traits": ["Divination", "Scrying"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "1 minute",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "500 feet",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "You create an invisible floating ear at a location within range (even if it’s outside your line of sight or line of effect). It can’t move, but you can hear through the ear as if using your normal auditory senses."
+  },
+  {
+    "spell_name": "Clairvoyance",
+    "source": "Core Rulebook pg. 324",
+    "level": 4,
+    "traits": ["Divination", "Scrying"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "1 minute",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "500 feet",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "You create an invisible floating eye at a location within range (even if it’s outside your line of sight or line of effect). The eye can’t move, but you can see in all directions from that point as if using your normal visual senses."
+  },
+  {
+    "spell_name": "Cload of Colors",
+    "source": "Core Rulebook pg. 324",
+    "level": 5,
+    "traits": ["Illusion", "Visual"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "A cloak of swirling colors shrouds the target. Creatures are dazzled while adjacent to it, and attacking the target causes a brilliant flash of light. A creature that hits the target with a melee attack must attempt a Will save.",
+    "successText": "The attacker is unaffected.",
+    "failText": "The attacker is blinded for 1 round.",
+    "critFailText": "The attacker is stunned for 1 round. The creature is temporarily immune until the end of its turn; this effect has the incapacitation trait."
+  },
+  {
+    "spell_name": "Cloudkill",
+    "source": "Core Rulebook pg. 324",
+    "level": 5,
+    "traits": ["Death", "Necromancy", "Poison"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "area": "20-foot burst",
+    "saving_throw": "FORTITUDE",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You conjure a poisonous fog. This functions as obscuring mist (page 355), except the area moves 10 feet away from you each round. You deal 6d8 poison damage to each breathing creature that starts its turn in the spell’s area. You can Dismiss the spell.",
+    "critSuccessText": "You take no damage from the spell, hazard, or effect that caused you to attempt the save.",
+    "successText": "You take half the listed damage from the effect.",
+    "failText": "You take the full damage listed from the effect.",
+    "critFailText": "You take double the listed damage from the effect.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 1d8."
+      }
+    ]
+  },
+  {
+    "spell_name": "Collective Transposition",
+    "source": "Core Rulebook pg. 324",
+    "level": 6,
+    "traits": ["Conjuration", "Teleportation"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "trigger": "up to 2 creatures",
+    "area": "30-foot emanation",
+    "targets": "up to 2 creatures",
+    "short_description": "",
+    "description": "You teleport the targets to new positions within the area. The creatures must each be able to fit in their new space, and their positions must be unoccupied, entirely within the area, and in your line of sight. Unwilling creatures can attempt a Will save.",
+    "critSuccessText": "The target can teleport if it wants, but it chooses the destination within range.",
+    "successText": "The target is unaffected.",
+    "failText": "You teleport the target and choose its destination.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "number of targets increases by 1."
+      }
+    ]
+  },
+  {
+    "spell_name": "Color Spray",
+    "source": "Core Rulebook pg. 324",
+    "level": 1,
+    "traits": ["Illusion", "Incapacitation"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "15-foot cone",
+    "saving_throw": "WILL",
+    "duration": "1 or more rounds (see description)",
+    "short_description": "",
+    "description": "Swirling colors affect viewers based on their Will saves.",
+    "critSuccessText": "The creature is unaffected.",
+    "successText": "The creature is dazzled for 1 round.",
+    "failText": "The creature is stunned 1, blinded for 1 round, and dazzled for 1 minute.",
+    "critFailText": "The creature is stunned for 1 round and blinded for 1 minute."
+  },
+  {
+    "spell_name": "Command",
+    "source": "Core Rulebook pg. 325",
+    "level": 1,
+    "traits": ["Auditory", "Enchantment", "Linguistic", "Mental"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "WILL",
+    "duration": "until the end of the target’s next turn",
+    "short_description": "",
+    "description": "You shout a command that’s hard to ignore. You can command the target to approach you, run away (as if it had the fleeing condition), release what it’s holding, drop prone, or stand in place. It can’t Delay or take any reactions until it has obeyed your command. The effects depend on the target’s Will save.",
+    "successText": "The creature is unaffected.",
+    "failText": "For the first action on its next turn, the creature must use a single action to do as you command.",
+    "critFailText": "The target must use all its actions on its next turn to obey your command.",
+    "heightened": [
+      {
+        "trigger_level": "(5th)",
+        "description": "You can target up to 10 creatures."
+      }
+    ]
+  },
+  {
+    "spell_name": "Comprehend Language",
+    "source": "Core Rulebook pg. 325",
+    "level": 2,
+    "traits": ["Divination"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "30 feet",
+    "targets": "1 creature",
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "The target can understand the meaning of a single language it is hearing or reading when you cast the spell. This doesn’t let it understand codes, language couched in metaphor, and the like (subject to GM discretion). If the target can hear multiple languages and knows that, it can choose which language to understand; otherwise, choose one of the languages randomly.",
+    "heightened": [
+      {
+        "trigger_level": "(3rd)",
+        "description": "The target can also speak the language."
+      },
+      {
+        "trigger_level": "(4th)",
+        "description": "You can target up to 10 creatures, and targets can also speak the language."
+      }
+    ]
+  },
+  {
+    "spell_name": "Cone of Cold",
+    "source": "Core Rulebook pg. 325",
+    "level": 5,
+    "traits": ["Cold", "Evocation"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "60-foot cone",
+    "saving_throw": "REFLEX",
+    "short_description": "",
+    "description": "Icy cold rushes forth from your hands. You deal 12d6 cold damage to creatures in the area.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 2d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Confusion",
+    "source": "Core Rulebook pg. 325",
+    "level": 4,
+    "traits": ["Emotion", "Enchantment", "Mental"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "WILL",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You befuddle your target with strange impulses, causing it to act randomly. The effects are determined by the target’s Will save. You can Dismiss the spell.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target babbles incoherently and is stunned 1.",
+    "failText": "The target is confused for 1 minute. It can attempt a new save at the end of each of its turns to end the confusion.",
+    "critFailText": "The target is confused for 1 minute, with no save to end early.",
+    "heightened": [
+      {
+        "trigger_level": "(8th)",
+        "description": "You can target up to 10 creatures."
+      }
+    ]
+  },
+  {
+    "spell_name": "Contingency",
+    "source": "Core Rulebook pg. 326",
+    "level": 7,
+    "traits": ["Abjuration"],
+    "traditions": ["ARCANE"],
+    "casting_time": "10 minutes",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "duration": "24 hours",
+    "short_description": "",
+    "description": "You prepare a spell that will trigger later. While casting contingency, you also cast another spell of 4th level or lower with a casting time of no more than 3 actions. This companion spell must be one that can affect you. You must make any decisions for the spell when you cast contingency, such as choosing a damage type for resist energy. During the casting, choose a trigger under which the spell will be cast, using the same restrictions as for the trigger of a Ready action. Once contingency is cast, you can cause the companion spell to come into effect as a reaction with that trigger. It affects only you, even if it would affect more creatures. If you define complicated conditions, as determined by the GM, the trigger might fail. If you cast contingency again, the newer casting supersedes the older.",
+    "heightened": [
+      {
+        "trigger_level": "(8th)",
+        "description": "You can choose a spell of 5th level or lower."
+      },
+      {
+        "trigger_level": "(9th)",
+        "description": "You can choose a spell of 6th level or lower."
+      },
+      {
+        "trigger_level": "(10th)",
+        "description": "You can choose a spell of 7th level or lower."
+      }
+    ]
+  },
+  {
+    "spell_name": "Continual Flame",
+    "source": "Core Rulebook pg. 326",
+    "level": 2,
+    "traits": ["Evocation", "Light"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "cost": "6 gp of ruby dust",
+    "range": "touch",
+    "targets": "1 object",
+    "duration": "unlimited",
+    "short_description": "",
+    "description": "A magical flame springs up from the object, as bright as a torch. It doesn’t need oxygen, react to water, or generate heat.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The cost increases as follows: 16 gp for 3rd level; 30 gp for 4th, 60 gp for 5th, 120 gp for 6th,; 270 gp for 7th, 540 gp for 8th, 1,350 gp for 9th, and 3,350 gp for 10th."
+      }
+    ]
+  },
+  {
+    "spell_name": "Control Water",
+    "source": "Core Rulebook pg. 326",
+    "level": 5,
+    "traits": ["Evocation", "Water"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "500 feet",
+    "area": "50 feet long by 50 feet wide",
+    "short_description": "",
+    "description": "By imposing your will upon the water, you can raise or lower the level of water in the chosen area by 10 feet. Water creatures in the area are subjected to the effects of slow."
+  },
+  {
+    "spell_name": "Create Food",
+    "source": "Core Rulebook pg. 326",
+    "level": 2,
+    "traits": ["Conjuration"],
+    "traditions": ["ARCANE", "DIVINE", "PRIMAL"],
+    "casting_time": "1 hour",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "description": "You create enough food to feed six Medium creatures for a day. This food is bland and unappealing, but it is nourishing. After 1 day, if no one has eaten the food, it decays and becomes inedible. Most Small creatures eat one-quarter as much as a Medium creature (one-sixteenth as much for most Tiny creatures), and most Large creatures eat 10 times as much (100 times as much for Huge creatures and so on).",
+    "heightened": [
+      {
+        "trigger_level": "(4th)",
+        "description": "You can feed 12 Medium creatures."
+      },
+      {
+        "trigger_level": "(6th)",
+        "description": "You can feed 50 Medium creatures."
+      },
+      {
+        "trigger_level": "(8th)",
+        "description": "You can feed 200 Medium creatures."
+      }
+    ]
+  },
+  {
+    "spell_name": "Create Water",
+    "source": "Core Rulebook pg. 326",
+    "level": 1,
+    "traits": ["Conjuration", "Water"],
+    "traditions": ["ARCANE", "DIVINE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "0 feet",
+    "short_description": "",
+    "description": "As you cup your hands, water begins to flow forth from them. You create 2 gallons of water. If no one drinks it, it evaporates after 1 day."
+  },
+  {
+    "spell_name": "Creation",
+    "source": "Core Rulebook pg. 326",
+    "level": 4,
+    "traits": ["Conjuration"],
+    "traditions": ["ARCANE", "PRIMAL"],
+    "casting_time": "1 minute",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "0 feet",
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "You conjure a temporary object from eldritch energy. It must be of vegetable matter (such as wood or paper) and 5 cubic feet or smaller. It can’t rely on intricate artistry or complex moving parts, never fulfills a cost or the like, and can’t be made of precious materials or materials with a rarity of uncommon or higher. It is obviously temporarily conjured, and thus can’t be sold or passed off as a genuine item.",
+    "heightened": [
+      {
+        "trigger_level": "(5th)",
+        "description": "The item is metal and can include common minerals, like feldspar or quartz."
+      }
+    ]
+  },
+  {
+    "spell_name": "Crisis of Faith",
+    "source": "Core Rulebook pg. 326",
+    "level": 3,
+    "traits": ["Enchantment", "Mental"],
+    "traditions": ["DIVINE"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "WILL",
+    "short_description": "",
+    "description": "You assault the target’s faith, riddling the creature with doubt and mental turmoil that deal 6d6 mental damage, or 6d8 mental damage if it can cast divine spells. The effects are determined by its Will save.<br />&emsp;To many deities, casting this spell on a follower of your own deity without significant cause is anathema.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target takes half damage.",
+    "failText": "The target takes full damage; if the target can cast divine spells, it’s stupefied 1 for 1 round.",
+    "critFailText": "The target takes double damage, is stupefied 1 for 1 round, and can’t cast divine spells for 1 round.",
+    "heightened": [
+      {
+        "trigger_level": "(+1)",
+        "description": "The damage increases by 2d6 (or by 2d8 if the target is a divine spellcaster)."
+      }
+    ]
+  },
+  {
+    "spell_name": "Crusade",
+    "source": "Core Rulebook pg. 327",
+    "level": 9,
+    "traits": ["Uncommon", "Enchantment", "Linguistic", "Mental"],
+    "traditions": ["DIVINE"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "60 FEET",
+    "targets": "up to 4 creatures",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "You issue a divine mandate to the targets. you pronounce a cause. It can be to attain an item, claim a patch of land, slay a creature, war with a group, or be entirely peaceful. Your cause can’t force the targets to harm one another or themselves. The targets become completely dedicated to that cause, depending on their levels. They choose their own actions, but they favor direct action over inaction or indirect action.<ul><li><b>13th or Lower</b> The target is so dedicated to the cause that it pursues the cause to the death (unless you say otherwise).</li><li><b>14th</b> The target is dedicated to the cause, but the spell ends for the target if it’s reduced to half its maximum Hit Points or fewer.</li><li><b>15th</b> As 14th, plus the target can attempt a Will save at the end of each of its turns to end the spell for itself.</li></ul>The spell ends for all creatures if you or one of your allies uses a hostile action against a target, or when the cause is completed. The GM might determine this spell has alignment traits befitting the cause.",
+    "heightened": [
+      {
+        "trigger_level": "(10th)",
+        "description": "The level for each category increases by 2."
+      }
+    ]
+  },
+  {
+    "spell_name": "Crushing Despair",
+    "source": "Core Rulebook pg. 327",
+    "level": 5,
+    "traits": ["Emotion", "Enchantment", "Mental"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "30-foot cone",
+    "saving_throw": "WILL",
+    "duration": "1 or more rounds",
+    "short_description": "",
+    "description": "You inflict despair on creatures in the area. The effects for each creature are determined by its Will save.",
+    "critSuccessText": "The creature is unaffected.",
+    "successText": "For 1 round, the creature can’t use reactions and must attempt another save at the start of its turn; on a failure, it is slowed 1 for that turn as it sobs uncontrollably.",
+    "failText": "As success, but the slowed 1 duration is 1 minute.",
+    "critFailText": "As failure, and the creature is automatically slowed 1 for 1 minute.",
+    "heightened": [
+      {
+        "trigger_level": "(7th)",
+        "description": "The area increases to a 60-foot cone."
+      }
+    ]
+  },
+  {
+    "spell_name": "Dancing Lights",
+    "source": "Core Rulebook pg. 327",
+    "level": 0,
+    "traits": ["Cantrips", "Evocation", "Light"],
+    "traditions": ["ARCANE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "duration": "sustained",
+    "short_description": "",
+    "description": "You create up to four floating lights, no two of which are more than 10 feet apart. Each sheds light like a torch. When you Sustain the Spell, you can move any number of lights up to 60 feet. Each light must remain within 120 feet of you and within 10 feet of all others, or it winks out."
+  },
+  {
+    "spell_name": "Darkness",
+    "source": "Core Rulebook pg. 327",
+    "level": 2,
+    "traits": ["Darkness", "Evocation"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "3_ACTION",
+    "component": ["MATERIAL", "SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "area": "20-foot burst",
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You create a shroud of darkness that prevents light from penetrating or emanating within the area. Light does not enter the area and any non-magical light sources, such as a torch or lantern, do not emanate any light while inside the area, even if their light radius would extend beyond the darkness. This also suppresses magical light of your darkness spell’s level or lower. Light can’t pass through, so creatures in the area can’t see outside. From outside, it appears as a globe of pure darkness.",
+    "heightened": [
+      {
+        "trigger_level": "(4th)",
+        "description": "Even creatures with darkvision (but not greater darkvision) can barely see through the darkness. They treat targets seen through the darkness as concealed."
+      }
+    ]
+  },
+  {
+    "spell_name": "Darkvision",
+    "source": "Core Rulebook pg. 327",
+    "level": 2,
+    "traits": ["Divination"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "You grant yourself supernatural sight in areas of darkness. You gain darkvision.",
+    "heightened": [
+      {
+        "trigger_level": "(3rd)",
+        "description": "The spell’s range is touch and it targets 1 willing creature."
+      },
+      {
+        "trigger_level": "(5th)",
+        "description": "The spell’s range is touch and it targets 1 willing creature. The duration is until the next time you make your daily preparations."
+      }
+    ]
+  },
+  {
+    "spell_name": "Daze",
+    "source": "Core Rulebook pg. 327",
+    "level": 0,
+    "traits": ["Cantrip", "Enchantment", "Mental", "Nonlethal"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "60 feet",
+    "targets": "1 creature",
+    "saving_throw": "WILL",
+    "duration": "1 round",
+    "short_description": "",
+    "description": "You cloud the target’s mind and daze it with a mental jolt. The jolt deals mental damage equal to your spellcasting ability modifier; the target must attempt a basic Will save. If the target critically fails the save, it is also stunned 1.",
+    "heightened": [
+      {
+        "trigger_level": "(+2)",
+        "description": "The damage increases by 1d6."
+      }
+    ]
+  },
+  {
+    "spell_name": "Deafness",
+    "source": "Core Rulebook pg. 327",
+    "level": 2,
+    "traits": ["Necromancy"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "FORTITUDE",
+    "short_description": "",
+    "description": "The target loses hearing; it must attempt a Fortitude save. The target is then temporarily immune for 1 minute.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target is deafened for 1 round.",
+    "failText": "The target is deafened for 10 minutes.",
+    "critFailText": "The target is deafened permanently."
+  },
+  {
+    "spell_name": "Death Knell",
+    "source": "Core Rulebook pg. 328",
+    "level": 2,
+    "traits": ["Attack", "Death", "Necromancy"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "cost": "",
+    "requirements": "",
+    "trigger": "",
+    "range": "touch",
+    "area": "",
+    "targets": "1 living creature that has 0 HP",
+    "saving_throw": "WILL",
+    "duration": "",
+    "short_description": "",
+    "description": "You snuff the life out of a creature on the brink of death. The target must attempt a Will save. If this kills it, you gain 10 temporary HP and a +1 status bonus to attack and damage rolls for 10 minutes.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The target’s dying value increases by 1.",
+    "failText": "The target dies."
+  },
+  {
+    "spell_name": "Death Ward",
+    "source": "Core Rulebook pg. 328",
+    "level": 5,
+    "traits": ["Abjuration"],
+    "traditions": ["DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "touch",
+    "targets": "1 living creature touched",
+    "duration": "10 minutes",
+    "short_description": "",
+    "description": "You shield a creature from the ravages of negative energy. It receives a +4 status bonus to saves against death and negative effects, gains negative resistance 10, and suppresses the effects of the doomed condition."
+  },
+  {
+    "spell_name": "Detect Alignment",
+    "source": "Core Rulebook pg. 328",
+    "level": 1,
+    "traits": ["Uncommon", "Detection", "Divination"],
+    "traditions": ["DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "30-foot emanation",
+    "description": "Your eyes glow as you sense aligned auras. Choose chaotic, evil, good, or lawful. You detect auras of that alignment. You receive no information beyond presence or absence. You can choose not to detect creatures or effects you’re aware have that alignment. Only creatures of 6th level or higher—unless divine spellcasters, undead, or beings from the Outer Sphere—have alignment auras.",
+    "heightened": [
+      {
+        "trigger_level": "(2nd)",
+        "description": "You learn each aura’s location and strength."
+      }
+    ]
+  },
+  {
+    "spell_name": "Detect Magic",
+    "source": "Core Rulebook pg. 328",
+    "level": 0,
+    "traits": ["Cantrip", "Detection", "DIVINATION"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "30-foot emanation",
+    "short_description": "",
+    "description": "You send out a pulse that registers the presence of magic. You receive no information beyond the presence or absence of magic. You can choose to ignore magic you’re fully aware of, such as the magic items and ongoing spells of you and your allies.<br />&emsp;You detect illusion magic only if that magic’s effect has a lower level than the level of your detect magic spell. However, items that have an illusion aura but aren’t deceptive in appearance (such as an invisibility potion) typically are detected normally.",
+    "heightened": [
+      {
+        "trigger_level": "(3rd)",
+        "description": "You learn the school of magic for the highestlevel effect within range that the spell detects. If multiple effects are equally strong, the GM determines which you learn."
+      },
+      {
+        "trigger_level": "(4th)",
+        "description": "As 3rd level, but you also pinpoint the source of the highest-level magic. Like for an imprecise sense, you don’t learn the exact location, but can narrow down the source to within a 5-foot cube (or the nearest if larger than that)."
+      }
+    ]
+  },
+  {
+    "spell_name": "Detect Poison",
+    "source": "Core Rulebook pg. 328",
+    "level": 1,
+    "traits": ["Uncommon", "Detection", "Divination"],
+    "traditions": ["DIVINE", "PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 object or creature",
+    "short_description": "",
+    "description": "You detect whether a creature is venomous or poisonous, or if an object is poison or has been poisoned. You do not ascertain whether the target is poisonous in multiple ways, nor do you learn the type or types of poison. Certain substances, like lead and alcohol, are poisons and so mask other poisons.",
+    "heightened": [
+      {
+        "trigger_level": "(2nd)",
+        "description": "You learn the number and types of poison."
+      }
+    ]
+  },
+  {
+    "spell_name": "Detect Scrying",
+    "source": "Core Rulebook pg. 328",
+    "level": 4,
+    "traits": ["Uncommon", "Detection", "Divination"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "area": "30-foot emanation",
+    "duration": "1 hour",
+    "short_description": "",
+    "description": "By tapping into trace divinatory auras, you detect the presence of scrying effects in the area. If detect scrying is higher level than a scrying effect, you gain a glimpse of the scrying creature and learn its approximate distance and direction.",
+    "heightened": [
+      {
+        "trigger_level": "(6th)",
+        "description": "The duration is until the next time you make your daily preparations."
+      }
+    ]
+  },
+  {
+    "spell_name": "Dimension Door",
+    "source": "Core Rulebook pg. 328",
+    "level": 4,
+    "traits": ["Conjuration", "Teleportation"],
+    "traditions": ["ARCANE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "short_description": "",
+    "description": "Opening a door that bypasses normal space, you instantly transport yourself and any items you’re wearing and holding from your current space to a clear space within range you can see. If this would bring another creature with you—even if you’re carrying it in an extradimensional container—the spell is lost.",
+    "heightened": [
+      {
+        "trigger_level": "(5th)",
+        "description": "The range increases to 1 mile. You don’t need to be able to see your destination, as long as you have been there in the past and know its relative location and distance from you. You are temporarily immune for 1 hour."
+      }
+    ]
+  },
+  {
+    "spell_name": "Dimensional Anchor",
+    "source": "Core Rulebook pg. 329",
+    "level": 4,
+    "traits": ["Abjuration"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "30 feet",
+    "targets": "1 creature",
+    "saving_throw": "WILL",
+    "duration": "varies",
+    "short_description": "",
+    "description": "You interfere with the target’s ability to teleport and travel between dimensions. Dimensional anchor attempts to counteract any teleportation effect, or any effect that would move the target to a different plane. The duration is determined by the target’s Will save.",
+    "critSuccessText": "The target is unaffected.",
+    "successText": "The effect’s duration is 1 minute.",
+    "failText": "The effect’s duration is 10 minutes.",
+    "critFailText": "The effect’s duration is 1 hour."
+  },
+  {
+    "spell_name": "Dimensional Lock",
+    "source": "Core Rulebook pg. 329",
+    "level": 7,
+    "traits": ["Uncommon", "Abjuration"],
+    "traditions": ["ARCANE", "DIVINE", "OCCULT"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "range": "120 feet",
+    "area": "60-foot burst",
+    "duration": "1 day",
+    "short_description": "",
+    "description": "You create a shimmering barrier that attempts to counteract teleportation effects and planar travel into or out of the area, including items that allow access to extradimensional spaces (such as a bag of holding). Dimensional lock tries to counteract any attempt to summon a creature into the area but doesn’t stop the creature from departing when the summoning ends."
+  },
+  {
+    "spell_name": "Dinosaur Form",
+    "source": "Core Rulebook pg. 329",
+    "level": 4,
+    "traits": ["Polymorph", "Transmutation"],
+    "traditions": ["PRIMAL"],
+    "casting_time": "2_ACTION",
+    "component": ["SOMATIC", "VERBAL"],
+    "duration": "1 minute",
+    "short_description": "",
+    "description": "You channel the primal forces of nature to transform into a Large animal battle form, specifically that of a powerful and terrifying dinosaur. You must have space to expand or the spell is lost. When you cast this spell, choose ankylosaurus, brontosaurus, deinonychus, stegosaurus, triceratops, or tyrannosaurus. You can decide the specific type of animal, but this has no effect on the form’s Size or statistics. While in this form, you gain the animal and dinosaur traits. You can Dismiss the spell.<br />&emsp;You gain the following statistics and abilities regardless of which battle form you choose:<ul><li>AC = 18 + your level. Ignore your armor’s check penalty and Speed reduction.</li><li>15 temporary Hit Points.</li><li>Low-light vision and imprecise scent 30 feet.</li><li>One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can use. You’re trained with them. Your attack modifier is +16, and your damage bonus is +9. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If your unarmed attack modifier is higher, you can use it instead.</li><li>Athletics modifier of +18, unless your own modifier is higher.</li></ul>You also gain specific abilities based on the form you choose:<ul><li><b>Ankylosaurus</b> Speed 25 feet; <b>Melee</b> [one-action] tail (backswing, reach 10 feet), <b>Damage</b> 2d6 bludgeoning; <b>Melee</b> [one-action] foot, <b>Damage</b> 2d6 bludgeoning.</li><li><b>Brontosaurus</b> Speed 25 feet; <b>Melee</b> [one-action] tail (reach 15 feet), <b>Damage</b> 2d6 bludgeoning; <b>Melee</b> [one-action] foot, <b>Damage</b> 2d8 bludgeoning.</li><li><b>Deinonychus</b> Speed 40 feet; <b>Melee</b> [one-action] talon (agile), <b>Damage</b> 2d4 piercing plus 1 persistent bleed; <b>Melee</b> [one-action] jaws, <b>Damage</b> 1d10 piercing.</li><li><b>Stegosaurus</b> Speed 30 feet; <b>Melee</b> [one-action] tail (reach 10 feet), <b>Damage</b> 2d8 piercing.</li><li><b>Triceratops</b> Speed 30 feet; <b>Melee</b> [one-action] horn, <b>Damage</b> 2d8 piercing, plus 1d6 persistent bleed on a critical hit; <b>Melee</b> [one-action] foot, <b>Damage</b> 2d6 bludgeoning.</li><li><b>Tyrannosaurus</b> Speed 30 feet; <b>Melee</b> [one-action] jaws (deadly, reach 10 feet), <b>Damage</b> 1d12 piercing; <b>Melee</b> [one-action] tail (reach 10 feet), <b>Damage</b> 1d10 bludgeoning.</li></ul>",
+    "heightened": [
+      {
+        "trigger_level": "(5th)",
+        "description": "Your battle form is Huge and your attacks have 15-foot reach, or 20-foot reach if they started with 15-foot reach. You instead gain 20 temporary HP, an attack modifier of +18, a damage bonus of +6, double the damage dice, and Athletics +21."
+      },
+      {
+        "trigger_level": "(7th)",
+        "description": "Your battle form is Gargantuan and your attacks have 20-foot reach, or 25-foot reach if they started with 15-foot reach. You instead gain AC = 21 + your level, 25 temporary HP, an attack modifier of +25, a damage bonus of +15, double the damage dice, and Athletics +25."
+      }
+    ]
+  }
+]

@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HandleError, FeatLookupHttpErrorHandlerService } from './feat-lookup-http-error-handler.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Feat, Trait } from '@app/shared/app-interfaces-enums';
+import {
+  FeatLookupHttpErrorHandlerService,
+  HandleError
+} from '@app/feat-lookup/services/feat-lookup-http-error-handler.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeatLookupService {
-  traitsUrl = 'api/traits'; // URL to web api
-  featsUrl = 'api/feats'; // URL to web api
+  traitsUrl = '/traits'; // URL to web api
+  featsUrl = '/feats'; // URL to web api
   private handleError: HandleError;
 
   constructor(private http: HttpClient, httpErrorHandler: FeatLookupHttpErrorHandlerService) {

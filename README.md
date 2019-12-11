@@ -32,6 +32,20 @@ npm install
 npm start
 ```
 
+# Starting Backend
+
+1. Go to project folder -> backend and install dependencies:
+
+```bash
+npm install
+```
+
+2. Launch api server
+
+```bash
+npx nodemon server
+```
+
 # Project structure
 
 ```

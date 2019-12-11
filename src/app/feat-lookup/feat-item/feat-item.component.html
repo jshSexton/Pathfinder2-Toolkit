@@ -13,7 +13,7 @@
         class="trait-foreground"
         [ngClass]="{ 'trait-uncommon': trait.name === 'UNCOMMON_TRAIT', 'trait-rare': trait.name === 'RARE_TRAIT' }"
       >
-        {{ trait.displayText | uppercase }}
+        {{ trait.name | uppercase }}
       </div>
     </div>
   </div>

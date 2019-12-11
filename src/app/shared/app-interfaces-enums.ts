@@ -35,22 +35,15 @@ export enum SpellComponents {
   MATERIAL = 'MATERIAL'
 }
 
-export enum FeatureTypes {
-  FEAT_TYPE = 'FEAT',
-  SPELL_TYPE = 'SPELL',
-  POWER_TYPE = 'POWER'
-}
-
 export interface Trait {
   id: any;
   name: string;
-  displayText: string;
+  type: Array<string>;
 }
 
 export interface Feature {
   id: any;
   name: any;
-  type: FeatureTypes;
   traits: Array<Trait>;
   description: string;
   shortDesc: string;
@@ -76,6 +69,7 @@ export interface Spell extends Feature {
   traditions: Array<SpellTraditions>;
   castingTime: StandardActionTypes | string;
   components: Array<SpellComponents | string>;
+  cost: string;
   requirements: string;
   trigger: string;
   range: string;

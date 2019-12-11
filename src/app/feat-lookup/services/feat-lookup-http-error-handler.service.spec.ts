@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
-import { FeatLookupHttpErrorHandlerService } from './feat-lookup-http-error-handler.service';
+import { FeatLookupHttpErrorHandlerService } from '@app/feat-lookup/services/feat-lookup-http-error-handler.service';
 
 describe('FeatLookupHttpErrorHandlerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

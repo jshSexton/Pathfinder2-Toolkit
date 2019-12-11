@@ -14,7 +14,7 @@ import { FeatFilters, TableKey } from '@app/feat-lookup/feat-list/feat-list-inte
 import { forkJoin, Observable } from 'rxjs';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Options } from 'ng5-slider';
-import { FeatLookupService } from '@app/feat-lookup/feat-lookup.service';
+import { FeatLookupService } from '@app/feat-lookup/services/feat-lookup.service';
 import { delay, map, startWith } from 'rxjs/operators';
 import { Utils } from '@app/shared/utils.service';
 
@@ -63,14 +63,12 @@ export class FeatListComponent implements OnInit {
   }
 
   ngOnInit() {
-    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats().pipe(delay(3000))]).subscribe(
-      ([traitRes, featRes]) => {
-        this.featsData = featRes;
-        this.traitsData = traitRes;
+    forkJoin([this.featService.getAllTraits(), this.featService.getAllFeats()]).subscribe(([traitRes, featRes]) => {
+      this.featsData = featRes;
+      this.traitsData = traitRes;
 
-        this.initAfterGetData();
-      }
-    );
+      this.initAfterGetData();
+    });
   }
 
   initAfterGetData() {
@@ -84,7 +82,7 @@ export class FeatListComponent implements OnInit {
   }
 
   getTraitText(trait: Trait) {
-    return trait.displayText;
+    return trait.name;
   }
 
   setActionOptions() {
@@ -145,7 +143,7 @@ export class FeatListComponent implements OnInit {
     });
     this.autoTraits = this.traitsFilter.valueChanges.pipe(
       startWith(''),
-      map(value => (typeof value === 'string' ? value.trim() : value && value.displayText ? value.displayText : null)),
+      map(value => (typeof value === 'string' ? value.trim() : value && value.name ? value.name : null)),
       map(traitName => (traitName ? this._filterAutoTraits(traitName) : this.traitsData.slice()))
     );
 
@@ -236,8 +234,8 @@ export class FeatListComponent implements OnInit {
       if ((value || '').trim()) {
         const tempTrait: Trait = {
           id: -1,
-          name: 'CUSTOM_TRAIT',
-          displayText: value
+          name: value,
+          type: ['UNTYPED']
         };
         this.filterValues.traits.push(tempTrait);
         this.dataSource.filter = JSON.stringify(this.filterValues);
@@ -260,7 +258,7 @@ export class FeatListComponent implements OnInit {
   }
 
   traitAutoDisplay(trait?: Trait) {
-    return trait ? trait.displayText : undefined;
+    return trait ? trait.name : undefined;
   }
 
   onFilterResetClick() {
@@ -274,6 +272,6 @@ export class FeatListComponent implements OnInit {
   private _filterAutoTraits(value: string) {
     const filterValue = value.toLowerCase();
 
-    return this.traitsData.filter(trait => trait.displayText.toLowerCase().indexOf(filterValue) >= 0);
+    return this.traitsData.filter(trait => trait.name.toLowerCase().indexOf(filterValue) >= 0);
   }
 }

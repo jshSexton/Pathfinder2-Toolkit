@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   HandleError,
   SpellLookupHttpErrorHandlerService
-} from '@app/spell-lookup/spell-lookup-http-error-handler.service';
+} from '@app/spell-lookup/services/spell-lookup-http-error-handler.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Spell, Trait } from '@app/shared/app-interfaces-enums';
@@ -12,8 +12,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SpellLookupService {
-  traitsUrl = 'api/traits'; // URL to web api
-  spellsUrl = 'api/spells'; // URL to web api
+  traitsUrl = '/traits'; // URL to web api
+  spellsUrl = '/spells'; // URL to web api
   private handleError: HandleError;
 
   constructor(private http: HttpClient, httpErrorHandler: SpellLookupHttpErrorHandlerService) {

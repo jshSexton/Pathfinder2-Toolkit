@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {
   Affliction,
   Feat,
-  FeatureTypes,
   SavingThrowTypes,
   Spell,
   SpellComponents,
@@ -20,335 +19,334 @@ export class InMemoryDataService {
     const traits: Array<Trait> = [
       {
         id: 1,
-        name: 'DWARF_TRAIT',
-        displayText: 'Dwarf'
+        name: 'Dwarf',
+        type: ['UNTYPED']
       },
       {
         id: 2,
-        name: 'ELF_TRAIT',
-        displayText: 'Elf'
+        name: 'Elf',
+        type: ['UNTYPED']
       },
       {
         id: 3,
-        name: 'GNOME_TRAIT',
-        displayText: 'Gnome'
+        name: 'Gnome',
+        type: ['UNTYPED']
       },
       {
         id: 4,
-        name: 'GOBLIN_TRAIT',
-        displayText: 'Goblin'
+        name: 'Goblin',
+        type: ['UNTYPED']
       },
       {
         id: 5,
-        name: 'HALFLING_TRAIT',
-        displayText: 'Halfling'
+        name: 'Halfling',
+        type: ['UNTYPED']
       },
       {
         id: 6,
-        name: 'HUMAN_TRAIT',
-        displayText: 'Human'
+        name: 'Human',
+        type: ['UNTYPED']
       },
       {
         id: 7,
-        name: 'HALFELF_TRAIT',
-        displayText: 'Half Elf'
+        name: 'Half Elf',
+        type: ['UNTYPED']
       },
       {
         id: 8,
-        name: 'ORC_TRAIT',
-        displayText: 'Orc'
+        name: 'Orc',
+        type: ['UNTYPED']
       },
       {
         id: 9,
-        name: 'HALFORC_TRAIT',
-        displayText: 'Half Orc'
+        name: 'Half Orc',
+        type: ['UNTYPED']
       },
       {
         id: 10,
-        name: 'ALCHEMIST_TRAIT',
-        displayText: 'Alchemist'
+        name: 'Alchemist',
+        type: ['UNTYPED']
       },
       {
         id: 11,
-        name: 'BARBARIAN_TRAIT',
-        displayText: 'Barbarian'
+        name: 'Barbarian',
+        type: ['UNTYPED']
       },
       {
         id: 12,
-        name: 'BARD_TRAIT',
-        displayText: 'Bard'
+        name: 'Bard',
+        type: ['UNTYPED']
       },
       {
         id: 13,
-        name: 'CLERIC_TRAIT',
-        displayText: 'Cleric'
+        name: 'Cleric',
+        type: ['UNTYPED']
       },
       {
         id: 14,
-        name: 'DRUID_TRAIT',
-        displayText: 'Druid'
+        name: 'Druid',
+        type: ['UNTYPED']
       },
       {
         id: 15,
-        name: 'FIGHTER_TRAIT',
-        displayText: 'Fighter'
+        name: 'Fighter',
+        type: ['UNTYPED']
       },
       {
         id: 16,
-        name: 'MONK_TRAIT',
-        displayText: 'Monk'
+        name: 'Monk',
+        type: ['UNTYPED']
       },
       {
         id: 17,
-        name: 'PALADIN_TRAIT',
-        displayText: 'Paladin'
+        name: 'Paladin',
+        type: ['UNTYPED']
       },
       {
         id: 18,
-        name: 'RANGER_TRAIT',
-        displayText: 'Ranger'
+        name: 'Ranger',
+        type: ['UNTYPED']
       },
       {
         id: 19,
-        name: 'ROGUE_TRAIT',
-        displayText: 'Rogue'
+        name: 'Rogue',
+        type: ['UNTYPED']
       },
       {
         id: 20,
-        name: 'SORCERER_TRAIT',
-        displayText: 'Sorcerer'
+        name: 'Sorcerer',
+        type: ['UNTYPED']
       },
       {
         id: 21,
-        name: 'WIZARD_TRAIT',
-        displayText: 'Wizard'
+        name: 'Wizard',
+        type: ['UNTYPED']
       },
       {
         id: 22,
-        name: 'HERITAGE_TRAIT',
-        displayText: 'Heritage'
+        name: 'Heritage',
+        type: ['UNTYPED']
       },
       {
         id: 23,
-        name: 'GENERAL_TRAIT',
-        displayText: 'General'
+        name: 'General',
+        type: ['UNTYPED']
       },
       {
         id: 24,
-        name: 'SKILL_TRAIT',
-        displayText: 'Skill'
+        name: 'Skill',
+        type: ['UNTYPED']
       },
       {
         id: 25,
-        name: 'DOWNTIME_TRAIT',
-        displayText: 'Downtime'
+        name: 'Downtime',
+        type: ['UNTYPED']
       },
       {
         id: 26,
-        name: 'SECRET_TRAIT',
-        displayText: 'Secret'
+        name: 'Secret',
+        type: ['UNTYPED']
       },
       {
         id: 27,
-        name: 'MOVE_TRAIT',
-        displayText: 'Move'
+        name: 'Move',
+        type: ['UNTYPED']
       },
       {
         id: 28,
-        name: 'ATTACK_TRAIT',
-        displayText: 'Attack'
+        name: 'Attack',
+        type: ['UNTYPED']
       },
       {
         id: 29,
-        name: 'VISUAL_TRAIT',
-        displayText: 'Visual'
+        name: 'Visual',
+        type: ['UNTYPED']
       },
       {
         id: 30,
-        name: 'MANIPULATE_TRAIT',
-        displayText: 'Manipulate'
+        name: 'Manipulate',
+        type: ['UNTYPED']
       },
       {
         id: 31,
-        name: 'DEATH_TRAIT',
-        displayText: 'Death'
+        name: 'Death',
+        type: ['UNTYPED']
       },
       {
         id: 32,
-        name: 'EMOTION_TRAIT',
-        displayText: 'Emotion'
+        name: 'Emotion',
+        type: ['UNTYPED']
       },
       {
         id: 33,
-        name: 'FEAR_TRAIT',
-        displayText: 'Fear'
+        name: 'Fear',
+        type: ['UNTYPED']
       },
       {
         id: 34,
-        name: 'HEALING_TRAIT',
-        displayText: 'Healing'
+        name: 'Healing',
+        type: ['UNTYPED']
       },
       {
         id: 35,
-        name: 'CONCENTRATE_TRAIT',
-        displayText: 'Concentrate'
+        name: 'Concentrate',
+        type: ['UNTYPED']
       },
       {
         id: 36,
-        name: 'ADDITIVE_TRAIT',
-        displayText: 'Additive'
+        name: 'Additive',
+        type: ['UNTYPED']
       },
       {
         id: 37,
-        name: 'MENTAL_TRAIT',
-        displayText: 'Mental'
+        name: 'Mental',
+        type: ['UNTYPED']
       },
       {
         id: 38,
-        name: 'RAGE_TRAIT',
-        displayText: 'Rage'
+        name: 'Rage',
+        type: ['UNTYPED']
       },
       {
         id: 39,
-        name: 'MORPH_TRAIT',
-        displayText: 'Morph'
+        name: 'Morph',
+        type: ['UNTYPED']
       },
       {
         id: 40,
-        name: 'PRIMAL_TRAIT',
-        displayText: 'Primal'
+        name: 'Primal',
+        type: ['UNTYPED']
       },
       {
         id: 41,
-        name: 'TOTEM_TRAIT',
-        displayText: 'Totem'
+        name: 'Totem',
+        type: ['UNTYPED']
       },
       {
         id: 42,
-        name: 'TRANSMUTATION_TRAIT',
-        displayText: 'Transmutation'
+        name: 'Transmutation',
+        type: ['UNTYPED']
       },
       {
         id: 43,
-        name: 'ARCANE_TRAIT',
-        displayText: 'Arcane'
+        name: 'Arcane',
+        type: ['UNTYPED']
       },
       {
         id: 44,
-        name: 'EVOCATION_TRAIT',
-        displayText: 'Evocation'
+        name: 'Evocation',
+        type: ['UNTYPED']
       },
       {
         id: 45,
-        name: 'POLYMORPH_TRAIT',
-        displayText: 'Polymorph'
+        name: 'Polymorph',
+        type: ['UNTYPED']
       },
       {
         id: 46,
-        name: 'DIVINE_TRAIT',
-        displayText: 'Divine'
+        name: 'Divine',
+        type: ['UNTYPED']
       },
       {
         id: 47,
-        name: 'NECROMANCY_TRAIT',
-        displayText: 'Necromancy'
+        name: 'Necromancy',
+        type: ['UNTYPED']
       },
       {
         id: 48,
-        name: 'AUDITORY_TRAIT',
-        displayText: 'Auditory'
+        name: 'Auditory',
+        type: ['UNTYPED']
       },
       {
         id: 49,
-        name: 'FORTUNE_TRAIT',
-        displayText: 'Fortune'
+        name: 'Fortune',
+        type: ['UNTYPED']
       },
       {
         id: 50,
-        name: 'METAMAGIC_TRAIT',
-        displayText: 'Metamagic'
+        name: 'Metamagic',
+        type: ['UNTYPED']
       },
       {
         id: 51,
-        name: 'POSITIVE_TRAIT',
-        displayText: 'Positive'
+        name: 'Positive',
+        type: ['UNTYPED']
       },
       {
         id: 52,
-        name: 'NEGATIVE_TRAIT',
-        displayText: 'Negative'
+        name: 'Negative',
+        type: ['UNTYPED']
       },
       {
         id: 53,
-        name: 'GOOD_TRAIT',
-        displayText: 'Good'
+        name: 'Good',
+        type: ['UNTYPED']
       },
       {
         id: 54,
-        name: 'EVIL_TRAIT',
-        displayText: 'Evil'
+        name: 'Evil',
+        type: ['UNTYPED']
       },
       {
         id: 55,
-        name: 'ANIMALORDER_TRAIT',
-        displayText: 'Animal Order'
+        name: 'Animal Order',
+        type: ['UNTYPED']
       },
       {
         id: 56,
-        name: 'CHAOTIC_TRAIT',
-        displayText: 'Chaotic'
+        name: 'Chaotic',
+        type: ['UNTYPED']
       },
       {
         id: 57,
-        name: 'DISEASE_TRAIT',
-        displayText: 'Disease'
+        name: 'Disease',
+        type: ['UNTYPED']
       },
       {
         id: 58,
-        name: 'ACID_TRAIT',
-        displayText: 'Acid'
+        name: 'Acid',
+        type: ['UNTYPED']
       },
       {
         id: 59,
-        name: 'CANTRIP_TRAIT',
-        displayText: 'Cantrip'
+        name: 'Cantrip',
+        type: ['UNTYPED']
       },
       {
         id: 60,
-        name: 'AIR_TRAIT',
-        displayText: 'Air'
+        name: 'Air',
+        type: ['UNTYPED']
       },
       {
         id: 61,
-        name: 'CONJURATION_TRAIT',
-        displayText: 'Conjuration'
+        name: 'Conjuration',
+        type: ['UNTYPED']
       },
       {
         id: 62,
-        name: 'ABJURATION_TRAIT',
-        displayText: 'Abjuration'
+        name: 'Abjuration',
+        type: ['UNTYPED']
       },
       {
         id: 63,
-        name: 'DIVINATION_TRAIT',
-        displayText: 'Divination'
+        name: 'Divination',
+        type: ['UNTYPED']
       },
       {
         id: 64,
-        name: 'UNCOMMON_TRAIT',
-        displayText: 'Uncommon'
+        name: 'Uncommon',
+        type: ['UNTYPED']
       },
       {
         id: 65,
-        name: 'RARE_TRAIT',
-        displayText: 'Rare'
+        name: 'Rare',
+        type: ['UNTYPED']
       }
     ];
     const feats: Array<Feat> = [
       {
         id: 1,
         name: 'Far Lobber',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[10]],
         actions: StandardActionTypes.NO_ACTION,
         levelRequirement: 1,
@@ -365,7 +363,6 @@ export class InMemoryDataService {
       {
         id: 2,
         name: 'Alertness',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[23]],
         actions: StandardActionTypes.NO_ACTION,
         levelRequirement: 1,
@@ -381,7 +378,6 @@ export class InMemoryDataService {
       {
         id: 3,
         name: 'Battle Medic',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[23], traits[34], traits[30], traits[24]],
         actions: StandardActionTypes.SINGLE_ACTION,
         levelRequirement: 1,
@@ -406,7 +402,6 @@ export class InMemoryDataService {
       {
         id: 4,
         name: 'Armor Proficiency',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[23]],
         actions: StandardActionTypes.NO_ACTION,
         levelRequirement: 1,
@@ -427,7 +422,6 @@ export class InMemoryDataService {
       {
         id: 5,
         name: 'Ancient’s Blood',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[1], traits[22]],
         actions: StandardActionTypes.REACTION_ACTION,
         levelRequirement: 1,
@@ -447,7 +441,6 @@ export class InMemoryDataService {
       {
         id: 6,
         name: 'Counterspell',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[20]],
         actions: StandardActionTypes.REACTION_ACTION,
         levelRequirement: 1,
@@ -467,7 +460,6 @@ export class InMemoryDataService {
       {
         id: 7,
         name: 'Kip Up',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[23], traits[27]],
         actions: StandardActionTypes.FREE_ACTION,
         levelRequirement: 7,
@@ -483,7 +475,6 @@ export class InMemoryDataService {
       {
         id: 8,
         name: 'Debilitating Bomb',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[36], traits[10]],
         actions: StandardActionTypes.FREE_ACTION,
         levelRequirement: 6,
@@ -503,7 +494,6 @@ export class InMemoryDataService {
       {
         id: 9,
         name: 'Legendary Impersonator',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[23], traits[24]],
         actions: StandardActionTypes.TRIPLE_ACTION,
         levelRequirement: 15,
@@ -518,7 +508,6 @@ export class InMemoryDataService {
       {
         id: 10,
         name: 'Boulder Roll',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[1]],
         actions: StandardActionTypes.DOUBLE_ACTION,
         levelRequirement: 5,
@@ -543,7 +532,6 @@ export class InMemoryDataService {
       {
         id: 11,
         name: 'Recognize Spell',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[23], traits[26], traits[24]],
         actions: StandardActionTypes.REACTION_ACTION,
         levelRequirement: 1,
@@ -572,7 +560,6 @@ export class InMemoryDataService {
       {
         id: 12,
         name: 'Improved Combat Grab',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[15]],
         actions: StandardActionTypes.NO_ACTION,
         levelRequirement: 2,
@@ -592,7 +579,6 @@ export class InMemoryDataService {
       {
         id: 13,
         name: 'Scare to Death',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[31], traits[33], traits[23], traits[24]],
         actions: StandardActionTypes.SINGLE_ACTION,
         levelRequirement: 15,
@@ -617,7 +603,6 @@ export class InMemoryDataService {
       {
         id: 14,
         name: 'Sudden Charge',
-        type: FeatureTypes.FEAT_TYPE,
         traits: [traits[28], traits[15], traits[27]],
         actions: StandardActionTypes.DOUBLE_ACTION,
         levelRequirement: 1,
@@ -639,7 +624,6 @@ export class InMemoryDataService {
       {
         id: 1,
         name: 'Abyssal Plague',
-        type: FeatureTypes.SPELL_TYPE,
         level: 5,
         traits: [traits[27], traits[55], traits[56], traits[53], traits[46]],
         traditions: [SpellTraditions.DIVINE, SpellTraditions.OCCULT],
@@ -685,7 +669,6 @@ export class InMemoryDataService {
       {
         id: 2,
         name: 'Acid Arrow',
-        type: FeatureTypes.SPELL_TYPE,
         level: 2,
         traits: [traits[57], traits[27], traits[43]],
         traditions: [SpellTraditions.ARCANE, SpellTraditions.PRIMAL],
@@ -710,7 +693,6 @@ export class InMemoryDataService {
       {
         id: 3,
         name: 'Acid Splash',
-        type: FeatureTypes.SPELL_TYPE,
         level: 0,
         traits: [traits[57], traits[27], traits[58], traits[43]],
         traditions: [SpellTraditions.ARCANE, SpellTraditions.PRIMAL],
@@ -758,7 +740,6 @@ export class InMemoryDataService {
       {
         id: 4,
         name: 'Aerial Form',
-        type: FeatureTypes.SPELL_TYPE,
         level: 4,
         traits: [traits[44], traits[41]],
         traditions: [SpellTraditions.PRIMAL, SpellTraditions.ARCANE],
@@ -792,21 +773,21 @@ export class InMemoryDataService {
           '<ul>' +
           '<li>' +
           '<b>Bat</b> Speed 20 feet, fly Speed 30 feet; precise echolocation 40 feet; ' +
-          '<b>Melee</b> (((ICON-SINGLE-ACTION))) fangs, <b>Damage</b> 2d8 piercing; ' +
-          '<b>Melee</b> (((ICON-SINGLE-ACTION))) wing (agile), <b>Damage</b> 2d6 bludgeoning;' +
+          '<b>Melee</b> [one-action] fangs, <b>Damage</b> 2d8 piercing; ' +
+          '<b>Melee</b> [one-action] wing (agile), <b>Damage</b> 2d6 bludgeoning;' +
           '</li>' +
           '<li>' +
           '<b>Bird</b> Speed 10 feet, fly Speed 50 feet; ' +
-          '<b>Melee</b> (((ICON-SINGLE-ACTION))) beak, <b>Damage</b> 2d8 piercing; ' +
-          '<b>Melee</b> (((ICON-SINGLE-ACTION))) talon (agile), <b>Damage</b> 1d10 slashing; ' +
+          '<b>Melee</b> [one-action] beak, <b>Damage</b> 2d8 piercing; ' +
+          '<b>Melee</b> [one-action] talon (agile), <b>Damage</b> 1d10 slashing; ' +
           '</li>' +
           '<li>' +
           '<b>Pterosaur</b> Speed 10 feet, fly Speed 40 feet; imprecise scent 30 feet; ' +
-          '<b>Melee</b> (((ICON-SINGLE-ACTION))) beak, <b>Damage</b> 3d6 piercing;' +
+          '<b>Melee</b> [one-action] beak, <b>Damage</b> 3d6 piercing;' +
           '</li>' +
           '<li>' +
           '<b>Wasp</b> Speed 20 feet, fly Speed 40 feet; ' +
-          '<b>Melee</b> (((ICON-SINGLE-ACTION))) stinger, <b>Damage</b> 1d8 piercing plus 1d6 persistent poison;' +
+          '<b>Melee</b> [one-action] stinger, <b>Damage</b> 1d8 piercing plus 1d6 persistent poison;' +
           '</li>' +
           '</ul>',
         heightened: [
@@ -834,7 +815,6 @@ export class InMemoryDataService {
       {
         id: 5,
         name: 'Air Bubble',
-        type: FeatureTypes.SPELL_TYPE,
         level: 1,
         traits: [traits[59], traits[60]],
         traditions: [SpellTraditions.ARCANE, SpellTraditions.DIVINE, SpellTraditions.PRIMAL],
@@ -853,7 +833,6 @@ export class InMemoryDataService {
       {
         id: 6,
         name: 'Alarm',
-        type: FeatureTypes.SPELL_TYPE,
         level: 1,
         traits: [traits[61]],
         traditions: [SpellTraditions.ARCANE, SpellTraditions.DIVINE, SpellTraditions.OCCULT, SpellTraditions.PRIMAL],
@@ -888,7 +867,6 @@ export class InMemoryDataService {
       {
         id: 7,
         name: 'Alter Reality',
-        type: FeatureTypes.SPELL_TYPE,
         level: 10,
         traits: [traits[62]],
         traditions: [SpellTraditions.OCCULT],
@@ -911,7 +889,6 @@ export class InMemoryDataService {
       {
         id: 8,
         name: 'Bind Soul',
-        type: FeatureTypes.SPELL_TYPE,
         level: 9,
         traits: [traits[63], traits[53], traits[46]],
         traditions: [SpellTraditions.DIVINE, SpellTraditions.OCCULT],
@@ -934,7 +911,6 @@ export class InMemoryDataService {
       {
         id: 9,
         name: 'Antimagic Field',
-        type: FeatureTypes.SPELL_TYPE,
         level: 8,
         traits: [traits[64], traits[61]],
         traditions: [SpellTraditions.ARCANE, SpellTraditions.DIVINE, SpellTraditions.OCCULT],
