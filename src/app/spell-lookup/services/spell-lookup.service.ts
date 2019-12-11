@@ -3,9 +3,9 @@ import {
   HandleError,
   SpellLookupHttpErrorHandlerService
 } from '@app/spell-lookup/services/spell-lookup-http-error-handler.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Spell, Trait } from '@app/shared/app-interfaces-enums';
+import { Spell, StandardActionTypes, Trait } from '@app/shared/app-interfaces-enums';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -20,14 +20,37 @@ export class SpellLookupService {
     this.handleError = httpErrorHandler.createHandleError('SpellLookupService');
   }
 
-  getAllSpells(): Observable<Array<Spell>> {
-    return this.http.get<Array<Spell>>(this.spellsUrl).pipe(catchError(this.handleError('getSpells', [])));
+  getSpellById(spellId: string): Observable<Spell> {
+    return this.http
+      .get<Spell>(`${this.spellsUrl}/single`, {
+        params: new HttpParams().set('spellId', spellId)
+      })
+      .pipe(catchError(this.handleError(`getSpell: id=${spellId}`, {} as Spell)));
   }
 
-  getSpellById(spellId: number): Observable<Spell> {
+  getSpells(
+    filterName: string = '',
+    filterLevelMin: number = 0,
+    filterLevelMax: number = 10,
+    filterCastingTime: StandardActionTypes | string = '',
+    filterTraits: Array<Trait> = [],
+    sortOrder: string = 'asc',
+    pageNumber: number = 0,
+    pageSize: number = 50
+  ): Observable<Array<Spell>> {
     return this.http
-      .get<Spell>(`${this.spellsUrl}/${spellId}`)
-      .pipe(catchError(this.handleError(`getSpell: id=${spellId}`, {} as Spell)));
+      .get<Array<Spell>>(`${this.spellsUrl}/list`, {
+        params: new HttpParams()
+          .set('filterName', filterName)
+          .set('filterLevelMin', filterLevelMin.toString())
+          .set('filterLevelMax', filterLevelMax.toString())
+          .set('filterCastingTime', filterCastingTime)
+          .set('filterTraits', filterTraits.join())
+          .set('sortOrder', sortOrder)
+          .set('pageNumber', pageNumber.toString())
+          .set('pageSize', pageSize.toString())
+      })
+      .pipe(catchError(this.handleError('getSpells', [])));
   }
 
   getAllTraits(): Observable<Array<Trait>> {

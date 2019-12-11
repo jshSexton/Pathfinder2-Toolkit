@@ -26,7 +26,8 @@ export class SpellItemComponent implements OnInit {
   }
 
   getSpell(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log('id:', id);
     this.spellService.getSpellById(id).subscribe(spellData => {
       if (spellData.constructor === Object && Object.entries(spellData).length === 0) {
         // API returned empty spell object, handle it
